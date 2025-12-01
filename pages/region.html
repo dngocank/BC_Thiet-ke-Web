@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Vùng Miền - VietFestivals</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/pages/region.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <header style="background: white; padding: 15px 0; border-bottom: 1px solid #eee;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <h1><a href="../index.html" style="color: #d32f2f;">VietFestivals</a></h1>
+            <nav>
+                <ul style="display: flex; gap: 20px;">
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="region.html" style="font-weight: bold; color: #d32f2f;">Vùng miền</a></li>
+                    <li id="user-area"><a href="auth/login.html">Đăng nhập</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="region-container">
+        <div class="container">
+            <h2 class="page-title">Bản Đồ Văn Hóa Việt Nam</h2>
+            <p class="page-subtitle">Click vào địa điểm để khám phá (Bấm vào chỗ trống để lấy tọa độ thêm tỉnh mới)</p>
+
+            <div class="map-interface">
+                
+                <div class="map-wrapper" id="map-wrapper">
+                    <img src="../assets/images/vietnam-map.jpg" 
+                         alt="Bản đồ Việt Nam" 
+                         class="vietnam-map"
+                         onerror="this.src='https://via.placeholder.com/600x800?text=Loi+Anh+Ban+Do'">
+                </div>
+
+                <div class="info-panel" id="region-info">
+                    <div class="info-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 50px; color: #ddd; margin-bottom: 20px;"></i>
+                        <h3>Chọn một địa điểm</h3>
+                        <p>Thông tin chi tiết sẽ hiện tại đây.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/pages/region.js"></script>
+</body>
+</html>

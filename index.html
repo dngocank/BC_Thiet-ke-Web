@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lễ Hội Việt Nam - Trang Chủ</title>
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header style="background: white; padding: 15px 0; border-bottom: 1px solid #eee;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <h1><a href="index.html" style="color: #d32f2f; text-decoration: none;">VietFestivals</a></h1>
+            <nav>
+                <ul style="display: flex; gap: 20px;">
+                    <li><a href="index.html" style="font-weight: bold; color: #d32f2f;">Trang chủ</a></li>
+                    <li><a href="pages/region.html">Vùng miền</a></li>
+                    <li id="user-area"><a href="pages/auth/login.html">Đăng nhập</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner" id="hero-banner">
+        <div class="banner-content">
+            <h2>Khám Phá Văn Hóa Việt Nam</h2>
+            <p>Trải nghiệm những lễ hội đặc sắc nhất trải dài 3 miền</p>
+        </div>
+        
+        <div class="carousel-dots" id="carousel-dots"></div>
+    </section>
+
+    <main class="container">
+        <h2 style="margin-top: 30px; border-left: 5px solid #d32f2f; padding-left: 10px;">Lễ Hội Nổi Bật</h2>
+        
+        <div id="festival-list" class="festival-grid">
+            </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
+        <p>&copy; 2025 Website Lễ Hội - Khám phá văn hóa Việt Nam</p>
+    </footer>
+
+    <script src="js/data/festivals.js"></script> 
+    <script src="js/common.js"></script>
+    <script src="js/pages/home.js"></script>
+</body>
+</html>

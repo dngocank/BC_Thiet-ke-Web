@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký - VietFestivals</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/pages/auth.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <a href="../../index.html" class="back-link">← Quay về Trang chủ</a>
+            
+            <div class="auth-header">
+                <h2>Tạo tài khoản mới</h2>
+                <p>Tham gia cộng đồng yêu văn hóa Việt Nam.</p>
+            </div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="fullname">Họ và tên</label>
+                    <input type="text" id="fullname" placeholder="Ví dụ: Nguyễn Văn A" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-username">Tên đăng nhập</label>
+                    <input type="text" id="reg-username" placeholder="Nhập tên tài khoản" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-password">Mật khẩu</label>
+                    <input type="password" id="reg-password" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Nhập lại mật khẩu</label>
+                    <input type="password" id="confirm-password" placeholder="Xác nhận lại mật khẩu" required>
+                </div>
+
+                <div id="reg-error-message" class="error-msg"></div>
+
+                <button type="submit" class="btn-auth">Đăng Ký</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/pages/register.js"></script>
+</body>
+</html>                                             
