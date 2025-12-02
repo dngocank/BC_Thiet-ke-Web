@@ -1,108 +1,70 @@
-/* =========================================
-   1. HERO BANNER - KHUNG CHÍNH
-   ========================================= */
+/* ================= HERO BANNER (Giữ nguyên) ================= */
 .hero-banner {
     height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    
-    position: relative; /* Quan trọng để con cái định vị theo */
-    overflow: hidden;
-    background-color: #222;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: white;
+    position: relative; overflow: hidden; background-color: #222;
 }
 
-/* --- CÁC LỚP HIỂN THỊ (LAYERS) --- */
-
-/* LỚP 1: ẢNH NỀN (Nằm dưới cùng) */
-.carousel-image-wrapper {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 1; 
-}
-
+/* LAYERS */
+.carousel-image-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
 .carousel-image {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    opacity: 0; transition: opacity 1.5s ease-in-out;
 }
+.carousel-image.active { opacity: 1; }
 
-.carousel-image.active {
-    opacity: 1;
-}
+.banner-content { position: relative; z-index: 2; transform: translateY(-20px); }
+.hero-banner h2 { font-size: 3rem; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin-bottom: 15px; }
+.hero-banner p { font-size: 1.2rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); }
 
-/* LỚP 2: NỘI DUNG CHỮ (Nằm giữa) */
-.banner-content {
-    position: relative;
-    z-index: 2; /* Nổi lên trên ảnh */
-    transform: translateY(-20px); /* Đẩy lên cao một chút để nhường chỗ cho dots */
-}
-
-.hero-banner h2 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-    margin-bottom: 15px;
-}
-
-.hero-banner p {
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-}
-
-/* LỚP 3: THANH PHÂN TRANG DOTS (Nằm đáy) */
+/* DOTS */
 .carousel-dots {
-    position: absolute;
-    bottom: 0; /* Dính sát đáy */
-    left: 0;
-    width: 100%; /* Rộng toàn màn hình */
-    height: 60px; /* Chiều cao khu vực chứa dots */
-    
-    display: flex;
-    justify-content: center; /* Căn giữa các chấm */
-    align-items: center;
-    gap: 15px;
-    
-    /* Hiệu ứng nền đen mờ dần từ dưới lên giúp dots nổi bật */
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-    z-index: 10;
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 60px;
+    display: flex; justify-content: center; align-items: center; gap: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); z-index: 10;
 }
-
 .dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 50%; cursor: pointer; transition: all 0.3s ease;
 }
+.dot.active { background-color: white; transform: scale(1.3); box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
 
-.dot:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.dot.active {
-    background-color: white;
-    transform: scale(1.3);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-}
-
-/* =========================================
-   2. DANH SÁCH LỄ HỘI
-   ========================================= */
+/* ================= DANH SÁCH LỄ HỘI ================= */
 .festival-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 40px 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px; margin: 30px 0;
 }
+
+/* ================= MỚI: THANH TÌM KIẾM ================= */
+.search-section { margin-top: 20px; position: relative; z-index: 5; margin-bottom: 20px; }
+.search-box {
+    background: white; padding: 20px; border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex; gap: 15px; flex-wrap: wrap;
+}
+.search-box input, .search-box select {
+    flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;
+}
+.btn-search {
+    padding: 12px 30px; background: #d32f2f; color: white;
+    border: none; border-radius: 5px; cursor: pointer; font-weight: bold;
+}
+.btn-search:hover { background: #b71c1c; }
+
+/* ================= MỚI: BLOG / CẨM NANG ================= */
+.blog-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px; margin-top: 20px; margin-bottom: 50px;
+}
+.blog-card {
+    background: white; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s;
+}
+.blog-card:hover { transform: translateY(-5px); }
+.blog-card img { width: 100%; height: 180px; object-fit: cover; }
+.blog-content { padding: 15px; }
+.blog-content h3 { font-size: 1.1rem; margin-bottom: 10px; color: #333; }
+.blog-content p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+.blog-content a { color: #d32f2f; font-weight: bold; font-size: 0.9rem; text-decoration: none; }

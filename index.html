@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages/home.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -32,19 +30,113 @@
             <h2>Khám Phá Văn Hóa Việt Nam</h2>
             <p>Trải nghiệm những lễ hội đặc sắc nhất trải dài 3 miền</p>
         </div>
-        
         <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
+    <div class="search-section container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Nhập tên lễ hội cần tìm...">
+            
+            <select id="month-filter">
+                <option value="all">-- Tất cả các tháng --</option>
+                <option value="1">Tháng 1</option>
+                <option value="3">Tháng 3</option>
+                <option value="4">Tháng 4</option>
+                <option value="6">Tháng 6</option>
+                <option value="10">Tháng 10</option>
+                <option value="12">Tháng 12</option>
+            </select>
+
+            <button onclick="filterFestivals()" class="btn-search">Tìm Kiếm</button>
+        </div>
+    </div>
+
     <main class="container">
-        <h2 style="margin-top: 30px; border-left: 5px solid #d32f2f; padding-left: 10px;">Lễ Hội Nổi Bật</h2>
+        <h2 style="margin-top: 50px; border-left: 5px solid #d32f2f; padding-left: 10px;">Các Lễ Hội Nổi Bật</h2>
         
         <div id="festival-list" class="festival-grid">
             </div>
+
+        <h2 style="margin-top: 70px; border-left: 5px solid #d32f2f; padding-left: 10px;">Cẩm Nang Du Lịch</h2>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="https://media.vneconomy.vn/images/upload/2023/04/26/dulich-2.jpg" alt="Blog 1">
+                <div class="blog-content">
+                    <h3>5 vật dụng không thể thiếu khi đi lễ hội</h3>
+                    <p>Chuẩn bị kỹ càng giúp chuyến đi của bạn trọn vẹn và an toàn hơn...</p>
+                    <a href="#">Đọc thêm &rarr;</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://cdn.tuoitre.vn/thumb_w/640/2019/3/25/photo-1-15535073685461741570773.jpg" alt="Blog 2">
+                <div class="blog-content">
+                    <h3>Kinh nghiệm săn vé máy bay giá rẻ</h3>
+                    <p>Bí quyết đặt vé sớm để tiết kiệm chi phí di chuyển cho mùa lễ hội...</p>
+                    <a href="#">Đọc thêm &rarr;</a>
+                </div>
+            </article>
+
+             <article class="blog-card">
+                <img src="https://statics.vinpearl.com/bun-mam-mien-tay-1.jpg" alt="Blog 3">
+                <div class="blog-content">
+                    <h3>Khám phá ẩm thực miền Tây mùa nước nổi</h3>
+                    <p>Những món ăn dân dã đậm chất miền sông nước bạn nhất định phải thử...</p>
+                    <a href="#">Đọc thêm &rarr;</a>
+                </div>
+            </article>
+        </div>
     </main>
 
-    <footer style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
-        <p>&copy; 2025 Website Lễ Hội - Khám phá văn hóa Việt Nam</p>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            
+            <div class="footer-col">
+                <h3 style="color: #d32f2f;">VietFestivals</h3>
+                <p>Trang web phi lợi nhuận nhằm quảng bá nét đẹp văn hóa và các lễ hội truyền thống của Việt Nam đến bạn bè trong nước và quốc tế.</p>
+                <p style="margin-top: 20px; opacity: 0.7;">&copy; 2025 VietFestivals Team.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <ul class="footer-links">
+                    <li>
+                        <i class="fas fa-envelope"></i> 
+                        <span>admin@vietfestivals.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i> 
+                        <span>support@vietfestivals.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i> 
+                        <span>0987.654.321 (Hotline)</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <span>Hà Nội, Việt Nam</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Tham Gia Cộng Đồng</h3>
+                <p>Quét mã để vào nhóm Facebook:</p>
+                
+                <img src="./assets/images/common/qr-code.jpg" 
+                     alt="QR Code Facebook" 
+                     class="footer-qr"
+                     onerror="this.src='https://via.placeholder.com/150x150?text=QR+Code'">
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
     </footer>
 
     <script src="js/data/festivals.js"></script> 

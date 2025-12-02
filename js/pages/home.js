@@ -3,24 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroBanner = document.getElementById('hero-banner');
     const carouselDotsContainer = document.getElementById('carousel-dots');
 
-    // 1. DANH SÁCH ẢNH
+    // 1. SLIDER ẢNH BANNER
     const bannerImages = [
         './assets/images/banners/home-banner.jpg',
         './assets/images/banners/banner2.jpg',
         './assets/images/banners/banner3.jpg',
-        './assets/images/banners/banner4.png' // File png của bạn
+        './assets/images/banners/banner4.png'
     ];
 
     let currentBannerIndex = 0;
     let autoSlideInterval;
     let carouselImageElements = [];
 
-    // --- LOGIC CAROUSEL ---
+    // --- LOGIC CAROUSEL (Giữ nguyên) ---
     function initializeCarouselImages() {
         if (!heroBanner) return;
-        
-        // Tạo wrapper chứa ảnh, chèn vào đầu heroBanner
-        // Nó sẽ nằm dưới .banner-content nhờ CSS z-index
         const imageWrapper = document.createElement('div');
         imageWrapper.classList.add('carousel-image-wrapper');
         heroBanner.prepend(imageWrapper);
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function createCarouselDots() {
         if (!carouselDotsContainer) return;
         carouselDotsContainer.innerHTML = '';
-        
         bannerImages.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
@@ -80,10 +76,19 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoSlide();
     }
 
-    // --- HIỂN THỊ DANH SÁCH LỄ HỘI ---
-    if (typeof festivalsList !== 'undefined' && listContainer) {
+    // --- 2. LOGIC DANH SÁCH & TÌM KIẾM (MỚI) ---
+    
+    // Hàm hiển thị danh sách (Nhận vào 1 mảng dữ liệu)
+    window.renderFestivals = function(data) {
+        if (!listContainer) return;
+
+        if (data.length === 0) {
+            listContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; font-size: 1.2rem; color: #666; margin-top: 20px;">Không tìm thấy lễ hội nào phù hợp!</p>';
+            return;
+        }
+
         let htmlContent = '';
-        festivalsList.forEach(festival => {
+        data.forEach(festival => {
             const safeImage = festival.image ? festival.image : 'https://via.placeholder.com/300x200';
             htmlContent += `
                 <article class="festival-card">
@@ -102,9 +107,29 @@ document.addEventListener('DOMContentLoaded', function() {
         listContainer.innerHTML = htmlContent;
     }
 
+    // Hàm Lọc (Được gọi khi bấm nút Tìm kiếm)
+    window.filterFestivals = function() {
+        const searchText = document.getElementById('search-input').value.toLowerCase();
+        const selectedMonth = document.getElementById('month-filter').value;
+
+        // Lọc dữ liệu
+        const filteredData = festivalsList.filter(item => {
+            const nameMatch = item.name.toLowerCase().includes(searchText);
+            const monthMatch = (selectedMonth === 'all') || (item.month === selectedMonth);
+            return nameMatch && monthMatch;
+        });
+
+        renderFestivals(filteredData);
+    }
+
     // --- KHỞI CHẠY ---
     initializeCarouselImages();
     changeBannerImage(currentBannerIndex);
     createCarouselDots();
     startAutoSlide();
+
+    // Hiển thị toàn bộ danh sách khi mới vào
+    if (typeof festivalsList !== 'undefined') {
+        renderFestivals(festivalsList);
+    }
 });
