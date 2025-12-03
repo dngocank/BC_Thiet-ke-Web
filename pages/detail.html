@@ -10,35 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* CSS nội bộ cho trang detail (Hoặc bạn có thể để ra file detail.css) */
         .detail-header { margin-bottom: 30px; }
         .detail-img { width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .detail-info { font-size: 1.1rem; margin-bottom: 10px; color: #555; }
         .detail-desc { line-height: 1.8; text-align: justify; }
         
-        /* Style cho khối Cảnh báo đăng nhập */
         .login-warning-box {
-            display: none; /* Mặc định ẩn */
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 50px auto;
+            display: none; text-align: center; padding: 60px 20px; background: white;
+            border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 600px; margin: 50px auto;
         }
-        .lock-icon { font-size: 60px; color: #d32f2f; margin-bottom: 20px; }
         .btn-login-now {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #d32f2f;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
+            display: inline-block; margin-top: 20px; padding: 12px 30px; background: #d32f2f;
+            color: white; text-decoration: none; border-radius: 5px; font-weight: bold;
         }
-        .btn-login-now:hover { background: #b71c1c; }
     </style>
 </head>
 <body>
@@ -51,17 +36,42 @@
         </div>
     </header>
 
-    <div class="container" style="margin-top: 30px;">
+    <div class="container" style="margin-top: 30px; margin-bottom: 50px;">
         
         <div id="login-required" class="login-warning-box">
-            <i class="fas fa-lock lock-icon"></i>
+            <i class="fas fa-lock" style="font-size: 60px; color: #d32f2f; margin-bottom: 20px;"></i>
             <h2>Nội dung bị giới hạn</h2>
-            <p>Bạn cần đăng nhập tài khoản để xem thông tin chi tiết về lễ hội này.</p>
+            <p>Bạn cần đăng nhập tài khoản để xem thông tin chi tiết.</p>
             <a href="auth/login.html" class="btn-login-now">Đăng nhập ngay</a>
         </div>
 
         <div id="detail-content">
             <p style="text-align: center;">Đang tải dữ liệu...</p>
+        </div>
+
+        <div id="review-section" style="margin-top: 50px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display:none;">
+            <h3 style="color: #d32f2f; margin-bottom: 20px;"><i class="fas fa-comments"></i> Đánh giá & Bình luận</h3>
+            
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: bold;">Đánh giá của bạn:</label>
+                    <select id="rv-rating" style="padding: 8px; margin-left: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                        <option value="5">⭐⭐⭐⭐⭐ (Tuyệt vời)</option>
+                        <option value="4">⭐⭐⭐⭐ (Tốt)</option>
+                        <option value="3">⭐⭐⭐ (Bình thường)</option>
+                        <option value="2">⭐⭐ (Tệ)</option>
+                        <option value="1">⭐ (Rất tệ)</option>
+                    </select>
+                </div>
+                <textarea id="rv-comment" rows="3" placeholder="Chia sẻ cảm nghĩ của bạn về lễ hội này..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; font-family: inherit;"></textarea>
+                <button onclick="submitReview()" style="padding: 10px 25px; background: #d32f2f; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Gửi Đánh Giá</button>
+            </div>
+
+            <hr style="margin: 30px 0; border-top: 1px solid #eee;">
+
+            <div id="review-list">
+                <p style="color: #777; font-style: italic;">Chưa có bình luận nào. Hãy là người đầu tiên!</p>
+            </div>
         </div>
 
     </div>

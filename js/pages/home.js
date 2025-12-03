@@ -3,25 +3,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroBanner = document.getElementById('hero-banner');
     const carouselDotsContainer = document.getElementById('carousel-dots');
 
-    // 1. SLIDER ẢNH BANNER
+    // 1. SLIDER ẢNH (Giữ nguyên)
     const bannerImages = [
         './assets/images/banners/home-banner.jpg',
         './assets/images/banners/banner2.jpg',
         './assets/images/banners/banner3.jpg',
         './assets/images/banners/banner4.png'
     ];
-
     let currentBannerIndex = 0;
     let autoSlideInterval;
     let carouselImageElements = [];
 
-    // --- LOGIC CAROUSEL (Giữ nguyên) ---
     function initializeCarouselImages() {
         if (!heroBanner) return;
         const imageWrapper = document.createElement('div');
         imageWrapper.classList.add('carousel-image-wrapper');
         heroBanner.prepend(imageWrapper);
-
         bannerImages.forEach((imagePath) => {
             const imgElement = document.createElement('div');
             imgElement.classList.add('carousel-image');
@@ -76,30 +73,115 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoSlide();
     }
 
-    // --- 2. LOGIC DANH SÁCH & TÌM KIẾM (MỚI) ---
-    
-    // Hàm hiển thị danh sách (Nhận vào 1 mảng dữ liệu)
+    // ============================================================
+    // 2. MỚI: LOGIC ĐỒNG HỒ ĐẾM NGƯỢC
+    // ============================================================
+    function startCountdown() {
+        // Đặt ngày đích: Tết 2026 (17/02/2026)
+        const countDownDate = new Date("Feb 17, 2026 00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const dayElem = document.getElementById("days");
+            if (dayElem) {
+                dayElem.innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            }
+
+            if (distance < 0) {
+                clearInterval(x);
+                if (dayElem) document.getElementById("countdown-timer").innerHTML = "CHÚC MỪNG NĂM MỚI!";
+            }
+        }, 1000);
+    }
+
+    // ============================================================
+    // 3. MỚI: LOGIC YÊU THÍCH (WISHLIST)
+    // ============================================================
+    window.toggleWishlist = function(id, btn) {
+        // Lấy danh sách từ bộ nhớ
+        let wishlist = JSON.parse(localStorage.getItem('myWishlist')) || [];
+        
+        if (wishlist.includes(id)) {
+            // Xóa (Un-like)
+            wishlist = wishlist.filter(item => item !== id);
+            btn.classList.remove('active');
+            btn.innerHTML = '<i class="far fa-heart"></i>'; // Icon rỗng
+        } else {
+            // Thêm (Like)
+            wishlist.push(id);
+            btn.classList.add('active');
+            btn.innerHTML = '<i class="fas fa-heart"></i>'; // Icon đặc
+        }
+        
+        // Lưu lại vào bộ nhớ
+        localStorage.setItem('myWishlist', JSON.stringify(wishlist));
+    }
+
+    // ============================================================
+    // 4. LOGIC TÌM KIẾM & RENDER
+    // ============================================================
+    function removeVietnameseTones(str) {
+        if (!str) return '';
+        str = str.toLowerCase();
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+        str = str.replace(/đ/g, "d");
+        str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        return str;
+    }
+
     window.renderFestivals = function(data) {
         if (!listContainer) return;
 
         if (data.length === 0) {
-            listContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; font-size: 1.2rem; color: #666; margin-top: 20px;">Không tìm thấy lễ hội nào phù hợp!</p>';
+            listContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; font-size: 1.2rem; color: #666; margin-top: 20px;">Không tìm thấy kết quả nào!</p>';
             return;
         }
+
+        // Lấy danh sách đã like để tô đỏ icon
+        const wishlist = JSON.parse(localStorage.getItem('myWishlist')) || [];
 
         let htmlContent = '';
         data.forEach(festival => {
             const safeImage = festival.image ? festival.image : 'https://via.placeholder.com/300x200';
+            const ethnicityTag = festival.ethnicity ? `<span style="background:#f0f0f0; padding:2px 8px; border-radius:4px; font-size:0.8rem; color:#555;">👤 ${festival.ethnicity}</span>` : '';
+            
+            // Trạng thái like
+            const isLiked = wishlist.includes(festival.id);
+            const activeClass = isLiked ? 'active' : '';
+            const iconClass = isLiked ? 'fas' : 'far';
+
             htmlContent += `
                 <article class="festival-card">
                     <div class="img-container">
                         <img src="${safeImage}" alt="${festival.name}" onerror="this.src='https://via.placeholder.com/300x200'">
+                        
+                        <button class="btn-wishlist ${activeClass}" onclick="event.preventDefault(); toggleWishlist('${festival.id}', this)">
+                            <i class="${iconClass} fa-heart"></i>
+                        </button>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">${festival.name}</h3>
                         <p class="card-info">📍 ${festival.location}</p>
                         <p class="card-info">📅 ${festival.date}</p>
-                        <a href="pages/detail.html?id=${festival.id}" class="btn-detail">Xem chi tiết</a>
+                        <div style="margin:8px 0;">${ethnicityTag}</div>
+                        <p class="card-info" style="font-size:0.85rem; color:#d32f2f;">🍜 <strong>Món ngon:</strong> ${festival.foods || 'Đang cập nhật'}</p>
+                        
+                        <a href="pages/detail.html?id=${festival.id}" class="btn-detail" style="margin-top:10px;">Xem chi tiết</a>
                     </div>
                 </article>
             `;
@@ -107,28 +189,37 @@ document.addEventListener('DOMContentLoaded', function() {
         listContainer.innerHTML = htmlContent;
     }
 
-    // Hàm Lọc (Được gọi khi bấm nút Tìm kiếm)
     window.filterFestivals = function() {
-        const searchText = document.getElementById('search-input').value.toLowerCase();
+        const rawInput = document.getElementById('search-input').value;
+        const keyword = removeVietnameseTones(rawInput);
         const selectedMonth = document.getElementById('month-filter').value;
 
-        // Lọc dữ liệu
         const filteredData = festivalsList.filter(item => {
-            const nameMatch = item.name.toLowerCase().includes(searchText);
-            const monthMatch = (selectedMonth === 'all') || (item.month === selectedMonth);
-            return nameMatch && monthMatch;
+            const name = removeVietnameseTones(item.name);
+            const location = removeVietnameseTones(item.location);
+            const foods = removeVietnameseTones(item.foods || "");
+            const ethnicity = removeVietnameseTones(item.ethnicity || "");
+
+            const isMatchKeyword = name.includes(keyword) || 
+                                   location.includes(keyword) || 
+                                   foods.includes(keyword) || 
+                                   ethnicity.includes(keyword);
+
+            const isMatchMonth = (selectedMonth === 'all') || (item.month === selectedMonth);
+
+            return isMatchKeyword && isMatchMonth;
         });
 
         renderFestivals(filteredData);
     }
 
-    // --- KHỞI CHẠY ---
+    // KHỞI CHẠY
     initializeCarouselImages();
     changeBannerImage(currentBannerIndex);
     createCarouselDots();
     startAutoSlide();
+    startCountdown(); // Chạy đồng hồ
 
-    // Hiển thị toàn bộ danh sách khi mới vào
     if (typeof festivalsList !== 'undefined') {
         renderFestivals(festivalsList);
     }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -33,10 +34,21 @@
         <div class="carousel-dots" id="carousel-dots"></div>
     </section>
 
+    <div class="container" style="margin-top: 20px;">
+        <div class="countdown-section">
+            <h3>🔥 SỰ KIỆN SẮP DIỄN RA: TẾT NGUYÊN ĐÁN 2026</h3>
+            <div id="countdown-timer">
+                <div><span id="days">00</span> Ngày</div>
+                <div><span id="hours">00</span> Giờ</div>
+                <div><span id="minutes">00</span> Phút</div>
+                <div><span id="seconds">00</span> Giây</div>
+            </div>
+        </div>
+    </div>
+
     <div class="search-section container">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Nhập tên lễ hội cần tìm...">
-            
+            <input type="text" id="search-input" placeholder="Tìm kiếm: Tên lễ hội, Món ăn, Dân tộc...">
             <select id="month-filter">
                 <option value="all">-- Tất cả các tháng --</option>
                 <option value="1">Tháng 1</option>
@@ -46,43 +58,38 @@
                 <option value="10">Tháng 10</option>
                 <option value="12">Tháng 12</option>
             </select>
-
             <button onclick="filterFestivals()" class="btn-search">Tìm Kiếm</button>
         </div>
     </div>
 
     <main class="container">
         <h2 style="margin-top: 50px; border-left: 5px solid #d32f2f; padding-left: 10px;">Các Lễ Hội Nổi Bật</h2>
-        
         <div id="festival-list" class="festival-grid">
             </div>
 
         <h2 style="margin-top: 70px; border-left: 5px solid #d32f2f; padding-left: 10px;">Cẩm Nang Du Lịch</h2>
-        
         <div class="blog-grid">
             <article class="blog-card">
-                <img src="https://media.vneconomy.vn/images/upload/2023/04/26/dulich-2.jpg" alt="Blog 1">
+                <img src="https://dulichviet.com.vn/images/bandidau/meo-chuan-bi-hanh-ly-du-lich-da-lat-thang-12.jpg" alt="Thời tiết">
                 <div class="blog-content">
-                    <h3>5 vật dụng không thể thiếu khi đi lễ hội</h3>
-                    <p>Chuẩn bị kỹ càng giúp chuyến đi của bạn trọn vẹn và an toàn hơn...</p>
+                    <h3>Bí kíp xem thời tiết & Chuẩn bị hành lý</h3>
+                    <p>Đừng để cơn mưa bất chợt làm hỏng cuộc vui. Xem ngay cách chuẩn bị đồ cho từng vùng miền...</p>
                     <a href="#">Đọc thêm &rarr;</a>
                 </div>
             </article>
-
             <article class="blog-card">
-                <img src="https://cdn.tuoitre.vn/thumb_w/640/2019/3/25/photo-1-15535073685461741570773.jpg" alt="Blog 2">
+                <img src="https://statics.vinpearl.com/bun-mam-mien-tay-1.jpg" alt="Ẩm thực">
                 <div class="blog-content">
-                    <h3>Kinh nghiệm săn vé máy bay giá rẻ</h3>
-                    <p>Bí quyết đặt vé sớm để tiết kiệm chi phí di chuyển cho mùa lễ hội...</p>
+                    <h3>Top 10 món ăn đường phố phải thử</h3>
+                    <p>Khám phá ẩm thực 3 miền với những món ăn dân dã đậm đà bản sắc...</p>
                     <a href="#">Đọc thêm &rarr;</a>
                 </div>
             </article>
-
              <article class="blog-card">
-                <img src="https://statics.vinpearl.com/bun-mam-mien-tay-1.jpg" alt="Blog 3">
+                <img src="https://cdn.tuoitre.vn/thumb_w/640/2019/3/25/photo-1-15535073685461741570773.jpg" alt="Vé máy bay">
                 <div class="blog-content">
-                    <h3>Khám phá ẩm thực miền Tây mùa nước nổi</h3>
-                    <p>Những món ăn dân dã đậm chất miền sông nước bạn nhất định phải thử...</p>
+                    <h3>Kinh nghiệm săn vé máy bay mùa lễ hội</h3>
+                    <p>Bí quyết đặt vé sớm để tiết kiệm chi phí di chuyển tối đa...</p>
                     <a href="#">Đọc thêm &rarr;</a>
                 </div>
             </article>
@@ -91,51 +98,29 @@
 
     <footer class="main-footer">
         <div class="container footer-grid">
-            
             <div class="footer-col">
                 <h3 style="color: #d32f2f;">VietFestivals</h3>
-                <p>Trang web phi lợi nhuận nhằm quảng bá nét đẹp văn hóa và các lễ hội truyền thống của Việt Nam đến bạn bè trong nước và quốc tế.</p>
+                <p>Quảng bá nét đẹp văn hóa và các lễ hội truyền thống Việt Nam.</p>
                 <p style="margin-top: 20px; opacity: 0.7;">&copy; 2025 VietFestivals Team.</p>
             </div>
-
             <div class="footer-col">
                 <h3>Liên Hệ</h3>
                 <ul class="footer-links">
-                    <li>
-                        <i class="fas fa-envelope"></i> 
-                        <span>admin@vietfestivals.com</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i> 
-                        <span>support@vietfestivals.com</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i> 
-                        <span>0987.654.321 (Hotline)</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i> 
-                        <span>Hà Nội, Việt Nam</span>
-                    </li>
+                    <li><i class="fas fa-envelope"></i> <span>admin@vietfestivals.com</span></li>
+                    <li><i class="fas fa-phone"></i> <span>0987.654.321 (Hotline)</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> <span>Hà Nội, Việt Nam</span></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h3>Tham Gia Cộng Đồng</h3>
                 <p>Quét mã để vào nhóm Facebook:</p>
-                
-                <img src="./assets/images/common/qr-code.jpg" 
-                     alt="QR Code Facebook" 
-                     class="footer-qr"
-                     onerror="this.src='https://via.placeholder.com/150x150?text=QR+Code'">
-                
+                <img src="./assets/images/common/qr-code.jpg" class="footer-qr" onerror="this.src='https://via.placeholder.com/150x150?text=QR+Code'">
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                     <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-
         </div>
     </footer>
 
