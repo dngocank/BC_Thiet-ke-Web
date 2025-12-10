@@ -1,1206 +1,816 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <!--<< Header Area >>-->
-    <head>
-       <!-- ========== Meta Tags ========== -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Gramentheme">
-        <meta name="description" content="VietNam FEST">
-        <!-- ======== Page title ============ -->
-        <title>VietNam FEST</title>
-        <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
-        <!--<< Bootstrap min.css >>-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <!--<< Main.css >>-->
-        <link rel="stylesheet" href="assets/css/main.css">
-          <!-- ❄ Smooth Snow CSS (ADDED) -->
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Gramentheme">
+    <meta name="description" content="VietNam FEST">
+
+    <title>VietNam FEST</title>
+
+    <!--<< Favcion >>-->
+    <link rel="shortcut icon" href="assets/img/favicon.svg">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- ❄ Smooth Snow CSS (ADDED) -->
+    <style>
+        #snowCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+    </style>
+    <!-- ⭐ RESPONSIVE FIX (ADD THIS RIGHT BEFORE </head>) -->
 <style>
-    #snowCanvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9998;
+/* Mobile ≤ 576px */
+@media (max-width: 576px) {
+
+    /* Hero section text scale down */
+    .gt-hero-content h1 {
+        font-size: 36px !important;
+        line-height: 44px !important;
+        text-align: center !important;
     }
-</style>            
-    </head>
-    <body>
-        <!-- ❄ Smooth Snow Canvas (ADDED) -->
+
+    /* Fix hero background on mobile */
+    .gt-hero-5 {
+        background-size: cover !important;
+        background-position: center !important;
+        padding: 140px 20px 100px 20px !important;
+    }
+
+    /* Resize big 2025 text */
+    .year {
+        font-size: 80px !important;
+        top: 30px !important;
+    }
+
+    /* Make videos responsive */
+    video {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 14px !important;
+    }
+
+    /* General padding fix */
+    .section-padding {
+        padding: 60px 0 !important;
+    }
+}
+
+/* Tablet ≤ 768px */
+@media (max-width: 768px) {
+    .gt-hero-content h1 {
+        font-size: 48px !important;
+        line-height: 54px !important;
+    }
+
+    .gt-event-fashion-section {
+        padding-top: 60px !important;
+    }
+}
+</style>
+<!-- ⭐ END RESPONSIVE FIX -->
+<!-- ⭐ MUSIC BUTTON STYLE -->
+<style>
+#musicToggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 55px;
+    height: 55px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99999;
+    backdrop-filter: blur(4px);
+    transition: all .25s ease;
+}
+
+#musicToggle:hover {
+    transform: scale(1.1);
+}
+
+#musicToggle i {
+    font-size: 22px;
+    color: #d11d1d;
+}
+</style>
+<!-- ⭐ END MUSIC BUTTON STYLE -->
+
+</head>
+
+<body>
+
+<!-- ❄ Smooth Snow Canvas (ADDED) -->
 <canvas id="snowCanvas"></canvas>
-        <!-- << Preloader Area >> -->
+<!-- ❄ Snow Canvas -->
+<canvas id="snowCanvas"></canvas>
 
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-                <div class="spinner">                
-                </div>
-                <div class="txt-loading">
-                    <span data-text-preloader="V" class="letters-loading">
-                        V
-                    </span>
-                    <span data-text-preloader="N" class="letters-loading">
-                        N
-                    </span>
-                    <span data-text-preloader="F" class="letters-loading">
-                        F
-                    </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                    <span data-text-preloader="S" class="letters-loading">
-                        S
-                    </span>
-                    <span data-text-preloader="T" class="letters-loading">
-                        T
-                    </span>
-                </div>
-                <p class="text-center">ĐANG TẢI</p>
-            </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+<!-- ⭐ MUSIC BUTTON -->
+<div id="musicToggle">
+    <i class="fa-solid fa-volume-high"></i>
+</div>
+<!-- ⭐ END MUSIC BUTTON -->
 
-        <!-- GT Back To Top Start -->
-        <button id="gt-back-top" class="gt-back-to-top show">
-            <i class="fa-regular fa-arrow-up"></i>
-        </button>
+<!-- Preloader -->
+<div id="preloader" class="preloader">
+    <div class="animation-preloader">
+        <div class="spinner"></div>
+        <div class="txt-loading">
+            <span data-text-preloader="V" class="letters-loading">V</span>
+            <span data-text-preloader="N" class="letters-loading">N</span>
+            <span data-text-preloader="F" class="letters-loading">F</span>
+            <span data-text-preloader="E" class="letters-loading">E</span>
+            <span data-text-preloader="S" class="letters-loading">S</span>
+            <span data-text-preloader="T" class="letters-loading">T</span>
+        </div>
+        <p class="text-center">ĐANG TẢI</p>
+    </div>
+    <div class="loader">
+        <div class="row">
+            <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+            <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+            <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+        </div>
+    </div>
+</div>
 
-        <!-- GT MouseCursor Start -->
-        <div class="mouseCursor cursor-outer"></div>
-        <div class="mouseCursor cursor-inner"></div>
-        
-  
-        <!-- Offcanvas Area Start -->
-       <div class="fix-area">
-            <div class="offcanvas__info">
-                <div class="offcanvas__wrapper">
-                    <div class="offcanvas__content">
-                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                            <div class="offcanvas__logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/Logo.svg" alt="logo-img">
-                                </a>
-                            </div>
-                            <div class="offcanvas__close">
-                                <button>
-                                <i class="fas fa-times"></i>
-                                </button>
-                            </div>
+<!-- Back To Top -->
+<button id="gt-back-top" class="gt-back-to-top show">
+    <i class="fa-regular fa-arrow-up"></i>
+</button>
+
+<!-- Mouse Cursor -->
+<div class="mouseCursor cursor-outer"></div>
+<div class="mouseCursor cursor-inner"></div>
+
+<!-- Header -->
+<header id="header-sticky" class="header-1 header-new">
+    <div class="container-fluid">
+        <div class="mega-menu-wrapper">
+            <div class="header-main style-5">
+                <div class="logo">
+                    <a href="index.html" class="header-logo">
+                        <img src="assets/img/logo/Logo.svg" alt="logo-img">
+                    </a>
+                </div>
+
+                <div class="header-right d-flex justify-content-end align-items-center mt-0">
+                    <div class="mean__menu-wrapper">
+                        <div class="main-menu">
+                            <nav id="mobile-menus">
+                                <ul>
+                                    <li class="has-dropdown active">
+                                        <a href="index.html" class="border-none">Home</a>
+                                        <ul class="submenu">
+                                            <li><a href="index.html">Trang chủ</a></li>
+                                            <li><a href="index1.html">Tết Nguyên Đán</a></li>
+                                            <li><a href="index-2.html">Trung thu</a></li>
+                                            <li><a href="index-3.html">Quốc Khánh</a></li>
+                                            <li><a href="index-4.html">Nhà giáo</a></li>
+                                            <li><a href="index-4.html">Giáng sinh</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-dropdown">
+                                        <a href="news-details.html">Pages</a>
+                                        <ul class="submenu">
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="sponsor.html">Sponsor</a></li>
+                                            <li><a href="pricing.html">Our Pricing</a></li>
+                                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                                            <li><a href="404.html">404 Page</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="event-details.html">event</a></li>
+                                    <li><a href="speaker-details.html">Speaker</a></li>
+                                    <li><a href="news-details.html">Blog</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </nav>
                         </div>
-                        <div class="mobile-menus fix mb-3"></div>
-                        <div class="sideber-image">
-                            <img src="assets/img/header/sideber.jpg" alt="img">
+                    </div>
+
+                    <div class="header-right-icon">
+                        <a href="#" class="main-header__search search-toggler">
+                            <i class="fa-regular fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+
+                    <div class="header-button">
+                        <a href="contact.html" class="gt-theme-btn">
+                            <i class="fa-solid fa-ticket-simple"></i> Đăng kí tại đây
+                        </a>
+                    </div>
+
+                    <div class="header__hamburger d-xl-block my-auto">
+                        <div class="sidebar__toggle">
+                            <i class="fas fa-bars"></i>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <div class="offcanvas__overlay"></div>
+    </div>
+</header>
 
-        <!-- Header Section Start -->
-       <header id="header-sticky" class="header-1 header-new">
-            <div class="container-fluid">
-                <div class="mega-menu-wrapper">
-                    <div class="header-main style-5">
-                        <div class="logo">
-                            <a href="index.html" class="header-logo">
+<!-- HERO SECTION -->
+<section class="hero-section gt-hero-5 fix bg-cover" style="background-image: url(assets/img/home-5/hero/bg.gif);">
+    <div class="side-hero">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="index.html">
                                 <img src="assets/img/logo/Logo.svg" alt="logo-img">
                             </a>
                         </div>
-                        <div class="header-right d-flex justify-content-end align-items-center mt-0">
-                            <div class="mean__menu-wrapper">
-                                <div class="main-menu">
-                                    <nav id="mobile-menus">
-                                        <ul>
-                                            <li class="has-dropdown active">
-                                            <a href="index.html" class="border-none">
-                                            Home
-                                            </a>
-                                            <ul class="submenu">
-                                                    <li><a href="index.html">Trang chủ</a></li>
-                                                    <li><a href="index1.html">Tết Nguyên Đán</a></li>
-                                                    <li><a href="index-2.html">Trung thu</a></li>
-                                                    <li><a href="index-3.html">Quốc Khánh</a></li>
-                                                    <li><a href="index-4.html">Nhà giáo</a></li>
-                                                    <li><a href="index-4.html">Giáng sinh</a></li>
-                                                </ul>
-                                         </li>
-                                            <li class="has-dropdown">
-                                                <a href="news-details.html">
-                                                    Pages
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li>
-                                                        <a href="about.html">About Us</a>
-                                                    </li>
-                                                    
-                                                    <li><a href="sponsor.html">Sponsor</a></li>
-                                                    <li><a href="pricing.html">Our Pricing</a></li>
-                                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                    <li><a href="404.html">404 Page</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="event-details.html">
-                                                    event
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li><a href="event.html">Event</a></li>
-                                                    <li><a href="event-details.html">Event Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="speaker-details.html">
-                                                    Speaker
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li><a href="speaker.html">Speaker</a></li>
-                                                    <li><a href="speaker-details.html">Speaker Details</a></li>
-                                                </ul>
-                                            </li>
-                                           <li>
-                                                <a href="news-details.html">
-                                                    Blog
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li><a href="news-grid.html">Blog Grid</a></li>
-                                                    <li><a href="news.html">Blog Standard</a></li>
-                                                    <li><a href="news-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact Us</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="header-right-icon">
-                                <a href="index-5.html#" class="main-header__search search-toggler">
-                                    <i class="fa-regular fa-magnifying-glass"></i>
-                                </a>
-                            </div>
-                            <div class="header-button">
-                                <a href="contact.html" class="gt-theme-btn">
-                                   <i class="fa-solid fa-ticket-simple"></i> Đăng kí tại đây
-                                </a>
-                            </div>
-                            <div class="header__hamburger d-xl-block my-auto">
-                                <div class="sidebar__toggle">
-                                    <i class="fas fa-bars"></i>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="#" class="main-header__search search-toggler">
+                            <i class="fa-regular fa-magnifying-glass"></i>
+                        </a>
                     </div>
+
+                    <div class="mobile-menus fix mb-3"></div>
+
+                    <div class="sideber-image">
+                        <img src="assets/img/header/Xmas.jpg" alt="img">
+                    </div>
+
+                    <a href="contact.html" class="gt-theme-btn style-5">
+                        <i class="fa-solid fa-ticket-simple"></i> get A ticket
+                    </a>
                 </div>
             </div>
-        </header>
+        </div>
+    </div>
 
-        <!-- GT Search Start -->
-        <div class="search-popup">
-            <div class="search-popup__overlay search-toggler"></div>
-            <div class="search-popup__content">
-                <form role="search" method="get" class="search-popup__form" action="index-5.html#">
-                    <input type="text" id="search" name="search" placeholder="Search Here...">
-                    <button type="submit" aria-label="search submit" class="search-btn gt-style-4">
-                        <span><i class="fa-regular fa-magnifying-glass"></i></span>
-                    </button>
-                </form>
+    <ul class="gt-hero-list wow fadeInUp" data-wow-delay=".3s">
+        <li>
+            <i class="fa-solid fa-calendar-days"></i>
+            24/12/2025 - 16:00 - 23:00
+        </li>
+        <li>
+            <i class="fa-solid fa-location-dot"></i>
+            Nhà Văn hóa Thanh Niên, TP. HCM
+        </li>
+    </ul>
+
+    <h2 class="year">2025</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="gt-hero-content">
+                    <h1 class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                        <span>VietNam FEST</span> <br>Merry Xmas
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- GT-Event-Fashion-section Section Start -->
+<section class="gt-event-fashion-section section-padding fix">
+    <div class="left-shape">
+        <img src="assets/img/home-5/event/shape-3.png" alt="img">
+    </div>
+    <div class="right-shape">
+        <img src="assets/img/home-5/event/shape-4.png" alt="img">
+    </div>
+    <div class="container">
+        <div class="gt-section-title-area">
+            <div class="gt-section-title-5">  
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                    Merry Christmas <br> Đêm hội Giáng Sinh tại 
+                    <span> Nhà Văn hóa Thanh Niên </span>TP. HCM
+                </h2>
+                <a href="event-details.html" class="gt-theme-btn wow fadeInUp" data-wow-delay=".5s">
+                    <i class="fa-solid fa-ticket-simple"></i> Thông tin chi tiết
+                </a>
+            </div>
+            <div class="content">
+                <p class="wow fadeInUp" data-wow-delay=".3s">
+                    Hòa mình vào không khí rộn ràng của Giáng Sinh, nơi ánh sáng lung linh, âm nhạc rộn ràng 
+                    và những khoảnh khắc yêu thương ngập tràn. Sự kiện Giáng Sinh 2025 sẽ mang đến các hoạt động vui chơi, 
+                    mua sắm, biểu diễn và gặp gỡ rất nhiều ông già Noel!
+                </p>
+
+                <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
+                    <div class="counter-content">
+                        <h2><span class="gt-count">48</span>+</h2>
+                        <p>Ông già Noel</p>
+                    </div>
+
+                    <div class="counter-content">
+                        <h2><span class="gt-count">947</span>+</h2>
+                        <p>Người đã đăng kí</p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- GT-Hero-section Section Start -->
-        <section class="hero-section gt-hero-5 fix bg-cover" style="background-image: url(assets/img/home-5/hero/bg.jpg);">
-            <div class="side-hero">
-                <div class="offcanvas__info">
-                <div class="offcanvas__wrapper">
-                    <div class="offcanvas__content">
-                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                            <div class="offcanvas__logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/Logo.svg" alt="logo-img">
-                                </a>
-                            </div>
-                            <a href="index-5.html#" class="main-header__search search-toggler">
-                                    <i class="fa-regular fa-magnifying-glass"></i>
-                                </a>
-                        </div>
-                        <div class="mobile-menus fix mb-3"></div>
-                        <div class="sideber-image">
-                            <img src="assets/img/header/Xmas.jpg" alt="img">
-                        </div>
-                        <a href="contact.html" class="gt-theme-btn style-5"><i class="fa-solid fa-ticket-simple"></i> get A ticket</a>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <ul class="gt-hero-list wow fadeInUp" data-wow-delay=".3s">
-                <li>
-                    <i class="fa-solid fa-calendar-days"></i>
-                    24/12/2025 - 16:00 - 23:00
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Nhà Văn hóa Thanh Niên, TP. HCM
-                </li>
-            </ul>
-            <h2 class="year">2025</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="gt-hero-content">
-                            <h1 class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                <span>VietNam FEST</span> <br>
-                                 Merry Xmas
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GT-Event-Fashion-section Section Start -->
-        <section class="gt-event-fashion-section section-padding fix">
-            <div class="left-shape">
-                <img src="assets/img/home-5/event/shape-3.png" alt="img">
-            </div>
-            <div class="right-shape">
-                <img src="assets/img/home-5/event/shape-4.png" alt="img">
-            </div>
-            <div class="container">
-                <div class="gt-section-title-area">
-                 <div class="gt-section-title-5">  
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                         Merry Christmas <br> Đêm hội Giáng Sinh tại <span> Nhà Văn hóa Thanh Niên </span>TP. HCM
-                    </h2>
-                    <a href="event-details.html" class="gt-theme-btn wow fadeInUp" data-wow-delay=".5s">
-                        <i class="fa-solid fa-ticket-simple"></i> Thông tin chi tiết
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="gt-fashion-image">
+                    <video autoplay loop muted playsinline>
+                        <source src="../../vdo/banner2.mp4" type="video/mp4">
+                    </video>
+                    <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
+                        <i class="fa-solid fa-play"></i>
                     </a>
-                 </div>
-                 <div class="content">
-                    <p class="wow fadeInUp" data-wow-delay=".3s">
-                        Hòa mình vào không khí rộn ràng của Giáng Sinh, nơi ánh sáng lung linh, âm nhạc rộn ràng và những khoảnh khắc yêu thương ngập tràn. Sự kiện Giáng Sinh 2025 sẽ mang đến các hoạt động vui chơi, mua sắm, biểu diễn và gặp gỡ rất nhiều ông già Noel!
-                    </p>
-                    <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
-                        <div class="counter-content">
-                            <h2><span class="gt-count">48</span>+</h2>
-                            <p>
-                                Ông già Noel
-                            </p>
-                        </div>
-                        <div class="counter-content">
-                            <h2><span class="gt-count">947</span>+</h2>
-                            <p>
-                                Người đã đăng kí
-                            </p>
-                        </div>
-                    </div>
-                 </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="gt-fashion-image">
-                            <video autoplay loop muted playsinline>
-                            <source src="../../vdo/banner2.mp4" type="video/mp4">
-                            </video>
-                            <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
-                                <i class="fa-solid fa-play"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- GT-Event-Schedule-section Section Start -->
-        <section class="gt-event-schedule-section section-padding fix bg-cover" style="background-image: url(assets/img/home-5/event/bg.jpg);">
-            <div class="container">
-                <div class="gt-event-schedule-wrapper-5 bg-cover" style="background-image: url(assets/img/home-5/event/bg.png);">
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="gt-event-schedule-item-5">
-                                <ul class="gt-event-list">
-                                    <li>
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        24/12/2025
-                                        </li>
-                                        <li>
-                                            <i class="fa-regular fa-door-open"></i>
-                                            Nhà Văn hóa Thanh Niên, TP. HCM
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="event-details.html">
-                                            Đêm hội Giáng sinh & Cuộc thi "Sắc màu mùa đông - Âm vang văn nghệ"
-                                        </a>
-                                    </h3>
-                                    <ul class="gt-list">
-                                        <li>
-                                            <i class="fa-regular fa-location-dot"></i>
-                                            Nhà Văn hóa Thanh Niên, TP. HCM
-                                        </li>
-                                    </ul>
-                                 <div class="swiper-container mySwiper">
-                                    <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
+    </div>
+</section>
+
+<!-- GT-Event-Schedule-section Section Start -->
+<section class="gt-event-schedule-section section-padding fix bg-cover" style="background-image: url(assets/img/home-5/event/bg.jpg);">
+    <div class="container">
+        <div class="gt-event-schedule-wrapper-5 bg-cover" style="background-image: url(assets/img/home-5/event/bg.png);">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="gt-event-schedule-item-5">
+                        <ul class="gt-event-list">
+                            <li><i class="fa-regular fa-calendar-days"></i>24/12/2025</li>
+                            <li><i class="fa-regular fa-door-open"></i>Nhà Văn hóa Thanh Niên, TP. HCM</li>
+                        </ul>
+
+                        <h3>
+                            <a href="event-details.html">
+                                Đêm hội Giáng sinh & Cuộc thi "Sắc màu mùa đông - Âm vang văn nghệ"
+                            </a>
+                        </h3>
+
+                        <ul class="gt-list">
+                            <li><i class="fa-regular fa-location-dot"></i>Nhà Văn hóa Thanh Niên, TP. HCM</li>
+                        </ul>
+
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
                                     <div class="gt-event-schedule-image">
                                         <img src="assets/img/home-5/event/event-5.jpg" alt="">
-                                     </div>
                                     </div>
-                                    <div class="swiper-slide">
+                                </div>
+
+                                <div class="swiper-slide">
                                     <div class="gt-event-schedule-image style-2">
                                         <img src="assets/img/home-5/event/event-6.jpg" alt="">
-                                     </div>
                                     </div>
-                                    <div class="swiper-slide">
+                                </div>
+
+                                <div class="swiper-slide">
                                     <div class="gt-event-schedule-image">
                                         <img src="assets/img/home-5/event/event-7.jpg" alt="">
-                                     </div>
                                     </div>
-                                    <div class="swiper-slide">
+                                </div>
+
+                                <div class="swiper-slide">
                                     <div class="gt-event-schedule-image">
                                         <img src="assets/img/home-5/event/event-8.jpg" alt="">
-                                     </div>
-                                    </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="array-buttons-4">
-                              <button class="array-prev"><i class="fa-solid fa-chevron-up"></i></button>
-                               <button class="array-next"><i class="fa-solid fa-chevron-down"></i></button>
+
                             </div>
                         </div>
+
                     </div>
+
+                    <div class="array-buttons-4">
+                        <button class="array-prev"><i class="fa-solid fa-chevron-up"></i></button>
+                        <button class="array-next"><i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- GT-Why-Attend-section Section Start -->
-        <section class="gt-why-attend-section section-padding fix">
-            <div class="shape">
-                <img src="assets/img/home-5/feature/shape.png" alt="img">
-            </div>
-            <div class="container">
-                <div class="gt-section-title-5 text-center">  
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                         Vì sao nên tham gia <span> VN FEST Giáng Sinh</span>
-                    </h2>
-                    <p class="mt-3 mt-mb-0">
-                        VietNam FEST không chỉ là một sự kiện, mà là một hành trình trải nghiệm trọn vẹn mùa lễ hội <br> vui chơi - kết nối - sẻ chia - lưu giữ kỉ niệm.
-                    </p>
-                 </div>
-                <div class="row align-items-center">
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="gt-why-attend-item">
-                            <div class="gt-why-attend-content">
-                                <span>01</span>
-                                <h3>
-                                    Không gian check-in "ngàn góc sống ảo"
-                                </h3>
-                                <p>
-                                    Phố đèn Giáng Sinh, rừng thông tuyết, hộp quà khổng lồ và nhiều concept trang trí độc đáo dành cho các bạn nhỏ & cặp đôi GenZ
-                                </p>
-                            </div>
-                            <div class="gt-why-attend-content">
-                                <span>02</span>
-                                <h3>
-                                    Hội chợ ẩm thực Giáng Sinh
-                                </h3>
-                                <p>
-                                    Thưởng thức đa dạng món ăn truyền thống và hiện đại, quà tặng handmade từ các bạn sinh viên và local brand Việt Nam
-                                </p>
-                            </div>
-                             <div class="gt-why-attend-content">
-                                <span>03</span>
-                                <h3>
-                                    Hoạt động cho cả người lớn và trẻ em
-                                </h3>
-                                <p>
-                                 Giao lưu với các ông già Noel, nhận quà, làm bánh, viết thiệp mong ước. Mang lại không gian an toàn & ấm áp cho tất cả mọi người
-                                </p>
-                            </div>
-                        </div>
+<!-- GT-Why-Attend-section Section Start -->
+<section class="gt-why-attend-section section-padding fix">
+    <div class="shape">
+        <img src="assets/img/home-5/feature/shape.png" alt="img">
+    </div>
+
+    <div class="container">
+
+        <div class="gt-section-title-5 text-center">  
+            <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                Vì sao nên tham gia <span> VN FEST Giáng Sinh</span>
+            </h2>
+            <p class="mt-3 mt-mb-0">
+                VietNam FEST không chỉ là một sự kiện, mà là một hành trình trải nghiệm trọn vẹn mùa lễ hội 
+                vui chơi - kết nối - sẻ chia - lưu giữ kỉ niệm.
+            </p>
+        </div>
+
+        <div class="row align-items-center">
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="gt-why-attend-item">
+
+                    <div class="gt-why-attend-content">
+                        <span>01</span>
+                        <h3>Không gian check-in "ngàn góc sống ảo"</h3>
+                        <p>Phố đèn Giáng Sinh, rừng thông tuyết, hộp quà khổng lồ và nhiều concept đặc sắc</p>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="gt-why-attend-item">
-                           <div class="gt-why-attend-image">
-                            <video autoplay loop muted playsinline>
+
+                    <div class="gt-why-attend-content">
+                        <span>02</span>
+                        <h3>Hội chợ ẩm thực Giáng Sinh</h3>
+                        <p>Ẩm thực truyền thống + quà handmade từ local brand Việt Nam</p>
+                    </div>
+
+                    <div class="gt-why-attend-content">
+                        <span>03</span>
+                        <h3>Hoạt động cho cả người lớn và trẻ em</h3>
+                        <p>Giao lưu ông già Noel, nhận quà, làm bánh, viết thiệp mong ước...</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="gt-why-attend-item">
+                    <div class="gt-why-attend-image">
+                        <video autoplay loop muted playsinline>
                             <source src="../../vdo/fashion.mp4" type="video/mp4">
-                            </video>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="gt-why-attend-item">
-                            <div class="gt-why-attend-content">
-                                <span>04</span>
-                                <h3>
-                                    Đêm nhạc và Cuộc thi "Sắc màu mùa đông - Âm vang văn nghệ"
-                                </h3>
-                                <p>
-                                    Live band, DJ, các tiết mục văn nghệ đặc sắc từ các bạn sinh viên và các nhóm nhảy đình đám
-                                </p>
-                            </div>
-                            <div class="gt-why-attend-content">
-                                <span>05</span>
-                                <h3>
-                                    Kết nối cộng đồng & thiện nguyện
-                                </h3>
-                                <p>
-                                    Các hoạt động quyên góp, gây quỹ, tặng quà cho trẻ em nghèo, người già neo đơn trong dịp lễ Giáng Sinh
-                                </p>
-                            </div>
-                             <div class="gt-why-attend-content">
-                                <span>06</span>
-                                <h3>
-                                    Lưu giữ khoảnh khắc cuối năm
-                                </h3>
-                                <p>
-                                    Một nơi lý tưởng để cùng bạn bè, đồng nghiệp, gia đình “chốt năm” bằng những kỷ niệm vui và ý nghĩa
-                                </p>
-                            </div>
-                        </div>
+                        </video>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- GT-Speaker-section-5 Section Start -->
-        <section class="gt-speaker-section-5 section-padding fix bg-cover" style="background-image: url(assets/img/home-5/speaker/bg.png);">
-            <div class="gt-blur-shape">
-                <img src="assets/img/home-5/speaker/shape.png" alt="img">
-            </div>
-            <div class="container">
-                <div class="gt-section-title-area mb-0">
-                    <div class="gt-section-title style-5">
-                        <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
-                            Nghệ sĩ & hoạt động <br>
-                            nổi bật tại VietNam FEST 2025
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/01.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">Low G</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/02.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">MCK</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/03.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">tlinh</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/04.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">Hà Anh Tuấn</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/05.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">Soobin Hoàng Sơn</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/06.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">Sơn Tùng - MTP</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/07.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">HIEUTHUHAI</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="gt-speaker-items-5">
-                            <div class="gt-speaker-image">
-                                <img src="assets/img/home-5/speaker/08.png" alt="img">
-                                <div class="gt-speaker-content">
-                                    <h4>
-                                        <a href="speaker-details.html">NEGAV</a>
-                                    </h4>
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-5.html#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-5.html#"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-5.html#"><i class="fa-brands fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                <div class="gt-why-attend-item">
 
-         <!-- GT-Counter-section-5 Section Start -->
-        <section class="gt-counter-section-5 section-padding fix">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="gt-couinter-box-item-5">
-                           <h2><span class="gt-count">120</span>+</h2>
-                           <p>Số event của VietNam FEST</p>
-                        </div>
+                    <div class="gt-why-attend-content">
+                        <span>04</span>
+                        <h3>Đêm nhạc & Cuộc thi nghệ thuật</h3>
+                        <p>Live band, DJ, nhóm nhảy, tiết mục văn nghệ sinh viên,…</p>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="gt-couinter-box-item-5">
-                           <h2><span class="gt-count">69</span>+</h2>
-                           <p>Số nghệ sĩ đã đồng hành</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="gt-couinter-box-item-5">
-                           <h2><span class="gt-count">25.5</span>k+</h2>
-                           <p>Số người tham gia sự kiện</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="gt-couinter-box-item-5">
-                           <h2><span class="gt-count">120</span>+</h2>
-                           <p>Nhà tài trợ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- GT Testimonial Section Start -->
-        <section class="gt-testimonial-section-2 fix bg-cover" style="background-image: url(assets/img/home-2/testimonial/bg.jpg);">
-            <div class="left-shape">
-                <img src="assets/img/home-2/testimonial/shape.png" alt="">
-            </div>
-            <div class="container">
-                <div class="gt-testimomnial-wrapper-2">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-6">
-                            <div class="gt-testimonial-card-item">
-                                <div class="gt-shape">
-                                    <img src="assets/img/home-2/testimonial/shape-2.png" alt="img">
-                                </div>
-                                <div class="gt-shape-2">
-                                    <img src="assets/img/home-2/testimonial/shape-3.png" alt="img">
-                                </div>
-                                 <div class="array-buttons-2 style-5">
-                                    <button class="array-prev"><i class="fa-solid fa-arrow-left"></i></button>
-                                    <button class="array-next"><i class="fa-solid fa-arrow-right"></i></button>
-                                 </div>
-                                 <div class="swiper gt-testimonial-slider-2">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="gt-testmonial-content style-2">
-                                                <h3>Không khí Giáng Sinh quá đỉnh!</h3>
-                                                <p>
-                                                    "Mình đi cùng nhóm bạn và cả gia đình, ai cũng có hoạt động riêng để tham gia. 
-                                                    Từ chụp hình, ăn uống, nghe nhạc đến chơi game nhận quà, đúng nghĩa một ngày trọn vẹn trước khi kết thúc năm.”
-                                                </p>
-                                                <h6>
-                                                    Thu Huyền, <span>Tiktoker</span>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="gt-testmonial-content style-2">
-                                                <h3>Rất phù hợp cho gia đình có trẻ nhỏ</h3>
-                                                <p>
-                                                    “Con mình rất thích gặp ông già Noel, nhận quà và tham gia các khu tô màu, làm bánh nhỏ. 
-                                                    Không gian an toàn, nhiều bảo vệ và staff hỗ trợ, bố mẹ yên tâm cho các bé chạy nhảy vui chơi.”
-                                                </p>
-                                                <h6>
-                                                    Văn Quang, <span>Bố của 2 bé Tấn Phát và Minh Trí</span>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="gt-testmonial-content style-2">
-                                                <h3>Trải nghiệm cuối năm đáng tiền</h3>
-                                                <p>
-                                                    “Vé không quá đắt so với trải nghiệm nhận được. 
-                                                    Lại có thêm khu thiện nguyện, quyên góp cho trẻ em vùng khó khăn làm mìnhcảm giác Giáng Sinh không chỉ là vui mà còn là sẻ chia.”
-                                                </p>
-                                                <h6>
-                                                    Ngọc Ánh, <span>CEO</span>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="gt-testimonial-image">
-                                <img src="assets/img/home-5/testimonial.png" alt="img">
-                            </div>
-                        </div>
+                    <div class="gt-why-attend-content">
+                        <span>05</span>
+                        <h3>Kết nối cộng đồng & thiện nguyện</h3>
+                        <p>Hoạt động gây quỹ – chia sẻ yêu thương dịp Giáng Sinh</p>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Gt-Sponsor Section Start -->
-        <section class="gt-sponsor-secton section-padding fix">
-            <div class="container">
-                <div class="gt-section-title-area">
-                    <div class="gt-section-title style-5">
-                        <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                         Đối tác & Nhà tài trợ
-                       </h2>
+                    <div class="gt-why-attend-content">
+                        <span>06</span>
+                        <h3>Lưu giữ khoảnh khắc cuối năm</h3>
+                        <p>Không gian tuyệt vời để kết thúc năm cùng bạn bè & gia đình</p>
                     </div>
-                <a href="sponsor.html" class="gt-theme-btn style-5">Xem tất cả đối tác</a>
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-1.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">IOS</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-2.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">Samsung</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-3.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">Acer</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-4.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">HP</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-5.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">Lenovo</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-6.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">Xiaomi</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-7.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                           <h4>
-                                <a href="sponsor.html">J97 Entertainment</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="gt-sponsor-item">
-                        <div class="gt-sponsor-logo">
-                            <img src="assets/img/home-1/sponser/sponser-8.png" alt="img">
-                        </div>
-                        <div class="gt-hover-bg">
-                            <h4>
-                                <a href="sponsor.html">Asus</a>
-                            </h4>
-                         </div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Gt-Event-ticket-section-5 Start -->
-        <section class="gt-event-ticket-section-5">
-            <div class="shape">
-                <img src="assets/img/home-5/event/shape.png" alt="img">
-            </div>
-            <div class="shape-2">
-                <img src="assets/img/home-5/event/shape-2.png" alt="img">
-            </div>
-            <div class="container">
-                <div class="gt-section-title style-5 text-center">
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        Giá vé sự kiện
-                    </h2>
                 </div>
-                <div class="row g-4">
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="gt-event-ticket-box-5">
-                            <div class="gt-event-image">
-                                <img src="assets/img/home-5/event/event-1.jpg" alt="img">
-                            </div>
-                            <div class="gt-event-content">
-                                <h4>
-                                    <a href="event-details.html">Hoa hồng tuyết</a>
-                                </h4>
-                                <h6>Ngày 23/12/2025</h6>
-                                <ul class="event-list">
-                                    <li>
-                                        <a href="index-5.html#">Check-in sống ảo</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Chợ Giáng Sinh</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Đêm hội văn nghệ</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Give Away</a>
-                                    </li>
-                                </ul>
-                                <div class="gt-event-button">
-                                    <div class="gt-button">
-                                        <a href="event-details.html" class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
-                                    </div>
-                                    <div class="gt-right-text">
-                                        <h4>150.000 VND</h4>
-                                        <span>/người</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GT Testimonial Section Start -->
+<section class="gt-testimonial-section-2 fix bg-cover" style="background-image: url(assets/img/home-2/testimonial/bg.jpg);">
+    <div class="left-shape">
+        <img src="assets/img/home-2/testimonial/shape.png" alt="">
+    </div>
+
+    <div class="container">
+        <div class="gt-testimomnial-wrapper-2">
+            <div class="row g-4 align-items-center">
+
+                <div class="col-lg-6">
+                    <div class="gt-testimonial-card-item">
+
+                        <div class="gt-shape">
+                            <img src="assets/img/home-2/testimonial/shape-2.png" alt="img">
+                        </div>
+                        <div class="gt-shape-2">
+                            <img src="assets/img/home-2/testimonial/shape-3.png" alt="img">
+                        </div>
+
+                        <div class="array-buttons-2 style-5">
+                            <button class="array-prev"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="array-next"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="swiper gt-testimonial-slider-2">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <div class="gt-testmonial-content style-2">
+                                        <h3>Không khí Giáng Sinh quá đỉnh!</h3>
+                                        <p>
+                                            "Mình đi cùng nhóm bạn và gia đình, ai cũng có hoạt động riêng. 
+                                            Đúng nghĩa một ngày trọn vẹn trước khi kết thúc năm.”
+                                        </p>
+                                        <h6>Thu Huyền, <span>Tiktoker</span></h6>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="gt-event-ticket-box-5">
-                            <div class="gt-event-image">
-                                <img src="assets/img/home-5/event/event-2.jpg" alt="img">
-                            </div>
-                            <div class="gt-event-content">
-                                <h4>
-                                    <a href="event-details.html">Đêm Sao Băng</a>
-                                </h4>
-                                <h6>Ngày 24/12/2025</h6>
-                                <ul class="event-list">
-                                    <li>
-                                        <a href="index-5.html#">Full quyền lợi ngày 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Ưu đãi khu trò chơi</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Ưu đãi combo ẩm thực</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Give Away</a>
-                                    </li>
-                                </ul>
-                                <div class="gt-event-button">
-                                    <div class="gt-button">
-                                        <a href="event-details.html" class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
-                                    </div>
-                                    <div class="gt-right-text">
-                                        <h4>350.000 VND</h4>
-                                        <span>/người</span>
+
+                                <div class="swiper-slide">
+                                    <div class="gt-testmonial-content style-2">
+                                        <h3>Rất phù hợp cho gia đình có trẻ nhỏ</h3>
+                                        <p>
+                                            “Con mình rất thích gặp ông già Noel, nhận quà, tô màu, làm bánh… 
+                                            Không gian an toàn, bố mẹ yên tâm.”
+                                        </p>
+                                        <h6>Văn Quang, <span>Bố của 2 bé</span></h6>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="gt-event-ticket-box-5">
-                            <div class="gt-event-image">
-                                <img src="assets/img/home-5/event/event-3.jpg" alt="img">
-                            </div>
-                            <div class="gt-event-content">
-                                <h4>
-                                    <a href="event-details.html">Dạ Khúc Ánh Sáng</a>
-                                </h4>
-                                <h6>Ngày 25/12/2025</h6>
-                                <ul class="event-list">
-                                    <li>
-                                        <a href="index-5.html#">Tham dự cả 3 ngày</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Khu vực gần sân khấu</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Ưu tiên xếp hàng hoạt động hot</a>
-                                    </li>
-                                    <li>
-                                        <a href="index-5.html#">Quà lưu niệm đặc biệt VietNam FEST</a>
-                                    </li>
-                                </ul>
-                                <div class="gt-event-button">
-                                    <div class="gt-button">
-                                        <a href="event-details.html" class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
-                                    </div>
-                                    <div class="gt-right-text">
-                                        <h4>450.000 VND</h4>
-                                        <span>/người</span>
+
+                                <div class="swiper-slide">
+                                    <div class="gt-testmonial-content style-2">
+                                        <h3>Trải nghiệm cuối năm đáng giá</h3>
+                                        <p>
+                                            “Vé hợp lý, hoạt động đa dạng, lại có khu thiện nguyện. 
+                                            Giáng Sinh thật sự ý nghĩa.”
+                                        </p>
+                                        <h6>Ngọc Ánh, <span>CEO</span></h6>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
+
                     </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="gt-testimonial-image">
+                        <img src="assets/img/home-5/testimonial.png" alt="img">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GT Sponsor Section Start -->
+<section class="gt-sponsor-secton section-padding fix">
+    <div class="container">
+
+        <div class="gt-section-title-area">
+            <div class="gt-section-title style-5">
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">Đối tác & Nhà tài trợ</h2>
+            </div>
+            <a href="sponsor.html" class="gt-theme-btn style-5">Xem tất cả đối tác</a>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                <div class="gt-sponsor-item">
+                    <div class="gt-sponsor-logo"><img src="assets/img/home-1/sponser/sponser-1.png" alt="img"></div>
+                    <div class="gt-hover-bg"><h4><a href="sponsor.html">IOS</a></h4></div>
                 </div>
             </div>
-        </section>
 
-        <!-- Gt-Sponsor-Bg Section Start -->
-        <section class="gt-sponsor-bg-section section-padding fix">
-            <div class="container">
-                <div class="gt-sponsor-bg-wrapper bg-cover" style="background-image: url(assets/img/home-5/sponsor-bg.jpg);">
-                    <div class="gt-right-shape">
-                        <img src="assets/img/home-1/sponser/shape.png" alt="img">
-                    </div>
-                    <div class="gt-sponsor-content style-5">
-                        <h2 class="wow fadeInUp" data-wow-delay=".3s">Đăng kí trở thành nhà tài trợ VietNam FEST</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".5s">
-                            VietNamFEST là điểm chạm thương hiệu ấn tượng trong mùa lễ hội, thu hút hàng ngàn lượt khách mỗi ngày.
-                            Đồng hành cùng chúng tôi, thương hiệu của bạn sẽ hiện diện trong các hoạt động truyền thông, khu trải nghiệm, sân khấu chính và nhiều touchpoint khác leaders, and AI experts, united by our shared passion.
-                        </p>
-                        <a href="sponsor.html" class="gt-theme-btn wow fadeInUp" data-wow-delay=".3s"><i class="fa-solid fa-arrow-up"></i>Đăng kí tài trợ</a>
-                    </div>
-                    <div class="gt-qr-image wow fadeInUp" data-wow-delay=".3s">
-                        <img src="assets/img/home-1/sponser/qr-image.png" alt="img">
-                    </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                <div class="gt-sponsor-item">
+                    <div class="gt-sponsor-logo"><img src="assets/img/home-1/sponser/sponser-2.png" alt="img"></div>
+                    <div class="gt-hover-bg"><h4><a href="sponsor.html">Samsung</a></h4></div>
                 </div>
             </div>
-        </section>
 
-        <!-- Gt-News Section Start -->
-        <section class="gt-news-section-5 section-padding pt-0 fix">
-            <div class="container">
-                <div class="gt-section-title text-center mb-0">
-                    <span class="gt-sub-title wow fadeInUp">Tin tức sự kiện</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        Tin tức nổi bật
-                    </h2>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="gt-news-card-item-5">
-                            <div class="gt-news-image">
-                                <img src="assets/img/home-5/news/01.jpg" alt="img">
-                                <span class="gt-post">1/12/2025</span>
-                            </div>
-                            <div class="gt-news-content">
-                                <ul class="gt-news-post">
-                                    <li>Ngọc Ánh</li>
-                                    <li class="gt-style-2">264 bình luận</li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">LỘ DIỆN CONCEPT GIÁNG SINH VIETNAM FEST 2025</a>
-                                </h3>
-                                <a href="news-details.html" class="gt-link-btn-5">XEM CHI TIẾT<i class="fa-regular fa-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="gt-news-card-item-5">
-                            <div class="gt-news-image">
-                                <img src="assets/img/home-5/news/02.jpg" alt="img">
-                                <span class="gt-post">5/12/2025</span>
-                            </div>
-                            <div class="gt-news-content">
-                                <ul class="gt-news-post">
-                                    <li>Admin VietNam FEST</li>
-                                    <li class="gt-style-2">1000 bình luận</li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">MỞ BÁN VÉ ĐÊM GIÁNG SINH 2025</a>
-                                </h3>
-                                <a href="news-details.html" class="gt-link-btn-5">XEM CHI TIẾT<i class="fa-regular fa-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="gt-news-card-item-5">
-                            <div class="gt-news-image">
-                                <img src="assets/img/home-5/news/03.jpg" alt="img">
-                                <span class="gt-post">12/12/2025</span>
-                            </div>
-                            <div class="gt-news-content">
-                                <ul class="gt-news-post">
-                                    <li>Ngọc Ánh</li>
-                                    <li class="gt-style-2">1000 bình luận</li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">CHÁY 1000 VÉ ĐÊM HỘI GIÁNG SINH VIETNAM FEST ĐƯỢC BÁN CHỈ SAU 1 TUẦN</a>
-                                </h3>
-                                <a href="news-details.html" class="gt-link-btn-5">XEM CHI TIẾT<i class="fa-regular fa-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                <div class="gt-sponsor-item">
+                    <div class="gt-sponsor-logo"><img src="assets/img/home-1/sponser/sponser-3.png" alt="img"></div>
+                    <div class="gt-hover-bg"><h4><a href="sponsor.html">Acer</a></h4></div>
                 </div>
             </div>
-        </section>
 
-        <!-- GT Newsletter Section Start -->
-       <section class="gt-newsletter-section fix">
-            <div class="container">
-                <div class="gt-newsletter-wrapper bg-cover" style="background-image: url(assets/img/home-2/cta/cta-bg.jpg);">
-                    <div class="gt-microphone">
-                        <img src="assets/img/home-2/cta/microphone.png" alt="img">
-                    </div>
-                    <div class="gt-newsletter-content">
-                        <h3 class="wow fadeInUp" data-wow-delay=".3s">
-                            ĐĂNG KÍ ĐỂ NHẬN THÊM THÔNG TIN <br>
-                            ƯU ĐÃI & CẬP NHẬT SỰ KIỆN
-                        </h3>
-                    </div>
-                    <form action="index-5.html#" class="wow fadeInUp" data-wow-delay=".5s">
-                        <div class="form-clt">
-                            <input type="text" name="email" id="email" placeholder="Your Email Address">
-                            <button type="submit" class="gt-theme-btn">
-                               ĐĂNG KÝ NGAY
-                            </button>
-                        </div>
-                    </form>
+            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                <div class="gt-sponsor-item">
+                    <div class="gt-sponsor-logo"><img src="assets/img/home-1/sponser/sponser-4.png" alt="img"></div>
+                    <div class="gt-hover-bg"><h4><a href="sponsor.html">HP</a></h4></div>
                 </div>
             </div>
-        </section>
 
-        <footer class="gt-footer-section fix bg-cover" style="background-image: url(assets/img/home-1/footer/shape.png);">
-            <div class="container">
-                <div class="gt-footer-widget-wrapper gt-style-2">
-                    <div class="row g-4 justify-content-between">
-                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="gt-footer-widget-items">
-                                <div class="gt-widget-head">
-                                    <a href="index.html" class="gt-footer-logo">
-                                        <img src="assets/img/logo/white-logo.svg" alt="logo-img">
-                                    </a>
-                                </div>
-                                <div class="gt-footer-content">
-                    
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-youtube"></i></a>
-                                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="gt-footer-widget-items">
-                                <div class="gt-widget-head">
-                                    <h4 style="color: black;">Liên Kết</h4>
-                                </div>
-                                <ul class="gt-list-area">
-                                    <li><a href="about.html" style="color: black;">Giới Thiệu</a></li>
-                                    <li><a href="sponsor.html" style="color: black;">Nhà Tài Trợ</a></li>
-                                    <li><a href="contact.html" style="color: black;">Mua Vé</a></li>
-                                    <li><a href="news.html" style="color: black;">Tin Tức</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-                            <div class="gt-footer-widget-items">
-                                <div class="gt-widget-head">
-                                    <h4 style="color: black;">Địa Chỉ Tổ Chức</h4>
-                                </div>
-                                <div class="gt-footer-content">
-                                    <p style="color:black;">Nhà Văn hóa Thanh Niên,<br> Số 4, Phạm Ngọc Thạch, Quận 1, TP. Hồ Chí Minh</p>
-                                    <p style="color:black; margin-top:10px;">Hotline: 0909 123 456</p>
-                                    <p style="color:black; margin-top:5px;">Email: admin@vietnamfest.vn.com</p>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+    </div>
+</section>
+
+<!-- GT-News Section Start -->
+<section class="gt-news-section-5 section-padding pt-0 fix">
+    <div class="container">
+
+        <div class="gt-section-title text-center mb-0">
+            <span class="gt-sub-title wow fadeInUp">Tin tức sự kiện</span>
+            <h2 class="wow fadeInUp" data-wow-delay=".3s">Tin tức nổi bật</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="gt-news-card-item-5">
+                    <div class="gt-news-image">
+                        <img src="assets/img/home-5/news/01.jpg" alt="img">
+                        <span class="gt-post">1/12/2025</span>
                     </div>
-                    <div class="gt-footer-bottom">
-                        <div class="gt-footer-wrapper gt-style-2">
-                            <p class="wow fadeInUp" data-wow-delay=".3s" style="color: black;">©VietNam FEST. All Rights Reserved.</p>
-                            <ul class="gt-footer-list wow fadeInUp" data-wow-delay=".5s">
-                                <li><a href="#" style="color: black;">Điều khoản sử dụng</a></li>
-                                <li><a href="#" style="color: black;">Chính sách bảo mật</a></li>
-                            </ul>
+
+                    <div class="gt-news-content">
+                        <ul class="gt-news-post">
+                            <li>Ngọc Ánh</li>
+                            <li class="gt-style-2">264 bình luận</li>
+                        </ul>
+                        <h3><a href="news-details.html">LỘ DIỆN CONCEPT GIÁNG SINH 2025</a></h3>
+                        <a href="news-details.html" class="gt-link-btn-5">
+                            XEM CHI TIẾT<i class="fa-regular fa-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                <div class="gt-news-card-item-5">
+                    <div class="gt-news-image">
+                        <img src="assets/img/home-5/news/02.jpg" alt="img">
+                        <span class="gt-post">5/12/2025</span>
+                    </div>
+
+                    <div class="gt-news-content">
+                        <ul class="gt-news-post">
+                            <li>Admin VietNam FEST</li>
+                            <li class="gt-style-2">1000 bình luận</li>
+                        </ul>
+                        <h3><a href="news-details.html">MỞ BÁN VÉ ĐÊM GIÁNG SINH 2025</a></h3>
+                        <a href="news-details.html" class="gt-link-btn-5">
+                            XEM CHI TIẾT<i class="fa-regular fa-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                <div class="gt-news-card-item-5">
+                    <div class="gt-news-image">
+                        <img src="assets/img/home-5/news/03.jpg" alt="img">
+                        <span class="gt-post">12/12/2025</span>
+                    </div>
+
+                    <div class="gt-news-content">
+                        <ul class="gt-news-post">
+                            <li>Ngọc Ánh</li>
+                            <li class="gt-style-2">1000 bình luận</li>
+                        </ul>
+                        <h3><a href="news-details.html">
+                            CHÁY 1000 VÉ ĐÊM HỘI GIÁNG SINH CHỈ SAU 1 TUẦN
+                        </a></h3>
+                        <a href="news-details.html" class="gt-link-btn-5">
+                            XEM CHI TIẾT<i class="fa-regular fa-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Footer Section Start -->
+ <!-- GT Newsletter Section Start -->
+<section class="gt-newsletter-section fix">
+    <div class="container">
+        <div class="gt-newsletter-wrapper bg-cover" style="background-image: url(assets/img/home-2/cta/cta-bg.jpg);">
+
+            <div class="gt-microphone">
+                <img src="assets/img/home-2/cta/microphone.png" alt="img">
+            </div>
+
+            <div class="gt-newsletter-content">
+                <h3 class="wow fadeInUp" data-wow-delay=".3s">
+                    ĐĂNG KÍ ĐỂ NHẬN THÊM THÔNG TIN <br>
+                    ƯU ĐÃI & CẬP NHẬT SỰ KIỆN
+                </h3>
+            </div>
+
+            <form action="#" class="wow fadeInUp" data-wow-delay=".5s">
+                <div class="form-clt">
+                    <input type="text" name="email" id="email" placeholder="Your Email Address">
+                    <button type="submit" class="gt-theme-btn">
+                        ĐĂNG KÝ NGAY
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="gt-footer-section fix bg-cover" style="background-image: url(assets/img/home-1/footer/shape.png);">
+    <div class="container">
+        <div class="gt-footer-widget-wrapper gt-style-2">
+
+            <div class="row g-4 justify-content-between">
+                
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="gt-footer-widget-items">
+                        <div class="gt-widget-head">
+                            <a href="index.html" class="gt-footer-logo">
+                                <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        <div class="gt-footer-content">
+                            <div class="gt-social-icon d-flex align-items-center">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-  
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< nice-selec Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
 
-        
+                <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="gt-footer-widget-items">
+                        <div class="gt-widget-head">
+                            <h4 style="color: black;">Liên Kết</h4>
+                        </div>
+                        <ul class="gt-list-area">
+                            <li><a href="about.html" style="color: black;">Giới Thiệu</a></li>
+                            <li><a href="sponsor.html" style="color: black;">Nhà Tài Trợ</a></li>
+                            <li><a href="contact.html" style="color: black;">Mua Vé</a></li>
+                            <li><a href="news.html" style="color: black;">Tin Tức</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                    <div class="gt-footer-widget-items">
+                        <div class="gt-widget-head">
+                            <h4 style="color: black;">Địa Chỉ Tổ Chức</h4>
+                        </div>
+                        <div class="gt-footer-content">
+                            <p style="color:black;">Nhà Văn hóa Thanh Niên,<br> Số 4, Phạm Ngọc Thạch, Quận 1, TP. Hồ Chí Minh</p>
+                            <p style="color:black; margin-top:10px;">Hotline: 0909 123 456</p>
+                            <p style="color:black; margin-top:5px;">Email: admin@vietnamfest.vn.com</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gt-footer-bottom">
+                <div class="gt-footer-wrapper gt-style-2">
+                    <p class="wow fadeInUp" data-wow-delay=".3s" style="color: black;">
+                        ©VietNam FEST. All Rights Reserved.
+                    </p>
+                    <ul class="gt-footer-list wow fadeInUp" data-wow-delay=".5s">
+                        <li><a href="#" style="color: black;">Điều khoản sử dụng</a></li>
+                        <li><a href="#" style="color: black;">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- JS FILES -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/viewport.jquery.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.waypoints.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery.meanmenu.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/main.js"></script>
 
 <!-- ❄ Smooth Floating Snow (ADDED) -->
 <script>
@@ -1277,7 +887,55 @@ window.addEventListener("resize", () => {
 
 initSnow();
 animateSnow();
+</script>
+initSnow();
+animateSnow();
+</script> 
+initSnow();
+animateSnow();
 </script> 
 
-    </body>
+<!-- ⭐ BACKGROUND MUSIC (ADD HERE) -->
+<audio id="bgMusic" src="assets/music/noel.mp3" loop></audio>
+
+<script>
+const audio = document.getElementById("bgMusic");
+const toggleBtn = document.getElementById("musicToggle");
+let isPlaying = false;
+
+// Auto-play khi user click lần đầu vào trang
+document.addEventListener("click", function () {
+    if (!isPlaying) {
+        audio.volume = 0.55;
+        audio.play().then(() => {
+            isPlaying = true;
+            toggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        }).catch(()=>{});
+    }
+}, { once: true });
+
+// Nhấn nút toggle on/off
+toggleBtn.addEventListener("click", function (e) {
+    e.stopPropagation(); // tránh trigger autoplay
+
+    if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        toggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    } else {
+        audio.play().then(() => {
+            isPlaying = true;
+            toggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        });
+    }
+});
+</script>
+<!-- ⭐ END BACKGROUND MUSIC -->
+
+</body>
+</html>
+
+</body>
+</html>
+</body>
 </html>
