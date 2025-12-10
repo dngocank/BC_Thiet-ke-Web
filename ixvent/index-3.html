@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
     <!--<< Header Area >>-->
     <head>
        <!-- ========== Meta Tags ========== -->
@@ -7,11 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Gramentheme">
-        <meta name="description" content="Pixvent - Conference and Event HTML Template">
+        <meta name="description" content="VN FEST - Conference and Event HTML Template">
         <!-- ======== Page title ============ -->
-        <title>VietNam FEST</title>
+        <title>VN FEST - Conference and Event HTML Template</title>
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="shortcut icon" href="assets/img/Logo.svg">
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
@@ -28,6 +28,29 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        <style>
+            /* Cố gắng loại bỏ lớp phủ màu (color overlay) */
+            .gt-hero-section.gt-hero-3::before {
+                background: none !important; 
+                content: none !important;
+            }
+            .gt-hero-section.gt-hero-3::after {
+                background: none !important; 
+                content: none !important;
+            }
+            /* THÊM CSS GHI ĐÈ FONT MỚI */
+            .gt-hero-content h1, 
+            .gt-hero-content span, 
+            .gt-hero-content p {
+                font-family: 'Montserrat', sans-serif !important;
+                /* Đảm bảo độ đậm cho chữ */
+                font-weight: 900 !important; 
+            }
+            .gt-hero-content h1 { font-size: 130px !important; line-height: 1.2 !important; padding-top: 20px !important; }
+        </style>
                             
     </head>
     <body>
@@ -122,7 +145,7 @@
                             <ul class="gt-left">
                                 <li>
                                     <i class="fa-solid fa-location-dot"></i>
-                                    4233 w. 65th st. chicago il 60629
+                                    450-451 Lê Văn Việt - Phường Tăng Nhơn Phú A - Thủ Đức - TP.HCM
                                 </li>
                             </ul>
                         </div>
@@ -158,10 +181,13 @@
                                                         <a href="about.html">About Us</a>
                                                     </li>
                                                     <li class="has-dropdown">
-                                                        
+                                                        <a href="service-details.html">
+                                                            Our Service
+                                                            <i class="fas fa-angle-right"></i>
+                                                        </a>
                                                         <ul class="submenu">
                                                             <li><a href="service.html">Our Services</a></li>
-                                                            
+                                                            <li><a href="service-details.html">Service Details</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="sponsor.html">Sponsor</a></li>
@@ -232,12 +258,12 @@
         </div>
 
         <!-- GT Hero Section Start -->
-        <section class="gt-hero-section gt-hero-3 fix bg-cover" style="background-image: url(assets/img/home-3/hero/hero-bg.jpg);">
-            <div class="gt-shape">
-                <img src="assets/img/home-3/hero/shape.png" alt="img">
+        <section class="gt-hero-section gt-hero-3 fix bg-cover">      
+            <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <source src="assets/img/home-3/hero/Trống đồng.mp4" type="video/mp4">
+</video>      <div class="gt-shape">
             </div>
-            <div class="gt-coming-soon-time" data-event-time="2025-12-31T23:59:59">
-                <div class="gt-timer-content">
+                <div class="gt-coming-soon-time" data-event-time="2025-09-02T23:59:59" style="display: none;">                <div class="gt-timer-content">
                     <h3 class="gt-day">00</h3>
                     <p>Days</p>
                 </div>
@@ -258,15 +284,16 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <div class="gt-hero-content">
-                            <span class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">digital Design</span>
-                            <h1 class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                conference
+                            <span class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s" 
+                            style="color: #FFFFFF; text-shadow: 0 0 20px rgba(0,0,0,0.8); position: relative; top: 10px; font-size: 75px;">CHÀO MỪNG</span>
+                            <h1 class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s"
+                            style="color: #FFCC00; -webkit-text-stroke: 1.5px #B30000; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+                                NGÀY QUỐC KHÁNH 
                             </h1>
-                            <span class="gt-style-2 wow fadeInUp" data-wow-delay=".5s">2025</span>
-                            <p class="wow fadeInUp" data-wow-delay=".7s">september 25 - 10:00Am - 5:00 pm</p>
-                            <div class="hero-button wow fadeInUp" data-wow-delay=".3s">
-                                <a href="contact.html" class="gt-theme-btn gt-theme-btn-3"><i class="fa-solid fa-arrow-up"></i> get tickets</a>
-                            </div>
+                            <span class="gt-style-2 wow fadeInUp" data-wow-delay=".5s" style="color: #FF0000; text-shadow: 0 0 1px #FF0000, 0 0 10px #FF0000, 0 0 3px #CC0000; letter-spacing: normal; font-size: 110px;">VIỆT NAM</span>
+                            <p class="wow fadeInUp" data-wow-delay=".7s" style="color: #FFCC00; text-shadow: 0 0 3px #000; font-size: 40px !important; position: relative; top: 40px;">- 02 THÁNG 09 NĂM 2025 -</p>
+                            <div class="hero-button wow fadeInUp" data-wow-delay="2s" style="margin-top: 200px;"></div>
+                            <a href="contact.html" class="gt-theme-btn gt-theme-btn-3" style="background-image: linear-gradient(to right, #CC0000 0%, #FFCC00 100%);"><i class="fa-solid fa-arrow-up"></i> XEM CHI TIẾT</a>
                         </div>
                     </div>
                 </div>
@@ -276,10 +303,10 @@
         <!-- GT About Section Start -->
         <section class="gt-about-section section-padding fix">
             <div class="gt-left-shape">
-                <img src="assets/img/home-3/about/shape-1.png" alt="img">
+                <img src="assets/img/home-3/about/shape-1.1.png" alt="img">
             </div>
             <div class="gt-right-shape">
-                <img src="assets/img/home-3/about/shape-2.png" alt="img">
+                <img src="assets/img/home-3/about/shape-2.1.png" alt="img">
             </div>
              <div class="gt-blur-shape">
                 <img src="assets/img/home-3/about/blur-shape.png" alt="img">
@@ -289,49 +316,49 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="gt-about-image wow fadeInUp" data-wow-delay=".3s">
-                                <img src="assets/img/home-3/about/about-1.png" alt="img">
+                                <img src="assets/img/home-3/about/Không có gì quý hơn Độc Lập - Tự Do.png" alt="img">
                                 <div class="gt-circle-shape">
-                                    <img src="assets/img/home-3/about/circle.png" alt="img">
+                                    <img src="assets/img/home-3/about/circle1.png" alt="img">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="gt-about-content">
                                 <div class="gt-section-title mb-0">
-                                    <span class="gt-sub-title gt-style-4 wow fadeInUp">About design conference</span>
+                                    <span class="gt-sub-title gt-style-4 wow fadeInUp" style="font-size: 30px !important;color: #DA251D;">Độc lập – Tự do – Hạnh phúc</span>
                                     <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                        Building The Future of digital design & Conferences
+                                        “Mỗi lá cờ đỏ sao vàng tung bay là một niềm tự hào.”
                                     </h2>
                                 </div>
-                                <p class="gt-text wow fadeInUp" data-wow-delay=".5s">
-                                    Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
+                                <p class="gt-text wow fadeInUp" data-wow-delay=".5s" style="font-size: 25px;">
+                                    Ngày Quốc khánh Việt Nam, hay còn gọi là Tết Độc lập, là ngày lễ chính thức của Việt Nam, diễn ra vào ngày 2 tháng 9 hằng năm, kỷ niệm ngày Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn độc lập tại Quảng trường Ba Đình, Hà Nội, khai sinh ra nước Việt Nam Dân chủ Cộng hòa, một trong các tiền thân của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam ngày nay.
                                 </p>
                                 <div class="gt-counter-box wow fadeInUp" data-wow-delay=".3s">
                                     <div class="gt-count-item">
-                                        <h2><span class="gt-count">25</span>+</h2>
+                                        <h2 style="color: #DA251D;"><span class="gt-count">50</span>M</h2>
                                         <p>
-                                            Our Visionary Speakers
+                                            Hashtag #TuHaoVietNam
                                         </p>
                                     </div>
                                     <div class="gt-count-item">
-                                        <h2><span class="gt-count">897</span>+</h2>
+                                        <h2 style="color: #DA251D;"><span class="gt-count">30</span>K</h2>
                                         <p>
-                                            Event Participants
+                                            Người xem diễu binh 02/09/2025
                                         </p>
                                     </div>
                                     <div class="gt-count-item">
-                                        <h2><span class="gt-count">69</span>+</h2>
+                                        <h2 style="color: #DA251D;"><span class="gt-count">80</span></h2>
                                         <p>
-                                            International Sponsors
+                                            Năm xây dựng và bảo vệ Tổ quốc
                                         </p>
                                     </div>
                                 </div>
                                 <div class="gt-about-button wow fadeInUp" data-wow-delay=".5s">
-                                   <a href="contact.html" class="gt-theme-btn gt-theme-btn-3"><i class="fa-solid fa-arrow-up"></i> get tickets</a>
+                                   <a href="contact.html" class="gt-theme-btn gt-theme-btn-3"><i class="fa-solid fa-arrow-up"></i> Mua vé</a>
                                    <ul class="gt-button">
                                       <li>
                                          <i class="fa-solid fa-phone-volume"></i>
-                                         <a href="tel:+9132140203420">+91 3214 0203 420</a>
+                                         <a href="tel:+84337707057">0337707057</a>
                                       </li>
                                    </ul>
                                 </div>
@@ -1109,7 +1136,9 @@
                                         <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                           <i class="fa-solid fa-play"></i>
                                       </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Michael Joseph</a>
+                                      </h4>
                                       <p>
                                         founder & CEO
                                       </p>
@@ -1131,7 +1160,9 @@
                                         <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                           <i class="fa-solid fa-play"></i>
                                       </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Michael Joseph</a>
+                                      </h4>
                                       <p>
                                         founder & CEO
                                       </p>
@@ -1139,7 +1170,18 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="gt-section-title mb-0">
+                                <span class="text-white gt-sub-title gt-style-4 wow fadeInUp">event speakers</span>
+                                <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
+                                    Meet Our Event Speaker’s
+                                </h2>
+                                <p class="text-white mt-3 mt-mb-0 wow fadeInUp" data-wow-delay=".5s">
+                                    Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking
+                                </p>
+                            </div>
+                            <a href="speaker-details.html" class="gt-theme-btn gt-theme-btn-3 mt-5 wow fadeInUp" data-wow-delay=".3s"><i class="fa-solid fa-arrow-up"></i> view all speaker’s</a>
+                        </div>
                         <div class="col-xl-4 col-lg-6 col-md-6 wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
                             <div class="gt-speaker-items-3">
                                 <div class="gt-speaker-image">
@@ -1154,7 +1196,9 @@
                                         <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                           <i class="fa-solid fa-play"></i>
                                       </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Michael Joseph</a>
+                                      </h4>
                                       <p>
                                         founder & CEO
                                       </p>
@@ -1176,7 +1220,9 @@
                                         <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                           <i class="fa-solid fa-play"></i>
                                       </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Michael Joseph</a>
+                                      </h4>
                                       <p>
                                         founder & CEO
                                       </p>
@@ -1198,7 +1244,9 @@
                                         <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                           <i class="fa-solid fa-play"></i>
                                       </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Michael Joseph</a>
+                                      </h4>
                                       <p>
                                         founder & CEO
                                       </p>
@@ -1720,32 +1768,32 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                    <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                    <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                         </div>
@@ -1775,7 +1823,9 @@
                                 <li>
                                     <a href="event-details.html">events</a>
                                 </li>
-                                
+                                <li>
+                                    <a href="speaker-details.html">speakers</a>
+                                </li>
                                 <li>
                                     <a href="contact.html">contact us</a>
                                 </li>
@@ -1790,7 +1840,7 @@
                             </form>
                             <div class="gt-footer-wrapper-3">
                                 <p class="wow fadeInLeft" data-wow-delay=".3s">
-                                     © 2025 pixvent. All Rights Reserved.
+                                     © 2025 VN FEST. All Rights Reserved.
                                 </p>
                                 <div class="gt-social-icon d-flex align-items-center wow fadeInRight" data-wow-delay=".5s">
                                     <a href="index-3.html#"><i class="fab fa-facebook-f"></i></a>
