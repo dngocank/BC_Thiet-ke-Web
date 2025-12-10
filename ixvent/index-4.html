@@ -1,1371 +1,1535 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--<< Header Area >>-->
     <head>
-       <!-- ========== Meta Tags ========== -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Gramentheme">
         <meta name="description" content="Pixvent - Conference and Event HTML Template">
-        <!-- ======== Page title ============ -->
-        <title>Pixvent - Conference and Event HTML Template</title>
-        <!--<< Favcion >>-->
+        <title>Chào mừng Ngày Nhà Giáo Việt Nam - Pixvent</title>
         <link rel="shortcut icon" href="assets/img/favicon.svg">
-        <!--<< Bootstrap min.css >>-->
+        
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
         <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
         <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
         <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
         <link rel="stylesheet" href="assets/css/nice-select.css">
-        <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
-               <style>
-       
-        :root {
-            --white: #FFFFFF;
-            --gold-accent: #FFD700; 
-            --blue-light: #82CAFA;
-            --blue-bold: #00C0FF;
-            --pink-1: #F699CD;
-            --pink-2: #FC94AF;
-            --text-dark: #333333;
-            --text-gray: #555555;
-            --purple: #A855F7;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #fdfcfb;
-            --card-bg: #FFFFFF;
-            --shadow: rgba(0, 0, 0, 0.08);
-        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        <style>
+            :root {
+                --white: #FFFFFF;
+                --gold-accent: #FFD700; 
+                --blue-light: #82CAFA;
+                --blue-bold: #00C0FF;
+                --pink-1: #F699CD;
+                --pink-2: #FC94AF;
+                --text-dark: #333333;
+                --text-gray: #555555;
+                --purple: #A855F7;
+                --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                --bg-primary: #FFFFFF;
+                --bg-secondary: #fdfcfb;
+                --card-bg: #FFFFFF;
+                --shadow: rgba(0, 0, 0, 0.08);
+            }
 
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background-color 0.3s, color 0.3s;
-        }
+            /* Reset cơ bản cho phần nội dung riêng, tránh ảnh hưởng Bootstrap quá nhiều */
+            .hero-section-wrapper * { box-sizing: border-box; }
 
-        header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-            z-index: 1000;
-            animation: slideDown 0.6s ease-out;
-        }
+            body {
+                font-family: 'Quicksand', sans-serif;
+                background-color: var(--bg-primary);
+                color: var(--text-dark);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
 
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+            /* --- ĐÃ XÓA CSS HEADER CŨ ĐỂ DÙNG HEADER CỦA PIXVENT --- */
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(45deg, var(--blue-bold), var(--pink-2), var(--purple));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 3s ease infinite;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .logo:hover { transform: scale(1.05); }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        nav ul { list-style: none; display: flex; gap: 35px; }
-        nav a {
-            text-decoration: none; color: var(--text-dark); font-weight: 600;
-            position: relative; padding: 5px 0; transition: color 0.3s;
-        }
-        nav a::after {
-            content: ''; position: absolute; width: 0; height: 3px; bottom: -5px;
-            left: 50%; transform: translateX(-50%); background: var(--gradient-2);
-            transition: width 0.3s; border-radius: 2px;
-        }
-        nav a:hover::after { width: 100%; }
-        nav a:hover { color: var(--pink-2); }
-
-        .hero {
-            position: relative; min-height: 85vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center; overflow: hidden;
-            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-        }
-
-        .particle {
-            position: absolute; width: 10px; height: 10px; background: var(--gold-accent);
-            border-radius: 50%; opacity: 0.6; animation: float-particle 15s infinite ease-in-out;
-        }
-
-        @keyframes float-particle {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; }
-            50% { transform: translate(100px, -100px) rotate(180deg); opacity: 0.2; }
-        }
-
-        .blob {
-            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5;
-            z-index: 0; animation: float 12s infinite ease-in-out alternate;
-        }
-        .blob-1 { top: -15%; left: -10%; width: 500px; height: 500px; background: var(--blue-light); animation-delay: 0s; }
-        .blob-2 { bottom: 10%; right: -8%; width: 400px; height: 400px; background: var(--pink-1); animation-delay: -5s; }
-        .blob-3 { top: 25%; right: 15%; width: 250px; height: 250px; background: var(--gold-accent); opacity: 0.4; animation-delay: -2s; }
-
-        .hero-content { z-index: 1; animation: fadeInUp 1.2s ease-out; max-width: 800px; padding: 20px; }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px;
-            color: var(--text-dark); text-shadow: 3px 3px 6px rgba(0,0,0,0.1); line-height: 1.2;
-        }
-        .hero h1 span {
-            display: inline-block; background: var(--gradient-2);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero p { font-size: 1.4rem; color: var(--text-gray); margin-bottom: 40px; font-weight: 500; }
-
-        .btn-main {
-            padding: 18px 50px; border: none; border-radius: 50px;
-            background: linear-gradient(90deg, var(--blue-bold), var(--pink-2));
-            background-size: 200% auto; color: var(--white); font-weight: bold;
-            font-size: 18px; cursor: pointer; box-shadow: 0 15px 35px rgba(252, 148, 175, 0.4);
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); position: relative; overflow: hidden;
-        }
-        .btn-main::before {
-            content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0;
-            background: rgba(255, 255, 255, 0.3); border-radius: 50%;
-            transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s;
-        }
-        .btn-main:hover::before { width: 300px; height: 300px; }
-        .btn-main:hover {
-            background-position: right center; transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(252, 148, 175, 0.6);
-        }
-        .btn-main:active { transform: translateY(-2px) scale(1.02); }
-
-        .floating-icon {
-            position: absolute; font-size: 3rem; opacity: 0.15;
-            animation: float-icon 8s infinite ease-in-out;
-        }
-        .icon-1 { top: 15%; left: 10%; animation-delay: 0s; }
-        .icon-2 { top: 70%; left: 15%; animation-delay: -2s; }
-        .icon-3 { top: 20%; right: 8%; animation-delay: -4s; }
-        .icon-4 { bottom: 20%; right: 12%; animation-delay: -6s; }
-
-        @keyframes float-icon {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(10deg); }
-        }
-
-        .wave-divider {
-            position: absolute; bottom: -1px; left: 0; width: 100%;
-            overflow: hidden; line-height: 0; z-index: 2;
-        }
-        .wave-divider svg {
-            position: relative; display: block; width: calc(137% + 1.3px); height: 120px;
-        }
-        .wave-divider .shape-fill { fill: #FFFFFF; }
-
-        .stats-section {
-            background: var(--gradient-1); padding: 60px 20px; margin: 80px 0; color: white;
-        }
-        .stats-container {
-            max-width: 1000px; margin: 0 auto; display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;
-        }
-        .stat-item { animation: fadeInUp 1s ease-out; }
-        .stat-number {
-            font-size: 3.5rem; font-weight: bold; font-family: 'Playfair Display', serif;
-            margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        .stat-label { font-size: 1.1rem; opacity: 0.9; }
-
-        .container {
-            max-width: 1200px; margin: 0 auto 80px auto; padding: 80px 20px;
-            position: relative; z-index: 5;
-        }
-
-        .section-title {
-            text-align: center; font-family: 'Playfair Display', serif; font-size: 3rem;
-            margin-bottom: 20px; position: relative; display: inline-block; left: 50%;
-            transform: translateX(-50%); color: var(--text-dark);
-        }
-        .section-subtitle {
-            text-align: center; font-size: 1.1rem; color: var(--text-gray); margin-bottom: 60px;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 80px; height: 4px;
-            background: var(--gradient-2); margin: 15px auto 0; border-radius: 2px;
-        }
-
-        .slider-wrapper {
-            position: relative; width: 100%; overflow: hidden; padding: 40px 0; margin-top: 20px;
-        }
-        .slider-track {
-            display: flex; gap: 30px; transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .card {
-            min-width: calc(33.333% - 20px); background: #fff; border-radius: 20px;
-            overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            position: relative;
-        }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--gradient-1); opacity: 0; transition: opacity 0.4s; z-index: 0;
-        }
-        .card:hover::before { opacity: 0.05; }
-        .card:hover {
-            transform: translateY(-15px) scale(1.02); box-shadow: 0 20px 50px rgba(130, 202, 250, 0.3);
-        }
-        .card-img {
-            height: 220px; background-size: cover; background-position: center;
-            border-bottom: 4px solid var(--gold-accent); position: relative; overflow: hidden;
-        }
-        .card-img::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
-        }
-        .card-content { padding: 25px; text-align: center; position: relative; z-index: 1; }
-        .card-content h3 { margin: 0 0 15px 0; color: var(--blue-bold); font-family: 'Playfair Display', serif; font-size: 1.4rem; }
-        .card-content p { font-size: 1rem; color: var(--text-gray); font-style: italic; line-height: 1.6; }
-        .card-timestamp { font-size: 0.85rem; color: var(--text-gray); opacity: 0.7; margin-top: 10px; }
-
-        .nav-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            background: linear-gradient(135deg, var(--blue-bold), var(--pink-2));
-            color: white; border: none; width: 50px; height: 50px; border-radius: 50%;
-            font-size: 20px; cursor: pointer; z-index: 10;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: all 0.3s;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .nav-btn:hover { transform: translateY(-50%) scale(1.15); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
-        .prev-btn { left: -25px; }
-        .next-btn { right: -25px; }
-
-        .quote-section {
-            max-width: 800px; margin: 80px auto; padding: 50px 40px;
-            background: linear-gradient(135deg, rgba(130, 202, 250, 0.1), rgba(246, 153, 205, 0.1));
-            border-radius: 30px; border-left: 6px solid var(--gold-accent); position: relative;
-        }
-        .quote-section::before {
-            content: '"'; position: absolute; top: -20px; left: 30px; font-size: 8rem;
-            color: var(--gold-accent); opacity: 0.3; font-family: Georgia, serif;
-        }
-        .quote-text { font-size: 1.5rem; font-style: italic; color: var(--text-dark); line-height: 1.8; margin-bottom: 20px; }
-        .quote-author { text-align: right; font-size: 1.1rem; color: var(--text-gray); font-weight: 600; }
-
-        /* MODAL & FORMS */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); animation: fadeIn 0.3s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .modal-content { background: white; margin: 2% auto; padding: 0; border-radius: 30px; width: 90%; max-width: 600px; max-height: 95vh; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); animation: slideInDown 0.4s; overflow: hidden; display: flex; flex-direction: column; }
-        @keyframes slideInDown { from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .modal-header { background: var(--gradient-1); color: white; padding: 30px; text-align: center; position: relative; flex-shrink: 0; }
-        .modal-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 0; }
-        .close { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: white; font-size: 35px; font-weight: bold; cursor: pointer; transition: transform 0.3s; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .close:hover { transform: translateY(-50%) rotate(90deg); background: rgba(255, 255, 255, 0.2); }
-        .modal-body { padding: 40px; overflow-y: auto; flex: 1; }
-        .form-group { margin-bottom: 25px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark); font-size: 1rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: 'Quicksand', sans-serif; font-size: 1rem; transition: all 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--pink-2); box-shadow: 0 0 0 3px rgba(252, 148, 175, 0.1); }
-        .form-group textarea { resize: vertical; min-height: 120px; }
-        .image-upload-area { border: 3px dashed #e0e0e0; border-radius: 15px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; }
-        .image-upload-area:hover { border-color: var(--pink-2); background: rgba(252, 148, 175, 0.05); }
-        .image-upload-area.drag-over { border-color: var(--blue-bold); background: rgba(0, 192, 255, 0.1); }
-        #imageInput { display: none; }
-        .upload-icon { font-size: 3rem; margin-bottom: 10px; opacity: 0.5; }
-        .image-preview { margin-top: 20px; display: none; position: relative; }
-        .image-preview img { max-width: 100%; max-height: 200px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
-        .remove-image { position: absolute; top: 10px; right: 10px; background: var(--pink-2); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); transition: transform 0.3s; }
-        .remove-image:hover { transform: scale(1.1); }
-        .btn-submit { width: 100%; padding: 18px; border: none; border-radius: 50px; background: linear-gradient(90deg, var(--blue-bold), var(--pink-2)); color: white; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.4s; box-shadow: 0 10px 25px rgba(252, 148, 175, 0.4); }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(252, 148, 175, 0.6); }
-        .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-        
-        .success-message { display: none; position: fixed; top: 100px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px 40px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); z-index: 3000; animation: slideInDown 0.5s ease-out; }
-        .success-message.show { display: block; }
-
-        /* FOOTER & EXTRAS */
-        footer { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; position: relative; overflow: hidden; padding: 60px 20px 30px; }
-        footer::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255,255,255,0.1); transform: skewX(-15deg); animation: shine 3s infinite; }
-        @keyframes shine { 0% { left: -100%; } 50%, 100% { left: 200%; } }
-        .footer-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
-        .footer-section h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; color: var(--gold-accent); }
-        .footer-section p, .footer-section a { color: rgba(255, 255, 255, 0.9); line-height: 1.8; text-decoration: none; display: block; margin-bottom: 10px; transition: all 0.3s; }
-        .footer-section a:hover { color: var(--gold-accent); padding-left: 5px; }
-        .social-links { display: flex; gap: 15px; margin-top: 15px; }
-        .social-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s; cursor: pointer; }
-        .social-icon:hover { background: var(--gold-accent); transform: translateY(-5px); }
-        .footer-divider { height: 1px; background: rgba(255, 255, 255, 0.2); margin: 30px 0; }
-        .footer-bottom { text-align: center; font-size: 1rem; opacity: 0.9; }
-        .footer-heart { display: inline-block; color: #ff6b6b; animation: heartbeat 1.5s infinite; }
-        @keyframes heartbeat { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.2); } 50% { transform: scale(1); } }
-        
-        .music-player { position: fixed; bottom: 30px; right: 30px; background: white; padding: 15px 20px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; align-items: center; gap: 15px; z-index: 1500; transition: all 0.3s; }
-        .music-player:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
-        .music-toggle { width: 50px; height: 50px; border-radius: 50%; background: var(--gradient-2); border: none; color: white; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
-        .music-toggle:hover { transform: rotate(360deg); }
-        .music-info { display: none; }
-        .music-player.playing .music-info { display: block; }
-        .music-title { font-weight: 600; color: var(--text-dark); font-size: 0.95rem; }
-        
-        .filter-section { max-width: 1000px; margin: 0 auto 40px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center; }
-        .search-box { flex: 1; min-width: 250px; padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 1rem; font-family: 'Quicksand', sans-serif; transition: all 0.3s; }
-        .search-box:focus { outline: none; border-color: var(--pink-2); box-shadow: 0 0 0 3px rgba(252, 148, 175, 0.1); }
-        .filter-btn { padding: 12px 30px; border: 2px solid var(--blue-bold); background: white; color: var(--blue-bold); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
-        .filter-btn:hover, .filter-btn.active { background: var(--blue-bold); color: white; }
-        
-        .scroll-top { position: fixed; bottom: 30px; left: 30px; width: 55px; height: 55px; background: var(--gradient-1); border: none; border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: none; align-items: center; justify-content: center; z-index: 1500; transition: all 0.3s; }
-        .scroll-top.show { display: flex; }
-        .scroll-top:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
-        
-        .loading { display: none; text-align: center; padding: 40px; }
-        .loading.show { display: block; }
-        .spinner { border: 4px solid rgba(0, 0, 0, 0.1); border-left-color: var(--pink-2); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        
-        .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce-indicator 2s infinite; }
-        .scroll-indicator::before { content: ''; display: block; width: 30px; height: 50px; border: 3px solid var(--text-gray); border-radius: 25px; position: relative; }
-        .scroll-indicator::after { content: ''; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background: var(--text-gray); border-radius: 50%; animation: scroll-wheel 2s infinite; }
-        @keyframes bounce-indicator { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
-        @keyframes scroll-wheel { 0% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(20px); } }
-
-        /* --- ANIMATION REVEAL ON SCROLL --- */
-        .reveal {
-            position: relative;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal.active {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* --- TIMELINE STYLES --- */
-        .timeline-section { background-color: var(--bg-secondary); padding: 80px 20px; }
-        .timeline { position: relative; max-width: 1000px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--pink-2); top: 0; bottom: 0; left: 50%; margin-left: -3px; border-radius: 3px; }
-        .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
-        .timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -13px; background-color: white; border: 4px solid var(--blue-bold); top: 15px; border-radius: 50%; z-index: 1; }
-        .left { left: 0; }
-        .right { left: 50%; }
-        .left::before { content: " "; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; right: 30px; border: medium solid white; border-width: 10px 0 10px 10px; border-color: transparent transparent transparent white; }
-        .right::before { content: " "; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; left: 30px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
-        .right::after { left: -13px; }
-        .timeline-content { padding: 20px 30px; background-color: white; position: relative; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .year-badge { display: inline-block; padding: 5px 15px; background: var(--gradient-2); color: white; border-radius: 20px; font-weight: bold; margin-bottom: 10px; }
-
-        /* --- GALLERY STYLES --- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px 0; }
-        .gallery-item { position: relative; border-radius: 15px; overflow: hidden; height: 300px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 20px; color: white; opacity: 0; transition: opacity 0.3s; }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-        /* --- NEW CONTENT STYLES (ACTIVITIES, TEACHERS, POEMS) --- */
-        
-        /* Activities Section */
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .activity-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .activity-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        .activity-content { padding: 25px; }
-        .activity-content h3 {
-            color: var(--blue-bold);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        /* Teacher Team Section */
-        .team-section { background: #f8f9fa; padding: 80px 20px; }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .team-member {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-        .team-member:hover { transform: translateY(-10px); }
-        .member-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 4px solid var(--gold-accent);
-        }
-        .member-role {
-            color: var(--pink-2);
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* Poem Section */
-        .poem-section {
-            background: url('https://images.unsplash.com/photo-1519681393798-3828fb4090bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-            background-size: cover;
-            padding: 100px 20px;
-            position: relative;
-            color: white;
-            text-align: center;
-        }
-        .poem-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-        }
-        .poem-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            border: 2px solid rgba(255,255,255,0.3);
-            padding: 40px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-        }
-        .poem-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--gold-accent);
-        }
-        .poem-lines {
-            font-size: 1.2rem;
-            line-height: 2;
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
-            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            nav a { font-size: 0.9rem; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            .card { min-width: 100%; }
-            .section-title { font-size: 2rem; }
-            .stats-container { grid-template-columns: 1fr; }
-            .quote-text { font-size: 1.2rem; }
-            .prev-btn, .next-btn { width: 40px; height: 40px; font-size: 16px; }
-            .modal-content { width: 95%; margin: 10% auto; }
-            .modal-body { padding: 25px; }
+            /* --- GIỮ NGUYÊN CÁC STYLE CÒN LẠI CỦA TRANG 20/11 --- */
             
-            /* Responsive Timeline */
-            .timeline::after { left: 31px !important; }
-            .timeline-item { width: 100% !important; padding-left: 70px !important; padding-right: 25px !important; left: 0 !important; }
-            .timeline-item::after { left: 15px !important; }
-            .left::after, .right::after { left: 15px !important; }
-            .right { left: 0% !important; }
-            .left::before, .right::before { left: 30px; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
-        }
-    </style>             
+            .hero {
+                position: relative; min-height: 85vh; display: flex; flex-direction: column;
+                justify-content: center; align-items: center; text-align: center; overflow: hidden;
+                background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+                padding-top: 100px; /* Thêm padding để không bị header che khuất */
+            }
+
+            .particle {
+                position: absolute; width: 10px; height: 10px; background: var(--gold-accent);
+                border-radius: 50%; opacity: 0.6; animation: float-particle 15s infinite ease-in-out;
+            }
+
+            @keyframes float-particle {
+                0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; }
+                50% { transform: translate(100px, -100px) rotate(180deg); opacity: 0.2; }
+            }
+
+            .blob {
+                position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5;
+                z-index: 0; animation: float 12s infinite ease-in-out alternate;
+            }
+            .blob-1 { top: -15%; left: -10%; width: 500px; height: 500px; background: var(--blue-light); animation-delay: 0s; }
+            .blob-2 { bottom: 10%; right: -8%; width: 400px; height: 400px; background: var(--pink-1); animation-delay: -5s; }
+            .blob-3 { top: 25%; right: 15%; width: 250px; height: 250px; background: var(--gold-accent); opacity: 0.4; animation-delay: -2s; }
+
+            .hero-content { z-index: 1; animation: fadeInUp 1.2s ease-out; max-width: 800px; padding: 20px; }
+
+            .hero h1 {
+                font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px;
+                color: var(--text-dark); text-shadow: 3px 3px 6px rgba(0,0,0,0.1); line-height: 1.2;
+            }
+            .hero h1 span {
+                display: inline-block; background: var(--gradient-2);
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                animation: bounce 2s ease-in-out infinite;
+            }
+
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            .hero p { font-size: 1.4rem; color: var(--text-gray); margin-bottom: 40px; font-weight: 500; }
+
+            .btn-main {
+                padding: 18px 50px; border: none; border-radius: 50px;
+                background: linear-gradient(90deg, var(--blue-bold), var(--pink-2));
+                background-size: 200% auto; color: var(--white); font-weight: bold;
+                font-size: 18px; cursor: pointer; box-shadow: 0 15px 35px rgba(252, 148, 175, 0.4);
+                transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); position: relative; overflow: hidden;
+            }
+            .btn-main::before {
+                content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+                background: rgba(255, 255, 255, 0.3); border-radius: 50%;
+                transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s;
+            }
+            .btn-main:hover::before { width: 300px; height: 300px; }
+            .btn-main:hover {
+                background-position: right center; transform: translateY(-8px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(252, 148, 175, 0.6);
+            }
+            .btn-main:active { transform: translateY(-2px) scale(1.02); }
+
+            .floating-icon {
+                position: absolute; font-size: 3rem; opacity: 0.15;
+                animation: float-icon 8s infinite ease-in-out;
+            }
+            .icon-1 { top: 15%; left: 10%; animation-delay: 0s; }
+            .icon-2 { top: 70%; left: 15%; animation-delay: -2s; }
+            .icon-3 { top: 20%; right: 8%; animation-delay: -4s; }
+            .icon-4 { bottom: 20%; right: 12%; animation-delay: -6s; }
+
+            @keyframes float-icon {
+                0%, 100% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-30px) rotate(10deg); }
+            }
+
+            .wave-divider {
+                position: absolute; bottom: -1px; left: 0; width: 100%;
+                overflow: hidden; line-height: 0; z-index: 2;
+            }
+            .wave-divider svg {
+                position: relative; display: block; width: calc(137% + 1.3px); height: 120px;
+            }
+            .wave-divider .shape-fill { fill: #FFFFFF; }
+
+            .stats-section {
+                background: var(--gradient-1); padding: 60px 20px; margin: 80px 0; color: white;
+            }
+            .stats-container {
+                max-width: 1000px; margin: 0 auto; display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;
+            }
+            .stat-item { animation: fadeInUp 1s ease-out; }
+            .stat-number {
+                font-size: 3.5rem; font-weight: bold; font-family: 'Playfair Display', serif;
+                margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+            .stat-label { font-size: 1.1rem; opacity: 0.9; }
+
+            .container-content {
+                max-width: 1200px; margin: 0 auto 80px auto; padding: 80px 20px;
+                position: relative; z-index: 5;
+            }
+
+            .section-title-custom {
+                text-align: center; font-family: 'Playfair Display', serif; font-size: 3rem;
+                margin-bottom: 20px; position: relative; display: inline-block; left: 50%;
+                transform: translateX(-50%); color: var(--text-dark);
+            }
+            .section-subtitle {
+                text-align: center; font-size: 1.1rem; color: var(--text-gray); margin-bottom: 60px;
+            }
+            .section-title-custom::after {
+                content: ''; display: block; width: 80px; height: 4px;
+                background: var(--gradient-2); margin: 15px auto 0; border-radius: 2px;
+            }
+
+            .slider-wrapper {
+                position: relative; width: 100%; overflow: hidden; padding: 40px 0; margin-top: 20px;
+            }
+            .slider-track {
+                display: flex; gap: 30px; transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            .card-wish {
+                min-width: calc(33.333% - 20px); background: #fff; border-radius: 20px;
+                overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                border: 1px solid rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                position: relative;
+            }
+            .card-wish::before {
+                content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                background: var(--gradient-1); opacity: 0; transition: opacity 0.4s; z-index: 0;
+            }
+            .card-wish:hover::before { opacity: 0.05; }
+            .card-wish:hover {
+                transform: translateY(-15px) scale(1.02); box-shadow: 0 20px 50px rgba(130, 202, 250, 0.3);
+            }
+            .card-img {
+                height: 220px; background-size: cover; background-position: center;
+                border-bottom: 4px solid var(--gold-accent); position: relative; overflow: hidden;
+            }
+            .card-img::after {
+                content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+            }
+            .card-content { padding: 25px; text-align: center; position: relative; z-index: 1; }
+            .card-content h3 { margin: 0 0 15px 0; color: var(--blue-bold); font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+            .card-content p { font-size: 1rem; color: var(--text-gray); font-style: italic; line-height: 1.6; }
+            .card-timestamp { font-size: 0.85rem; color: var(--text-gray); opacity: 0.7; margin-top: 10px; }
+
+            .nav-btn {
+                position: absolute; top: 50%; transform: translateY(-50%);
+                background: linear-gradient(135deg, var(--blue-bold), var(--pink-2));
+                color: white; border: none; width: 50px; height: 50px; border-radius: 50%;
+                font-size: 20px; cursor: pointer; z-index: 10;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: all 0.3s;
+                display: flex; align-items: center; justify-content: center;
+            }
+            .nav-btn:hover { transform: translateY(-50%) scale(1.15); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+            .prev-btn { left: -25px; }
+            .next-btn { right: -25px; }
+
+            .quote-section {
+                max-width: 800px; margin: 80px auto; padding: 50px 40px;
+                background: linear-gradient(135deg, rgba(130, 202, 250, 0.1), rgba(246, 153, 205, 0.1));
+                border-radius: 30px; border-left: 6px solid var(--gold-accent); position: relative;
+            }
+            .quote-section::before {
+                content: '"'; position: absolute; top: -20px; left: 30px; font-size: 8rem;
+                color: var(--gold-accent); opacity: 0.3; font-family: Georgia, serif;
+            }
+            .quote-text { font-size: 1.5rem; font-style: italic; color: var(--text-dark); line-height: 1.8; margin-bottom: 20px; }
+            .quote-author { text-align: right; font-size: 1.1rem; color: var(--text-gray); font-weight: 600; }
+
+            /* MODAL & FORMS */
+            .modal-custom { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); animation: fadeIn 0.3s ease-out; }
+            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+            .modal-custom-content { background: white; margin: 2% auto; padding: 0; border-radius: 30px; width: 90%; max-width: 600px; max-height: 95vh; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); animation: slideInDown 0.4s; overflow: hidden; display: flex; flex-direction: column; }
+            @keyframes slideInDown { from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+            .modal-header { background: var(--gradient-1); color: white; padding: 30px; text-align: center; position: relative; flex-shrink: 0; display: block !important; }
+            .modal-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 0; color: white; }
+            .close-custom { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: white; font-size: 35px; font-weight: bold; cursor: pointer; transition: transform 0.3s; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+            .close-custom:hover { transform: translateY(-50%) rotate(90deg); background: rgba(255, 255, 255, 0.2); }
+            .modal-body { padding: 40px; overflow-y: auto; flex: 1; }
+            .form-group { margin-bottom: 25px; }
+            .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark); font-size: 1rem; }
+            .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: 'Quicksand', sans-serif; font-size: 1rem; transition: all 0.3s; }
+            .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--pink-2); box-shadow: 0 0 0 3px rgba(252, 148, 175, 0.1); }
+            .form-group textarea { resize: vertical; min-height: 120px; }
+            .image-upload-area { border: 3px dashed #e0e0e0; border-radius: 15px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; }
+            .image-upload-area:hover { border-color: var(--pink-2); background: rgba(252, 148, 175, 0.05); }
+            .image-upload-area.drag-over { border-color: var(--blue-bold); background: rgba(0, 192, 255, 0.1); }
+            #imageInput { display: none; }
+            .upload-icon { font-size: 3rem; margin-bottom: 10px; opacity: 0.5; }
+            .image-preview { margin-top: 20px; display: none; position: relative; }
+            .image-preview img { max-width: 100%; max-height: 200px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+            .remove-image { position: absolute; top: 10px; right: 10px; background: var(--pink-2); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); transition: transform 0.3s; }
+            .remove-image:hover { transform: scale(1.1); }
+            .btn-submit { width: 100%; padding: 18px; border: none; border-radius: 50px; background: linear-gradient(90deg, var(--blue-bold), var(--pink-2)); color: white; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.4s; box-shadow: 0 10px 25px rgba(252, 148, 175, 0.4); }
+            .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(252, 148, 175, 0.6); }
+            .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+            
+            .success-message { display: none; position: fixed; top: 100px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px 40px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); z-index: 3000; animation: slideInDown 0.5s ease-out; }
+            .success-message.show { display: block; }
+
+            /* Footer riêng của trang 20/11 - giữ class khác để không conflict */
+            .footer-teacher { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; position: relative; overflow: hidden; padding: 60px 20px 30px; }
+            .footer-teacher::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255,255,255,0.1); transform: skewX(-15deg); animation: shine 3s infinite; }
+            @keyframes shine { 0% { left: -100%; } 50%, 100% { left: 200%; } }
+            .footer-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+            .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
+            .footer-section h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; color: var(--gold-accent); }
+            .footer-section p, .footer-section a { color: rgba(255, 255, 255, 0.9); line-height: 1.8; text-decoration: none; display: block; margin-bottom: 10px; transition: all 0.3s; }
+            .footer-section a:hover { color: var(--gold-accent); padding-left: 5px; }
+            .social-links { display: flex; gap: 15px; margin-top: 15px; }
+            .social-icon-t { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.3s; cursor: pointer; }
+            .social-icon-t:hover { background: var(--gold-accent); transform: translateY(-5px); }
+            .footer-divider { height: 1px; background: rgba(255, 255, 255, 0.2); margin: 30px 0; }
+            .footer-bottom-t { text-align: center; font-size: 1rem; opacity: 0.9; }
+            .footer-heart { display: inline-block; color: #ff6b6b; animation: heartbeat 1.5s infinite; }
+            @keyframes heartbeat { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.2); } 50% { transform: scale(1); } }
+            
+            .music-player { position: fixed; bottom: 30px; right: 30px; background: white; padding: 15px 20px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; align-items: center; gap: 15px; z-index: 1500; transition: all 0.3s; }
+            .music-player:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
+            .music-toggle { width: 50px; height: 50px; border-radius: 50%; background: var(--gradient-2); border: none; color: white; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+            .music-toggle:hover { transform: rotate(360deg); }
+            .music-info { display: none; }
+            .music-player.playing .music-info { display: block; }
+            .music-title { font-weight: 600; color: var(--text-dark); font-size: 0.95rem; }
+            
+            .filter-section { max-width: 1000px; margin: 0 auto 40px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center; }
+            .search-box { flex: 1; min-width: 250px; padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 1rem; font-family: 'Quicksand', sans-serif; transition: all 0.3s; }
+            .search-box:focus { outline: none; border-color: var(--pink-2); box-shadow: 0 0 0 3px rgba(252, 148, 175, 0.1); }
+            .filter-btn { padding: 12px 30px; border: 2px solid var(--blue-bold); background: white; color: var(--blue-bold); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+            .filter-btn:hover, .filter-btn.active { background: var(--blue-bold); color: white; }
+            
+            .scroll-top-custom { position: fixed; bottom: 30px; left: 30px; width: 55px; height: 55px; background: var(--gradient-1); border: none; border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: none; align-items: center; justify-content: center; z-index: 1500; transition: all 0.3s; }
+            .scroll-top-custom.show { display: flex; }
+            .scroll-top-custom:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
+            
+            .loading { display: none; text-align: center; padding: 40px; }
+            .loading.show { display: block; }
+            .spinner-custom { border: 4px solid rgba(0, 0, 0, 0.1); border-left-color: var(--pink-2); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+            @keyframes spin { to { transform: rotate(360deg); } }
+            
+            .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce-indicator 2s infinite; }
+            .scroll-indicator::before { content: ''; display: block; width: 30px; height: 50px; border: 3px solid var(--text-gray); border-radius: 25px; position: relative; }
+            .scroll-indicator::after { content: ''; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background: var(--text-gray); border-radius: 50%; animation: scroll-wheel 2s infinite; }
+            @keyframes bounce-indicator { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
+            @keyframes scroll-wheel { 0% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(20px); } }
+
+            /* --- ANIMATION REVEAL ON SCROLL --- */
+            .reveal { position: relative; transform: translateY(100px); opacity: 0; transition: all 1s cubic-bezier(0.5, 0, 0, 1); }
+            .reveal.active { transform: translateY(0); opacity: 1; }
+
+            /* --- TIMELINE STYLES --- */
+            .timeline-section { background-color: var(--bg-secondary); padding: 80px 20px; }
+            .timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+            .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--pink-2); top: 0; bottom: 0; left: 50%; margin-left: -3px; border-radius: 3px; }
+            .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+            .timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -13px; background-color: white; border: 4px solid var(--blue-bold); top: 15px; border-radius: 50%; z-index: 1; }
+            .left { left: 0; }
+            .right { left: 50%; }
+            .left::before { content: " "; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; right: 30px; border: medium solid white; border-width: 10px 0 10px 10px; border-color: transparent transparent transparent white; }
+            .right::before { content: " "; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; left: 30px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+            .right::after { left: -13px; }
+            .timeline-content { padding: 20px 30px; background-color: white; position: relative; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+            .year-badge { display: inline-block; padding: 5px 15px; background: var(--gradient-2); color: white; border-radius: 20px; font-weight: bold; margin-bottom: 10px; }
+
+            /* --- GALLERY STYLES --- */
+            .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px 0; }
+            .gallery-item { position: relative; border-radius: 15px; overflow: hidden; height: 300px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+            .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+            .gallery-item:hover img { transform: scale(1.1); }
+            .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 20px; color: white; opacity: 0; transition: opacity 0.3s; }
+            .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+            /* Activities Section */
+            .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+            .activity-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: all 0.3s; border: 1px solid rgba(0,0,0,0.05); }
+            .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+            .activity-img { height: 200px; background-size: cover; background-position: center; }
+            .activity-content { padding: 25px; }
+            .activity-content h3 { color: var(--blue-bold); margin-bottom: 10px; font-size: 1.3rem; }
+
+            /* Teacher Team Section */
+            .team-section { background: #f8f9fa; padding: 80px 20px; }
+            .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+            .team-member { background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+            .team-member:hover { transform: translateY(-10px); }
+            .member-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 4px solid var(--gold-accent); }
+            .member-role { color: var(--pink-2); font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+
+            /* Poem Section */
+            .poem-section { background: url('https://images.unsplash.com/photo-1519681393798-3828fb4090bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed; background-size: cover; padding: 100px 20px; position: relative; color: white; text-align: center; }
+            .poem-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
+            .poem-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; border: 2px solid rgba(255,255,255,0.3); padding: 40px; border-radius: 20px; background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
+            .poem-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--gold-accent); }
+            .poem-lines { font-size: 1.2rem; line-height: 2; font-style: italic; }
+
+            @media (max-width: 768px) {
+                .hero h1 { font-size: 2.5rem; }
+                .hero p { font-size: 1.1rem; }
+                .card-wish { min-width: 100%; }
+                .section-title-custom { font-size: 2rem; }
+                .stats-container { grid-template-columns: 1fr; }
+                .quote-text { font-size: 1.2rem; }
+                .prev-btn, .next-btn { width: 40px; height: 40px; font-size: 16px; }
+                .modal-custom-content { width: 95%; margin: 10% auto; }
+                .modal-body { padding: 25px; }
+                
+                /* Responsive Timeline */
+                .timeline::after { left: 31px !important; }
+                .timeline-item { width: 100% !important; padding-left: 70px !important; padding-right: 25px !important; left: 0 !important; }
+                .timeline-item::after { left: 15px !important; }
+                .left::after, .right::after { left: 15px !important; }
+                .right { left: 0% !important; }
+                .left::before, .right::before { left: 30px; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+            }
+        </style>
     </head>
     <body>
-    <header>
-        <div class="logo">Cảm Ơn Người Gieo Mầm</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#activities">Hoạt động</a></li>
-                <li><a href="#teachers">Thầy cô</a></li>
-                <li><a href="#wishes">Lời chúc</a></li>
-                <li><a href="#gallery">Hình ảnh</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="particle" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 60%; left: 10%; animation-delay: -3s;"></div>
-        <div class="particle" style="top: 40%; right: 20%; animation-delay: -6s;"></div>
-        <div class="particle" style="bottom: 30%; right: 15%; animation-delay: -9s;"></div>
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">                
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="P" class="letters-loading">P</span>
+                    <span data-text-preloader="I" class="letters-loading">I</span>
+                    <span data-text-preloader="X" class="letters-loading">X</span>
+                    <span data-text-preloader="V" class="letters-loading">V</span>
+                    <span data-text-preloader="E" class="letters-loading">E</span>
+                    <span data-text-preloader="N" class="letters-loading">N</span>
+                    <span data-text-preloader="T" class="letters-loading">T</span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>  
 
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+        <button id="gt-back-top" class="gt-back-to-top show">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
 
-        <div class="floating-icon icon-1">📚</div>
-        <div class="floating-icon icon-2">✏️</div>
-        <div class="floating-icon icon-3">🌸</div>
-        <div class="floating-icon icon-4">🎓</div>
-
-        <div class="hero-content reveal">
-            <h1>Chào mừng <span>Ngày Nhà Giáo</span> Việt Nam</h1>
-            <p>Gửi trọn tấm lòng tri ân đến những người lái đò thầm lặng</p>
-            <button id="btnGuiLoiChuc" class="btn-main">Gửi lời chúc ngay ✨</button>
-        </div>
-
-        <div class="scroll-indicator"></div>
-
-        <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <section class="container reveal" id="activities">
-        <h2 class="section-title">Hoạt Động Chào Mừng</h2>
-        <p class="section-subtitle">Sôi nổi các phong trào thi đua dạy tốt - học tốt</p>
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
         
-        <div class="activities-grid">
-            <div class="activity-card">
-                <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="activity-content">
-                    <h3>🏆 Hội Thao Học Đường</h3>
-                    <p>Các giải đấu bóng đá, kéo co diễn ra sôi nổi giữa các khối lớp, thắt chặt tinh thần đoàn kết.</p>
-                </div>
-            </div>
-            <div class="activity-card">
-                <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="activity-content">
-                    <h3>🎭 Hội Diễn Văn Nghệ</h3>
-                    <p>Những tiết mục múa, hát đặc sắc ca ngợi công ơn thầy cô được chuẩn bị công phu.</p>
-                </div>
-            </div>
-            <div class="activity-card">
-                <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="activity-content">
-                    <h3>📰 Báo Tường Tri Ân</h3>
-                    <p>Những nét vẽ, vần thơ nắn nót trên trang báo tường là món quà ý nghĩa gửi đến thầy cô.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats-section reveal">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number" id="wishCount">0</div>
-                <div class="stat-label">Lời chúc đã gửi</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="teacherCount">0</div>
-                <div class="stat-label">Thầy cô yêu quý</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="studentCount">0</div>
-                <div class="stat-label">Học trò biết ơn</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="yearCount">0</div>
-                <div class="stat-label">Năm cống hiến</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="timeline-section" id="history">
-        <div class="container reveal">
-            <h2 class="section-title">Hành Trình Tri Ân</h2>
-            <p class="section-subtitle">Lịch sử và ý nghĩa ngày Nhà giáo Việt Nam 20/11</p>
-            
-            <div class="timeline">
-                <div class="timeline-item left reveal">
-                    <div class="timeline-content">
-                        <span class="year-badge">1958</span>
-                        <h3>Khởi nguồn</h3>
-                        <p>Ngày Quốc tế Hiến chương các nhà giáo lần đầu tiên được tổ chức tại miền Bắc Việt Nam.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right reveal">
-                    <div class="timeline-content">
-                        <span class="year-badge">1982</span>
-                        <h3>Quyết định chính thức</h3>
-                        <p>Hội đồng Bộ trưởng ban hành Quyết định số 167-HĐBT lấy ngày 20/11 hàng năm là Ngày Nhà giáo Việt Nam.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left reveal">
-                    <div class="timeline-content">
-                        <span class="year-badge">Ý nghĩa</span>
-                        <h3>Tôn sư trọng đạo</h3>
-                        <p>Ngày hội của ngành giáo dục, tôn vinh những người "kỹ sư tâm hồn" thầm lặng cống hiến.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right reveal">
-                    <div class="timeline-content">
-                        <span class="year-badge">Ngày nay</span>
-                        <h3>Tri ân & Tiếp bước</h3>
-                        <p>Học trò cả nước gửi lời tri ân, hoa tươi và những món quà tinh thần đến thầy cô giáo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="team-section reveal" id="teachers">
-        <div class="container" style="margin-bottom: 0;">
-            <h2 class="section-title">Gương Mặt Thân Quen</h2>
-            <p class="section-subtitle">Những người lái đò thầm lặng đưa bao thế hệ qua sông</p>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cô Lan" class="member-img">
-                    <span class="member-role">Môn Văn Học</span>
-                    <h3>Cô Ngọc Lan</h3>
-                    <p>"Văn học là nhân học. Cô mong các em luôn giữ tâm hồn trong sáng."</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Thầy Minh" class="member-img">
-                    <span class="member-role">Môn Toán</span>
-                    <h3>Thầy Đức Minh</h3>
-                    <p>"Toán học không khô khan, nó là vẻ đẹp của tư duy logic."</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cô Hoa" class="member-img">
-                    <span class="member-role">Môn Tiếng Anh</span>
-                    <h3>Cô Thanh Hoa</h3>
-                    <p>"Ngôn ngữ là chìa khóa mở ra cánh cửa thế giới."</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Thầy Hùng" class="member-img">
-                    <span class="member-role">Môn Vật Lý</span>
-                    <h3>Thầy Việt Hùng</h3>
-                    <p>"Hãy luôn tò mò về thế giới xung quanh các em."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container reveal" id="wishes">
-        <h2 class="section-title">Khoảnh Khắc & Lời Chúc</h2>
-        <p class="section-subtitle">Những tâm tình chan chứa tình cảm từ các thế hệ học trò</p>
-        
-        <div class="filter-section">
-            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Tìm kiếm lời chúc...">
-            <button class="filter-btn active" data-filter="all">Tất cả</button>
-            <button class="filter-btn" data-filter="recent">Mới nhất</button>
-            <button class="filter-btn" data-filter="oldest">Cũ nhất</button>
-        </div>
-
-        <div class="loading" id="loading">
-            <div class="spinner"></div>
-            <p>Đang tải lời chúc...</p>
-        </div>
-        
-        <div class="slider-wrapper">
-            <button class="nav-btn prev-btn" id="prevBtn">❮</button>
-            
-            <div class="slider-track" id="sliderTrack">
-            </div>
-
-            <button class="nav-btn next-btn" id="nextBtn">❯</button>
-        </div>
-    </section>
-
-    <section class="container reveal" id="gallery">
-        <h2 class="section-title">Thư Viện Ký Ức</h2>
-        <p class="section-subtitle">Lưu giữ những nụ cười và khoảnh khắc đẹp dưới mái trường</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Lớp học">
-                <div class="gallery-overlay">
-                    <h3>Giờ học vui</h3>
-                    <p>Niềm vui mỗi ngày đến trường</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Cô giáo">
-                <div class="gallery-overlay">
-                    <h3>Cô giáo mến thương</h3>
-                    <p>Người mẹ hiền thứ hai</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Học sinh">
-                <div class="gallery-overlay">
-                    <h3>Lễ tốt nghiệp</h3>
-                    <p>Trưởng thành và bay xa</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Hoa 20/11">
-                <div class="gallery-overlay">
-                    <h3>Tri ân</h3>
-                    <p>Những bông hoa tươi thắm</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="poem-section reveal">
-        <div class="poem-content">
-            <h2 class="poem-title">Người Lái Đò</h2>
-            <div class="poem-lines">
-                <p>Một đời người - một dòng sông...</p>
-                <p>Mấy ai làm kẻ đứng trông bến bờ,</p>
-                <p>"Muốn qua sông phải lụy đò"</p>
-                <p>Đường đời muôn bước cậy nhờ người đưa ...</p>
-                <br>
-                <p>Tháng năm dầu dãi nắng mưa,</p>
-                <p>Con đò trí thức thầy đưa bao người.</p>
-                <p>Qua sông gửi lại nụ cười</p>
-                <p>Tình yêu xin tặng người thầy kính thương.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="quote-section reveal">
-        <p class="quote-text">
-            "Không thầy đố mày làm nên. Nghề dạy học là nghề cao quý nhất, vì nó hun đúc những tâm hồn, nuôi dưỡng những ước mơ và thắp sáng tương lai của đất nước."
-        </p>
-        <p class="quote-author">— Tục ngữ Việt Nam</p>
-    </section>
-
-    <div id="wishModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>💌 Gửi Lời Tri Ân</h2>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="wishForm">
-                    <div class="form-group">
-                        <label for="nameInput">Tên của bạn *</label>
-                        <input type="text" id="nameInput" placeholder="Ví dụ: Nguyễn Văn A hoặc Lớp 12A1" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="messageInput">Lời chúc của bạn *</label>
-                        <textarea id="messageInput" placeholder="Chia sẻ tình cảm và lời tri ân đến thầy cô..." required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Đính kèm hình ảnh (Tùy chọn)</label>
-                        <div class="image-upload-area" id="uploadArea">
-                            <div class="upload-icon">📸</div>
-                            <p>Nhấp hoặc kéo thả hình ảnh vào đây</p>
-                            <p style="font-size: 0.9rem; opacity: 0.7;">Hỗ trợ: JPG, PNG, GIF (Tối đa 5MB)</p>
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/black-logo.svg" alt="logo-img">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button>
+                                <i class="fas fa-times"></i>
+                                </button>
+                            </div>
                         </div>
-                        <input type="file" id="imageInput" accept="image/*">
-                        <div class="image-preview" id="imagePreview">
-                            <img id="previewImg" src="" alt="Preview">
-                            <button type="button" class="remove-image" id="removeImage">✕</button>
+                        <p class="text d-none d-xl-block">
+                            Nullam dignissim, ante scelerisque the  is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.
+                        </p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="sideber-image d-block d-xl-none">
+                            <img src="assets/img/header/sideber.jpg" alt="img">
+                        </div>
+                        <div class="offcanvas__contact d-none d-xl-block">
+                            <h4 class="d-none d-xl-block">Contact Info</h4>
+                            <ul class="d-none d-xl-block">
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon">
+                                        <i class="fal fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="index.html#">Main Street, Melbourne, Australia</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="mailto:info@example.com"><span class="mailto:info@example.com">info@example.com</span></a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-clock"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="index.html#">Mod-friday, 09am -05pm</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="far fa-phone"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="tel:+11002345909">+11002345909</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="social-icon d-flex align-items-center">
+                                <a href="index.html#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="index.html#"><i class="fab fa-twitter"></i></a>
+                                <a href="index.html#"><i class="fab fa-youtube"></i></a>
+                                <a href="index.html#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
 
-                    <button type="submit" class="btn-submit" id="submitBtn">
-                        Gửi lời chúc 💝
+        <header id="header-sticky" class="header-1 header-new">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main">
+                        <div class="logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="assets/img/logo/black-logo.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        <div class="header-right d-flex justify-content-end align-items-center mt-0">
+                            <div class="mean__menu-wrapper">
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li class="has-dropdown active menu-thumb">
+                                                <a href="index.html">
+                                                    Home 
+                                                </a>
+                                                <ul class="submenu has-homemenu">
+                                                    <li>
+                                                        <div class="homemenu-items">
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb">
+                                                                    <img src="assets/img/header/home-1.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index.html" class="gt-theme-btn">
+                                                                            Multi Page
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">
+                                                                       Business Forum
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-2.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-2.html" class="gt-theme-btn">
+                                                                            Multi Page
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">
+                                                                        Trung thu
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-3.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-3.html" class="gt-theme-btn">
+                                                                            Multi Page
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">
+                                                                       Design Conference
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-4.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-4.html" class="gt-theme-btn">
+                                                                            Multi Page
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">
+                                                                       Ngày Nhà Giáo Việt Nam
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-5.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-5.html" class="gt-theme-btn">
+                                                                            Multi Page
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">
+                                                                       Fashion Event
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown active d-xl-none">
+                                                <a href="index.html" class="border-none">
+                                                Home
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="index.html">Business Forum</a></li>
+                                                    <li><a href="index-2.html">Trung thu</a></li>
+                                                    <li><a href="index-3.html">Design Conference</a></li>
+                                                    <li><a href="index-4.html">Nhà Giáo</a></li>
+                                                    <li><a href="index-5.html">Fashion Event</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown">
+                                                <a href="news-details.html">
+                                                    Pages
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <a href="about.html">About Us</a>
+                                                    </li>
+                                                    <li class="has-dropdown">
+                                                        <a href="service-details.html">
+                                                            Our Service
+                                                            <i class="fas fa-angle-right"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="service.html">Our Services</a></li>
+                                                            <li><a href="service-details.html">Service Details</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="sponsor.html">Sponsor</a></li>
+                                                    <li><a href="pricing.html">Our Pricing</a></li>
+                                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                    <li><a href="404.html">404 Page</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="event-details.html">
+                                                    event
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="event.html">Event</a></li>
+                                                    <li><a href="event-details.html">Eevent Detaills</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="speaker-details.html">
+                                                    Speaker
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="speaker.html">Speaker</a></li>
+                                                    <li><a href="speaker-details.html">Speaker Detaills</a></li>
+                                                </ul>
+                                            </li>
+                                           <li>
+                                                <a href="news-details.html">
+                                                    Blog
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="news-grid.html">Blog Grid</a></li>
+                                                    <li><a href="news.html">Blog Standard</a></li>
+                                                    <li><a href="news-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="header-right-icon">
+                                <a href="index.html#" class="main-header__search search-toggler">
+                                    <i class="fa-regular fa-magnifying-glass"></i>
+                                </a>
+                            </div>
+                            <div class="header-button">
+                                <a href="contact.html" class="gt-theme-btn">
+                                   <i class="fa-solid fa-ticket-simple"></i> get ticket
+                                </a>
+                            </div>
+                            <div class="header__hamburger d-xl-block my-auto">
+                                <div class="sidebar__toggle">
+                                    <i class="fas fa-bars"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-popup">
+            <div class="search-popup__overlay search-toggler"></div>
+            <div class="search-popup__content">
+                <form role="search" method="get" class="search-popup__form" action="index.html#">
+                    <input type="text" id="search" name="search" placeholder="Search Here...">
+                    <button type="submit" aria-label="search submit" class="search-btn">
+                        <span><i class="fa-regular fa-magnifying-glass"></i></span>
                     </button>
                 </form>
             </div>
         </div>
-    </div>
+        <section class="hero" id="home">
+            <div class="particle" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
+            <div class="particle" style="top: 60%; left: 10%; animation-delay: -3s;"></div>
+            <div class="particle" style="top: 40%; right: 20%; animation-delay: -6s;"></div>
+            <div class="particle" style="bottom: 30%; right: 15%; animation-delay: -9s;"></div>
 
-    <div class="success-message" id="successMessage">
-        ✅ Lời chúc đã được gửi thành công!
-    </div>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
 
-    <footer>
-        <div class="footer-content reveal">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>Về Chúng Tôi</h3>
-                    <p>Website tri ân thầy cô nhân dịp Ngày Nhà Giáo Việt Nam 20/11. Nơi gửi gắm những tình cảm chân thành nhất.</p>
-                    <div class="social-links">
-                        <div class="social-icon" title="Facebook">📘</div>
-                        <div class="social-icon" title="Instagram">📷</div>
-                        <div class="social-icon" title="YouTube">🎥</div>
-                        <div class="social-icon" title="Email">✉️</div>
+            <div class="floating-icon icon-1">📚</div>
+            <div class="floating-icon icon-2">✏️</div>
+            <div class="floating-icon icon-3">🌸</div>
+            <div class="floating-icon icon-4">🎓</div>
+
+            <div class="hero-content reveal">
+                <h1>Chào mừng <span>Ngày Nhà Giáo</span> Việt Nam</h1>
+                <p>Gửi trọn tấm lòng tri ân đến những người lái đò thầm lặng</p>
+                <button id="btnGuiLoiChuc" class="btn-main">Gửi lời chúc ngay ✨</button>
+            </div>
+
+            <div class="scroll-indicator"></div>
+
+            <div class="wave-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="container-content reveal" id="activities">
+            <h2 class="section-title-custom">Hoạt Động Chào Mừng</h2>
+            <p class="section-subtitle">Sôi nổi các phong trào thi đua dạy tốt - học tốt</p>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="activity-content">
+                        <h3>🏆 Hội Thao Học Đường</h3>
+                        <p>Các giải đấu bóng đá, kéo co diễn ra sôi nổi giữa các khối lớp, thắt chặt tinh thần đoàn kết.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="activity-content">
+                        <h3>🎭 Hội Diễn Văn Nghệ</h3>
+                        <p>Những tiết mục múa, hát đặc sắc ca ngợi công ơn thầy cô được chuẩn bị công phu.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="activity-content">
+                        <h3>📰 Báo Tường Tri Ân</h3>
+                        <p>Những nét vẽ, vần thơ nắn nót trên trang báo tường là món quà ý nghĩa gửi đến thầy cô.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section reveal">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="wishCount">0</div>
+                    <div class="stat-label">Lời chúc đã gửi</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="teacherCount">0</div>
+                    <div class="stat-label">Thầy cô yêu quý</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="studentCount">0</div>
+                    <div class="stat-label">Học trò biết ơn</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="yearCount">0</div>
+                    <div class="stat-label">Năm cống hiến</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section" id="history">
+            <div class="container-content reveal">
+                <h2 class="section-title-custom">Hành Trình Tri Ân</h2>
+                <p class="section-subtitle">Lịch sử và ý nghĩa ngày Nhà giáo Việt Nam 20/11</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <span class="year-badge">1958</span>
+                            <h3>Khởi nguồn</h3>
+                            <p>Ngày Quốc tế Hiến chương các nhà giáo lần đầu tiên được tổ chức tại miền Bắc Việt Nam.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <span class="year-badge">1982</span>
+                            <h3>Quyết định chính thức</h3>
+                            <p>Hội đồng Bộ trưởng ban hành Quyết định số 167-HĐBT lấy ngày 20/11 hàng năm là Ngày Nhà giáo Việt Nam.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <span class="year-badge">Ý nghĩa</span>
+                            <h3>Tôn sư trọng đạo</h3>
+                            <p>Ngày hội của ngành giáo dục, tôn vinh những người "kỹ sư tâm hồn" thầm lặng cống hiến.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <span class="year-badge">Ngày nay</span>
+                            <h3>Tri ân & Tiếp bước</h3>
+                            <p>Học trò cả nước gửi lời tri ân, hoa tươi và những món quà tinh thần đến thầy cô giáo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section reveal" id="teachers">
+            <div class="container-content" style="margin-bottom: 0;">
+                <h2 class="section-title-custom">Gương Mặt Thân Quen</h2>
+                <p class="section-subtitle">Những người lái đò thầm lặng đưa bao thế hệ qua sông</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cô Lan" class="member-img">
+                        <span class="member-role">Môn Văn Học</span>
+                        <h3>Cô Ngọc Lan</h3>
+                        <p>"Văn học là nhân học. Cô mong các em luôn giữ tâm hồn trong sáng."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Thầy Minh" class="member-img">
+                        <span class="member-role">Môn Toán</span>
+                        <h3>Thầy Đức Minh</h3>
+                        <p>"Toán học không khô khan, nó là vẻ đẹp của tư duy logic."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cô Hoa" class="member-img">
+                        <span class="member-role">Môn Tiếng Anh</span>
+                        <h3>Cô Thanh Hoa</h3>
+                        <p>"Ngôn ngữ là chìa khóa mở ra cánh cửa thế giới."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Thầy Hùng" class="member-img">
+                        <span class="member-role">Môn Vật Lý</span>
+                        <h3>Thầy Việt Hùng</h3>
+                        <p>"Hãy luôn tò mò về thế giới xung quanh các em."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-content reveal" id="wishes">
+            <h2 class="section-title-custom">Khoảnh Khắc & Lời Chúc</h2>
+            <p class="section-subtitle">Những tâm tình chan chứa tình cảm từ các thế hệ học trò</p>
+            
+            <div class="filter-section">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Tìm kiếm lời chúc...">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="recent">Mới nhất</button>
+                <button class="filter-btn" data-filter="oldest">Cũ nhất</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner-custom"></div>
+                <p>Đang tải lời chúc...</p>
+            </div>
+            
+            <div class="slider-wrapper">
+                <button class="nav-btn prev-btn" id="prevBtn">❮</button>
+                
+                <div class="slider-track" id="sliderTrack">
+                </div>
+
+                <button class="nav-btn next-btn" id="nextBtn">❯</button>
+            </div>
+        </section>
+
+        <section class="container-content reveal" id="gallery">
+            <h2 class="section-title-custom">Thư Viện Ký Ức</h2>
+            <p class="section-subtitle">Lưu giữ những nụ cười và khoảnh khắc đẹp dưới mái trường</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Lớp học">
+                    <div class="gallery-overlay">
+                        <h3>Giờ học vui</h3>
+                        <p>Niềm vui mỗi ngày đến trường</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Cô giáo">
+                    <div class="gallery-overlay">
+                        <h3>Cô giáo mến thương</h3>
+                        <p>Người mẹ hiền thứ hai</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Học sinh">
+                    <div class="gallery-overlay">
+                        <h3>Lễ tốt nghiệp</h3>
+                        <p>Trưởng thành và bay xa</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Hoa 20/11">
+                    <div class="gallery-overlay">
+                        <h3>Tri ân</h3>
+                        <p>Những bông hoa tươi thắm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="poem-section reveal">
+            <div class="poem-content">
+                <h2 class="poem-title">Người Lái Đò</h2>
+                <div class="poem-lines">
+                    <p>Một đời người - một dòng sông...</p>
+                    <p>Mấy ai làm kẻ đứng trông bến bờ,</p>
+                    <p>"Muốn qua sông phải lụy đò"</p>
+                    <p>Đường đời muôn bước cậy nhờ người đưa ...</p>
+                    <br>
+                    <p>Tháng năm dầu dãi nắng mưa,</p>
+                    <p>Con đò trí thức thầy đưa bao người.</p>
+                    <p>Qua sông gửi lại nụ cười</p>
+                    <p>Tình yêu xin tặng người thầy kính thương.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section reveal">
+            <p class="quote-text">
+                "Không thầy đố mày làm nên. Nghề dạy học là nghề cao quý nhất, vì nó hun đúc những tâm hồn, nuôi dưỡng những ước mơ và thắp sáng tương lai của đất nước."
+            </p>
+            <p class="quote-author">— Tục ngữ Việt Nam</p>
+        </section>
+
+        <div id="wishModal" class="modal-custom">
+            <div class="modal-custom-content">
+                <div class="modal-header">
+                    <h2>💌 Gửi Lời Tri Ân</h2>
+                    <span class="close-custom">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="wishForm">
+                        <div class="form-group">
+                            <label for="nameInput">Tên của bạn *</label>
+                            <input type="text" id="nameInput" placeholder="Ví dụ: Nguyễn Văn A hoặc Lớp 12A1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="messageInput">Lời chúc của bạn *</label>
+                            <textarea id="messageInput" placeholder="Chia sẻ tình cảm và lời tri ân đến thầy cô..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Đính kèm hình ảnh (Tùy chọn)</label>
+                            <div class="image-upload-area" id="uploadArea">
+                                <div class="upload-icon">📸</div>
+                                <p>Nhấp hoặc kéo thả hình ảnh vào đây</p>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Hỗ trợ: JPG, PNG, GIF (Tối đa 5MB)</p>
+                            </div>
+                            <input type="file" id="imageInput" accept="image/*">
+                            <div class="image-preview" id="imagePreview">
+                                <img id="previewImg" src="" alt="Preview">
+                                <button type="button" class="remove-image" id="removeImage">✕</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            Gửi lời chúc 💝
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            ✅ Lời chúc đã được gửi thành công!
+        </div>
+
+        <footer class="footer-teacher">
+            <div class="footer-content reveal">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Về Chúng Tôi</h3>
+                        <p>Website tri ân thầy cô nhân dịp Ngày Nhà Giáo Việt Nam 20/11. Nơi gửi gắm những tình cảm chân thành nhất.</p>
+                        <div class="social-links">
+                            <div class="social-icon-t" title="Facebook">📘</div>
+                            <div class="social-icon-t" title="Instagram">📷</div>
+                            <div class="social-icon-t" title="YouTube">🎥</div>
+                            <div class="social-icon-t" title="Email">✉️</div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Liên Kết Nhanh</h3>
+                        <a href="#home">🏠 Trang chủ</a>
+                        <a href="#wishes">💌 Lời chúc</a>
+                        <a href="#send" id="footerSendLink">📝 Gửi lời tri ân</a>
+                        <a href="#" id="viewStatsLink">📊 Thống kê</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Thông Tin</h3>
+                        <a href="#">📖 Lịch sử ngày 20/11</a>
+                        <a href="#">🎓 Ý nghĩa ngày Nhà Giáo</a>
+                        <a href="#">📸 Thư viện hình ảnh</a>
+                        <a href="#">📞 Liên hệ</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Hỗ Trợ</h3>
+                        <p>📧 Email: support@teacher20-11.vn</p>
+                        <p>📱 Hotline: 1900 xxxx</p>
+                        <p>⏰ Hỗ trợ 24/7</p>
                     </div>
                 </div>
 
-                <div class="footer-section">
-                    <h3>Liên Kết Nhanh</h3>
-                    <a href="#home">🏠 Trang chủ</a>
-                    <a href="#wishes">💌 Lời chúc</a>
-                    <a href="#send">📝 Gửi lời tri ân</a>
-                    <a href="#" id="viewStatsLink">📊 Thống kê</a>
-                </div>
+                <div class="footer-divider"></div>
 
-                <div class="footer-section">
-                    <h3>Thông Tin</h3>
-                    <a href="#">📖 Lịch sử ngày 20/11</a>
-                    <a href="#">🎓 Ý nghĩa ngày Nhà Giáo</a>
-                    <a href="#">📸 Thư viện hình ảnh</a>
-                    <a href="#">📞 Liên hệ</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Hỗ Trợ</h3>
-                    <p>📧 Email: support@teacher20-11.vn</p>
-                    <p>📱 Hotline: 1900 xxxx</p>
-                    <p>⏰ Hỗ trợ 24/7</p>
+                <div class="footer-bottom-t">
+                    <p>© 2025 Tri ân Thầy Cô | Designed with <span class="footer-heart">❤️</span> by Students</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Mọi đóng góp và ý kiến đều được trân trọng 🙏</p>
                 </div>
             </div>
+        </footer>
 
-            <div class="footer-divider"></div>
+        <button class="scroll-top-custom" id="scrollTop">↑</button>
 
-            <div class="footer-bottom">
-                <p>© 2025 Tri ân Thầy Cô | Designed with <span class="footer-heart">❤️</span> by Students</p>
-                <p style="margin-top: 10px; font-size: 0.9rem;">Mọi đóng góp và ý kiến đều được trân trọng 🙏</p>
+        <div class="music-player" id="musicPlayer">
+            <button class="music-toggle" id="musicToggle">🎵</button>
+            <div class="music-info">
+                <div class="music-title">Nhạc nền tri ân</div>
             </div>
         </div>
-    </footer>
 
-    <button class="scroll-top" id="scrollTop">↑</button>
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/viewport.jquery.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/main.js"></script>
 
-    <div class="music-player" id="musicPlayer">
-        <button class="music-toggle" id="musicToggle">🎵</button>
-        <div class="music-info">
-            <div class="music-title">Nhạc nền tri ân</div>
-        </div>
-    </div>
+        <script>
+            const WishesData = {
+                wishes: [],
+                filteredWishes: [],
+                stats: {
+                    wishCount: 0,
+                    teacherCount: 50,
+                    studentCount: 1000,
+                    yearCount: 40
+                },
 
-    <script>
-        const WishesData = {
-            wishes: [],
-            filteredWishes: [],
-            stats: {
-                wishCount: 0,
-                teacherCount: 50,
-                studentCount: 1000,
-                yearCount: 40
-            },
-
-            async init() {
-                await this.loadFromStorage();
-                this.addSampleWishes();
-                this.filteredWishes = [...this.wishes];
-                this.updateStats();
-                this.renderWishes();
-            },
-
-            async loadFromStorage() {
-                try {
-                    const storage = window.localStorage; 
-                    const wishesResult = storage.getItem('teacher-day-wishes');
-                    const statsResult = storage.getItem('teacher-day-stats');
-                    
-                    if (wishesResult) {
-                        this.wishes = JSON.parse(wishesResult);
-                    }
-                    
-                    if (statsResult) {
-                        this.stats = JSON.parse(statsResult);
-                    }
-                } catch (error) {
-                    console.log('Khởi tạo dữ liệu mới hoặc lỗi storage', error);
-                }
-            },
-
-            async saveToStorage() {
-                try {
-                    const storage = window.localStorage;
-                    storage.setItem('teacher-day-wishes', JSON.stringify(this.wishes));
-                    storage.setItem('teacher-day-stats', JSON.stringify(this.stats));
-                } catch (error) {
-                    console.error('Lỗi lưu dữ liệu:', error);
-                }
-            },
-
-            addSampleWishes() {
-                if (this.wishes.length === 0) {
-                    this.wishes = [
-                        {
-                            name: 'Lớp 12A1',
-                            message: 'Cảm ơn cô vì những bài giảng tuyệt vời và sự kiên nhẫn vô bờ bến. Cô đã thắp sáng ngọn đuốc tri thức trong tâm hồn chúng em.',
-                            image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-                            timestamp: new Date().toLocaleString('vi-VN')
-                        },
-                        {
-                            name: 'Nguyễn Văn A',
-                            message: 'Chúc thầy luôn mạnh khỏe để tiếp tục chèo lái con đò tri thức. Thầy là người cha thứ hai của em trong hành trình học vấn.',
-                            image: 'https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-                            timestamp: new Date().toLocaleString('vi-VN')
-                        },
-                        {
-                            name: 'Nhóm Cựu HS',
-                            message: 'Dù đi xa nhưng chúng em luôn nhớ về mái trường xưa. Yêu thầy cô! Những bài học của thầy cô là hành trang quý giá nhất.',
-                            image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-                            timestamp: new Date().toLocaleString('vi-VN')
-                        },
-                        {
-                            name: 'Tập thể 10C2',
-                            message: 'Chúc mừng ngày 20/11. Chúc cô giáo xinh đẹp mãi tuổi 20! Cảm ơn cô đã luôn tươi cười và tràn đầy năng lượng.',
-                            image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-                            timestamp: new Date().toLocaleString('vi-VN')
-                        },
-                        {
-                            name: 'Ẩn Danh',
-                            message: 'Cảm ơn thầy đã giúp em vượt qua môn Toán đáng sợ. Giờ em đã yêu thích môn này rồi ạ!',
-                            image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-                            timestamp: new Date().toLocaleString('vi-VN')
-                        }
-                    ];
-                    this.stats.wishCount = this.wishes.length;
-                    this.saveToStorage();
-                }
-            },
-
-            async addWish(name, message, imageData) {
-                const newWish = {
-                    name,
-                    message,
-                    image: imageData || 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-                    timestamp: new Date().toLocaleString('vi-VN')
-                };
-                
-                this.wishes.unshift(newWish);
-                this.stats.wishCount++;
-                
-                await this.saveToStorage();
-                this.updateStats();
-                this.renderWishes();
-            },
-
-            updateStats() {
-                this.animateCounter('wishCount', this.stats.wishCount);
-                this.animateCounter('teacherCount', this.stats.teacherCount);
-                this.animateCounter('studentCount', this.stats.studentCount);
-                this.animateCounter('yearCount', this.stats.yearCount);
-            },
-
-            animateCounter(id, target) {
-                const element = document.getElementById(id);
-                if(!element) return;
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        element.textContent = target + '+';
-                        clearInterval(timer);
-                    } else {
-                        element.textContent = Math.floor(current);
-                    }
-                }, 16);
-            },
-
-            renderWishes() {
-                const track = document.getElementById('sliderTrack');
-                track.innerHTML = '';
-                
-                const wishesToRender = this.filteredWishes.length > 0 ? this.filteredWishes : this.wishes;
-                
-                if (wishesToRender.length === 0) {
-                    track.innerHTML = '<p style="width: 100%; text-align: center; padding: 40px; color: #999;">Chưa có lời chúc nào. Hãy là người đầu tiên!</p>';
-                    return;
-                }
-                
-                wishesToRender.forEach(wish => {
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    card.innerHTML = `
-                        <div class="card-img" style="background-image: url('${wish.image}');"></div>
-                        <div class="card-content">
-                            <h3>${wish.name}</h3>
-                            <p>"${wish.message}"</p>
-                            <div class="card-timestamp">⏰ ${wish.timestamp}</div>
-                        </div>
-                    `;
-                    track.appendChild(card);
-                });
-            },
-
-            searchWishes(query) {
-                if (!query) {
+                async init() {
+                    await this.loadFromStorage();
+                    this.addSampleWishes();
                     this.filteredWishes = [...this.wishes];
-                } else {
-                    this.filteredWishes = this.wishes.filter(wish => 
-                        wish.name.toLowerCase().includes(query.toLowerCase()) ||
-                        wish.message.toLowerCase().includes(query.toLowerCase())
-                    );
-                }
-                this.renderWishes();
-            },
+                    this.updateStats();
+                    this.renderWishes();
+                },
 
-            sortWishes(type) {
-                switch(type) {
-                    case 'recent':
-                        this.filteredWishes = [...this.wishes];
-                        break;
-                    case 'oldest':
-                        this.filteredWishes = [...this.wishes].reverse();
-                        break;
-                    default:
-                        this.filteredWishes = [...this.wishes];
-                }
-                this.renderWishes();
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', async function() {
-            await WishesData.init();
-
-            const modal = document.getElementById('wishModal');
-            const btnGuiLoiChuc = document.getElementById('btnGuiLoiChuc');
-            const closeBtn = document.querySelector('.close');
-            const wishForm = document.getElementById('wishForm');
-
-            btnGuiLoiChuc.addEventListener('click', function() {
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeBtn.addEventListener('click', function() {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            const uploadArea = document.getElementById('uploadArea');
-            const imageInput = document.getElementById('imageInput');
-            const imagePreview = document.getElementById('imagePreview');
-            const previewImg = document.getElementById('previewImg');
-            const removeImageBtn = document.getElementById('removeImage');
-            let currentImageData = null;
-
-            uploadArea.addEventListener('click', () => imageInput.click());
-
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.classList.add('drag-over');
-            });
-
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('drag-over');
-            });
-
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.classList.remove('drag-over');
-                const file = e.dataTransfer.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    handleImageUpload(file);
-                }
-            });
-
-            imageInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file) {
-                    handleImageUpload(file);
-                }
-            });
-
-            function handleImageUpload(file) {
-                if (file.size > 5 * 1024 * 1024) {
-                    alert('⚠️ Kích thước file không được vượt quá 5MB!');
-                    return;
-                }
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    currentImageData = e.target.result;
-                    previewImg.src = currentImageData;
-                    imagePreview.style.display = 'block';
-                    uploadArea.style.display = 'none';
-                };
-                reader.readAsDataURL(file);
-            }
-
-            removeImageBtn.addEventListener('click', () => {
-                currentImageData = null;
-                previewImg.src = '';
-                imagePreview.style.display = 'none';
-                uploadArea.style.display = 'block';
-                imageInput.value = '';
-            });
-
-            wishForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('nameInput').value.trim();
-                const message = document.getElementById('messageInput').value.trim();
-                
-                if (!name || !message) {
-                    alert('⚠️ Vui lòng điền đầy đủ thông tin!');
-                    return;
-                }
-
-                const submitBtn = document.getElementById('submitBtn');
-                submitBtn.disabled = true;
-                submitBtn.textContent = '⏳ Đang gửi...';
-
-                try {
-                    await WishesData.addWish(name, message, currentImageData);
-
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    
-                    const successMsg = document.getElementById('successMessage');
-                    successMsg.classList.add('show');
-                    setTimeout(() => {
-                        successMsg.classList.remove('show');
-                    }, 3000);
-
-                    wishForm.reset();
-                    currentImageData = null;
-                    imagePreview.style.display = 'none';
-                    uploadArea.style.display = 'block';
-                    
-                } catch (error) {
-                    alert('❌ Có lỗi xảy ra. Vui lòng thử lại!');
-                }
-
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Gửi lời chúc 💝';
-            });
-
-            const track = document.getElementById('sliderTrack');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            let currentIndex = 0;
-
-            function getVisibleCards() {
-                if (window.innerWidth <= 768) return 1;
-                if (window.innerWidth <= 1024) return 2;
-                return 3;
-            }
-
-            function updateSlider() {
-                const cards = document.querySelectorAll('.card');
-                if (cards.length === 0) return;
-                
-                const cardWidth = cards[0].offsetWidth + 30;
-                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            }
-
-            nextBtn.addEventListener('click', () => {
-                const cards = document.querySelectorAll('.card');
-                const visibleCards = getVisibleCards();
-                const maxIndex = Math.max(0, cards.length - visibleCards);
-                
-                if (currentIndex < maxIndex) {
-                    currentIndex++;
-                } else {
-                    currentIndex = 0;
-                }
-                updateSlider();
-            });
-
-            prevBtn.addEventListener('click', () => {
-                const cards = document.querySelectorAll('.card');
-                const visibleCards = getVisibleCards();
-                const maxIndex = Math.max(0, cards.length - visibleCards);
-                
-                if (currentIndex > 0) {
-                    currentIndex--;
-                } else {
-                    currentIndex = maxIndex;
-                }
-                updateSlider();
-            });
-
-            setInterval(() => {
-                nextBtn.click();
-            }, 5000);
-
-            window.addEventListener('resize', () => {
-                currentIndex = 0;
-                updateSlider();
-            });
-
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
+                async loadFromStorage() {
+                    try {
+                        const storage = window.localStorage; 
+                        const wishesResult = storage.getItem('teacher-day-wishes');
+                        const statsResult = storage.getItem('teacher-day-stats');
+                        
+                        if (wishesResult) {
+                            this.wishes = JSON.parse(wishesResult);
                         }
+                        
+                        if (statsResult) {
+                            this.stats = JSON.parse(statsResult);
+                        }
+                    } catch (error) {
+                        console.log('Khởi tạo dữ liệu mới hoặc lỗi storage', error);
+                    }
+                },
+
+                async saveToStorage() {
+                    try {
+                        const storage = window.localStorage;
+                        storage.setItem('teacher-day-wishes', JSON.stringify(this.wishes));
+                        storage.setItem('teacher-day-stats', JSON.stringify(this.stats));
+                    } catch (error) {
+                        console.error('Lỗi lưu dữ liệu:', error);
+                    }
+                },
+
+                addSampleWishes() {
+                    if (this.wishes.length === 0) {
+                        this.wishes = [
+                            {
+                                name: 'Lớp 12A1',
+                                message: 'Cảm ơn cô vì những bài giảng tuyệt vời và sự kiên nhẫn vô bờ bến. Cô đã thắp sáng ngọn đuốc tri thức trong tâm hồn chúng em.',
+                                image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                                timestamp: new Date().toLocaleString('vi-VN')
+                            },
+                            {
+                                name: 'Nguyễn Văn A',
+                                message: 'Chúc thầy luôn mạnh khỏe để tiếp tục chèo lái con đò tri thức. Thầy là người cha thứ hai của em trong hành trình học vấn.',
+                                image: 'https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                                timestamp: new Date().toLocaleString('vi-VN')
+                            },
+                            {
+                                name: 'Nhóm Cựu HS',
+                                message: 'Dù đi xa nhưng chúng em luôn nhớ về mái trường xưa. Yêu thầy cô! Những bài học của thầy cô là hành trang quý giá nhất.',
+                                image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                                timestamp: new Date().toLocaleString('vi-VN')
+                            },
+                            {
+                                name: 'Tập thể 10C2',
+                                message: 'Chúc mừng ngày 20/11. Chúc cô giáo xinh đẹp mãi tuổi 20! Cảm ơn cô đã luôn tươi cười và tràn đầy năng lượng.',
+                                image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                                timestamp: new Date().toLocaleString('vi-VN')
+                            },
+                            {
+                                name: 'Ẩn Danh',
+                                message: 'Cảm ơn thầy đã giúp em vượt qua môn Toán đáng sợ. Giờ em đã yêu thích môn này rồi ạ!',
+                                image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                                timestamp: new Date().toLocaleString('vi-VN')
+                            }
+                        ];
+                        this.stats.wishCount = this.wishes.length;
+                        this.saveToStorage();
+                    }
+                },
+
+                async addWish(name, message, imageData) {
+                    const newWish = {
+                        name,
+                        message,
+                        image: imageData || 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                        timestamp: new Date().toLocaleString('vi-VN')
+                    };
+                    
+                    this.wishes.unshift(newWish);
+                    this.stats.wishCount++;
+                    
+                    await this.saveToStorage();
+                    this.updateStats();
+                    this.renderWishes();
+                },
+
+                updateStats() {
+                    this.animateCounter('wishCount', this.stats.wishCount);
+                    this.animateCounter('teacherCount', this.stats.teacherCount);
+                    this.animateCounter('studentCount', this.stats.studentCount);
+                    this.animateCounter('yearCount', this.stats.yearCount);
+                },
+
+                animateCounter(id, target) {
+                    const element = document.getElementById(id);
+                    if(!element) return;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            element.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            element.textContent = Math.floor(current);
+                        }
+                    }, 16);
+                },
+
+                renderWishes() {
+                    const track = document.getElementById('sliderTrack');
+                    track.innerHTML = '';
+                    
+                    const wishesToRender = this.filteredWishes.length > 0 ? this.filteredWishes : this.wishes;
+                    
+                    if (wishesToRender.length === 0) {
+                        track.innerHTML = '<p style="width: 100%; text-align: center; padding: 40px; color: #999;">Chưa có lời chúc nào. Hãy là người đầu tiên!</p>';
+                        return;
+                    }
+                    
+                    wishesToRender.forEach(wish => {
+                        const card = document.createElement('div');
+                        card.className = 'card-wish';
+                        card.innerHTML = `
+                            <div class="card-img" style="background-image: url('${wish.image}');"></div>
+                            <div class="card-content">
+                                <h3>${wish.name}</h3>
+                                <p>"${wish.message}"</p>
+                                <div class="card-timestamp">⏰ ${wish.timestamp}</div>
+                            </div>
+                        `;
+                        track.appendChild(card);
+                    });
+                },
+
+                searchWishes(query) {
+                    if (!query) {
+                        this.filteredWishes = [...this.wishes];
+                    } else {
+                        this.filteredWishes = this.wishes.filter(wish => 
+                            wish.name.toLowerCase().includes(query.toLowerCase()) ||
+                            wish.message.toLowerCase().includes(query.toLowerCase())
+                        );
+                    }
+                    this.renderWishes();
+                },
+
+                sortWishes(type) {
+                    switch(type) {
+                        case 'recent':
+                            this.filteredWishes = [...this.wishes];
+                            break;
+                        case 'oldest':
+                            this.filteredWishes = [...this.wishes].reverse();
+                            break;
+                        default:
+                            this.filteredWishes = [...this.wishes];
+                    }
+                    this.renderWishes();
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', async function() {
+                await WishesData.init();
+
+                const modal = document.getElementById('wishModal');
+                const btnGuiLoiChuc = document.getElementById('btnGuiLoiChuc');
+                const footerSendLink = document.getElementById('footerSendLink');
+                const closeBtn = document.querySelector('.close-custom');
+                const wishForm = document.getElementById('wishForm');
+
+                function openModal() {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+
+                if(btnGuiLoiChuc) btnGuiLoiChuc.addEventListener('click', openModal);
+                if(footerSendLink) {
+                    footerSendLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openModal();
+                    });
+                }
+
+                if(closeBtn) {
+                    closeBtn.addEventListener('click', function() {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    });
+                }
+
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
                     }
                 });
-            });
 
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.15)';
-                    header.style.padding = '15px 50px';
-                } else {
-                    header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
-                    header.style.padding = '20px 50px';
+                const uploadArea = document.getElementById('uploadArea');
+                const imageInput = document.getElementById('imageInput');
+                const imagePreview = document.getElementById('imagePreview');
+                const previewImg = document.getElementById('previewImg');
+                const removeImageBtn = document.getElementById('removeImage');
+                let currentImageData = null;
+
+                if(uploadArea) {
+                    uploadArea.addEventListener('click', () => imageInput.click());
+
+                    uploadArea.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        uploadArea.classList.add('drag-over');
+                    });
+
+                    uploadArea.addEventListener('dragleave', () => {
+                        uploadArea.classList.remove('drag-over');
+                    });
+
+                    uploadArea.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        uploadArea.classList.remove('drag-over');
+                        const file = e.dataTransfer.files[0];
+                        if (file && file.type.startsWith('image/')) {
+                            handleImageUpload(file);
+                        }
+                    });
                 }
-            });
 
-            function createRandomParticles() {
-                const hero = document.querySelector('.hero');
-                for (let i = 0; i < 8; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.animationDelay = -Math.random() * 15 + 's';
-                    particle.style.width = (Math.random() * 8 + 5) + 'px';
-                    particle.style.height = particle.style.width;
-                    hero.appendChild(particle);
+                if(imageInput) {
+                    imageInput.addEventListener('change', (e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                            handleImageUpload(file);
+                        }
+                    });
                 }
-            }
-            createRandomParticles();
 
-            const searchBox = document.getElementById('searchBox');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-
-            searchBox.addEventListener('input', (e) => {
-                WishesData.searchWishes(e.target.value);
-                updateSlider();
-            });
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    const filterType = btn.getAttribute('data-filter');
-                    if (filterType === 'all') {
-                        WishesData.filteredWishes = [...WishesData.wishes];
-                    } else {
-                        WishesData.sortWishes(filterType);
+                function handleImageUpload(file) {
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('⚠️ Kích thước file không được vượt quá 5MB!');
+                        return;
                     }
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        currentImageData = e.target.result;
+                        previewImg.src = currentImageData;
+                        imagePreview.style.display = 'block';
+                        uploadArea.style.display = 'none';
+                    };
+                    reader.readAsDataURL(file);
+                }
+
+                if(removeImageBtn) {
+                    removeImageBtn.addEventListener('click', () => {
+                        currentImageData = null;
+                        previewImg.src = '';
+                        imagePreview.style.display = 'none';
+                        uploadArea.style.display = 'block';
+                        imageInput.value = '';
+                    });
+                }
+
+                if(wishForm) {
+                    wishForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        
+                        const name = document.getElementById('nameInput').value.trim();
+                        const message = document.getElementById('messageInput').value.trim();
+                        
+                        if (!name || !message) {
+                            alert('⚠️ Vui lòng điền đầy đủ thông tin!');
+                            return;
+                        }
+
+                        const submitBtn = document.getElementById('submitBtn');
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = '⏳ Đang gửi...';
+
+                        try {
+                            await WishesData.addWish(name, message, currentImageData);
+
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                            
+                            const successMsg = document.getElementById('successMessage');
+                            successMsg.classList.add('show');
+                            setTimeout(() => {
+                                successMsg.classList.remove('show');
+                            }, 3000);
+
+                            wishForm.reset();
+                            currentImageData = null;
+                            imagePreview.style.display = 'none';
+                            uploadArea.style.display = 'block';
+                            
+                        } catch (error) {
+                            alert('❌ Có lỗi xảy ra. Vui lòng thử lại!');
+                        }
+
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Gửi lời chúc 💝';
+                    });
+                }
+
+                // Slider Logic
+                const track = document.getElementById('sliderTrack');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                let currentIndex = 0;
+
+                function getVisibleCards() {
+                    if (window.innerWidth <= 768) return 1;
+                    if (window.innerWidth <= 1024) return 2;
+                    return 3;
+                }
+
+                function updateSlider() {
+                    const cards = document.querySelectorAll('.card-wish');
+                    if (cards.length === 0) return;
+                    
+                    const cardWidth = cards[0].offsetWidth + 30; // +30 gap
+                    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                }
+
+                if(nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        const cards = document.querySelectorAll('.card-wish');
+                        const visibleCards = getVisibleCards();
+                        const maxIndex = Math.max(0, cards.length - visibleCards);
+                        
+                        if (currentIndex < maxIndex) {
+                            currentIndex++;
+                        } else {
+                            currentIndex = 0;
+                        }
+                        updateSlider();
+                    });
+                }
+
+                if(prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        const cards = document.querySelectorAll('.card-wish');
+                        const visibleCards = getVisibleCards();
+                        const maxIndex = Math.max(0, cards.length - visibleCards);
+                        
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                        } else {
+                            currentIndex = maxIndex;
+                        }
+                        updateSlider();
+                    });
+                }
+
+                // Auto Slide
+                setInterval(() => {
+                    if(nextBtn) nextBtn.click();
+                }, 5000);
+
+                window.addEventListener('resize', () => {
                     currentIndex = 0;
                     updateSlider();
                 });
-            });
 
-            const scrollTopBtn = document.getElementById('scrollTop');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollTopBtn.classList.add('show');
-                } else {
-                    scrollTopBtn.classList.remove('show');
+                function createRandomParticles() {
+                    const hero = document.querySelector('.hero');
+                    if(!hero) return;
+                    for (let i = 0; i < 8; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle';
+                        particle.style.top = Math.random() * 100 + '%';
+                        particle.style.left = Math.random() * 100 + '%';
+                        particle.style.animationDelay = -Math.random() * 15 + 's';
+                        particle.style.width = (Math.random() * 8 + 5) + 'px';
+                        particle.style.height = particle.style.width;
+                        hero.appendChild(particle);
+                    }
                 }
-            });
+                createRandomParticles();
 
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
+                const searchBox = document.getElementById('searchBox');
+                const filterBtns = document.querySelectorAll('.filter-btn');
 
-            const musicPlayer = document.getElementById('musicPlayer');
-            const musicToggle = document.getElementById('musicToggle');
-            let isPlaying = false;
-
-            musicToggle.addEventListener('click', () => {
-                isPlaying = !isPlaying;
-                
-                if (isPlaying) {
-                    musicToggle.textContent = '⏸️';
-                    musicPlayer.classList.add('playing');
-                } else {
-                    musicToggle.textContent = '🎵';
-                    musicPlayer.classList.remove('playing');
+                if(searchBox) {
+                    searchBox.addEventListener('input', (e) => {
+                        WishesData.searchWishes(e.target.value);
+                        updateSlider();
+                    });
                 }
-            });
 
-            document.querySelectorAll('.social-icon').forEach(icon => {
-                icon.addEventListener('click', () => {
-                    const title = icon.getAttribute('title');
-                    alert(`🔗 Chức năng ${title} đang được phát triển!`);
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        const filterType = btn.getAttribute('data-filter');
+                        if (filterType === 'all') {
+                            WishesData.filteredWishes = [...WishesData.wishes];
+                        } else {
+                            WishesData.sortWishes(filterType);
+                        }
+                        currentIndex = 0;
+                        updateSlider();
+                    });
                 });
-            });
 
-            document.getElementById('viewStatsLink').addEventListener('click', (e) => {
-                e.preventDefault();
-                const statsSection = document.querySelector('.stats-section');
-                statsSection.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            // --- ANIMATION OBSERVER ---
-            const revealElements = document.querySelectorAll('.reveal');
-
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
+                // Scroll Top Button Logic
+                const scrollTopBtn = document.getElementById('scrollTop');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        scrollTopBtn.classList.add('show');
+                    } else {
+                        scrollTopBtn.classList.remove('show');
                     }
                 });
-            }, {
-                root: null,
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            });
 
-            revealElements.forEach(el => {
-                revealObserver.observe(el);
+                if(scrollTopBtn) {
+                    scrollTopBtn.addEventListener('click', () => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+
+                // Music Player Logic
+                const musicPlayer = document.getElementById('musicPlayer');
+                const musicToggle = document.getElementById('musicToggle');
+                let isPlaying = false;
+
+                if(musicToggle) {
+                    musicToggle.addEventListener('click', () => {
+                        isPlaying = !isPlaying;
+                        
+                        if (isPlaying) {
+                            musicToggle.textContent = '⏸️';
+                            musicPlayer.classList.add('playing');
+                        } else {
+                            musicToggle.textContent = '🎵';
+                            musicPlayer.classList.remove('playing');
+                        }
+                    });
+                }
+
+                document.querySelectorAll('.social-icon-t').forEach(icon => {
+                    icon.addEventListener('click', () => {
+                        const title = icon.getAttribute('title');
+                        alert(`🔗 Chức năng ${title} đang được phát triển!`);
+                    });
+                });
+
+                const viewStatsLink = document.getElementById('viewStatsLink');
+                if(viewStatsLink) {
+                    viewStatsLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const statsSection = document.querySelector('.stats-section');
+                        if(statsSection) statsSection.scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+
+                // --- ANIMATION OBSERVER ---
+                const revealElements = document.querySelectorAll('.reveal');
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, {
+                    root: null,
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -50px 0px"
+                });
+
+                revealElements.forEach(el => {
+                    revealObserver.observe(el);
+                });
             });
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
