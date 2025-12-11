@@ -28,18 +28,18 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
-        <!-- Google Fonts - Vietnamese Support -->
+        <!-- Google Fonts - Montserrat -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         
         <style>
             * {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Montserrat', sans-serif;
             }
             
             h1, h2, h3, h4, h5, h6 {
-                font-family: 'Playfair Display', serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
                 letter-spacing: -0.5px;
             }
@@ -47,17 +47,19 @@
             h1 {
                 font-size: 56px;
                 line-height: 1.2;
-                font-weight: 800;
+                font-weight: 900;
             }
             
             h2 {
                 font-size: 42px;
                 line-height: 1.3;
+                font-weight: 700;
             }
             
             h3 {
                 font-size: 28px;
                 line-height: 1.4;
+                font-weight: 700;
             }
             
             body {
@@ -70,66 +72,403 @@
             p {
                 font-size: 16px;
                 line-height: 1.7;
-                font-weight: 300;
+                font-weight: 400;
             }
             
             .gt-sub-title {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Inter', sans-serif;
                 font-size: 14px;
                 font-weight: 600;
                 letter-spacing: 2px;
                 text-transform: uppercase;
             }
+            
+            /* Hide decorative elements in ticket section */
+            .gt-event-ticket-section-3::before,
+            .gt-event-ticket-section-3::after {
+                display: none !important;
+            }
+
+            /* ====== TẾT THEME - RED & GOLD COLOR ====== */
+            :root {
+                --gt-theme: #D32F2F !important;
+                --gt-theme-2: #FFD700 !important;
+                --gt-theme-3: #CC0000 !important;
+                --gt-theme-4: #FFC107 !important;
+            }
+
+            /* Update all buttons */
+            .gt-theme-btn {
+                background-image: linear-gradient(to right, #D32F2F 0%, #FFD700 50%, #D32F2F 100%) !important;
+            }
+
+            .gt-theme-btn.gt-style-2 {
+                border: 1px solid rgba(211, 47, 47, 0.2) !important;
+                color: #D32F2F !important;
+            }
+
+            .gt-theme-btn.gt-style-2:hover {
+                background-image: linear-gradient(to right, #FFD700 0%, #D32F2F 50%, #FFD700 100%) !important;
+                color: #fff !important;
+            }
+
+            .gt-theme-btn.gt-theme-btn-2 {
+                background-image: linear-gradient(to right, #D32F2F 0%, #FFD700 50%, #D32F2F 100%) !important;
+            }
+
+            .gt-theme-btn.gt-theme-btn-3 {
+                background-image: linear-gradient(to right, #D32F2F 0%, #FFD700 50%, #D32F2F 100%) !important;
+            }
+
+            .gt-theme-btn.style-5 {
+                background-image: linear-gradient(to right, #D32F2F 0%, #FFD700 50%, #D32F2F 100%) !important;
+            }
+
+            /* Update accents and highlights */
+            .gt-sub-title {
+                color: #D32F2F !important;
+            }
+
+            .gt-section-title span {
+                color: #FFD700 !important;
+            }
+
+            /* Update links and interactive elements */
+            a {
+                color: #D32F2F;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #FFD700;
+            }
+
+            /* Update all gradients to red-gold theme */
+            .gt-hero-content h1 span {
+                background: linear-gradient(90deg, #D32F2F 0%, #FFD700 100%) !important;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            /* Update contact box styles */
+            .gt-contact-us-box:hover .gt-icon {
+                background: linear-gradient(180deg, #D32F2F 0%, #FFD700 100%) !important;
+            }
+
+            /* Update featured/highlighted elements */
+            .gt-badge, .badge {
+                background-color: #D32F2F !important;
+            }
+
+            /* Accent colors for various elements */
+            .gt-theme-color {
+                color: #D32F2F !important;
+            }
+
+            .gt-bg-theme {
+                background-color: #D32F2F !important;
+            }
+
+            /* Hover effects - change to gold */
+            button:hover, a.gt-theme-btn:hover {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.4) !important;
+            }
+
+            /* Update primary text accents */
+            .gt-text-theme {
+                color: #D32F2F !important;
+            }
+
+            /* Marquee and special sections */
+            .gt-marque-section {
+                background: linear-gradient(90deg, #D32F2F 0%, #FFD700 100%) !important;
+            }
+            /* Display font (DFVN Soyuz Grotesk) */
+            @font-face {
+                font-family: 'DFVN Soyuz Grotesk';
+                src: url('DFVNSoyuzGrotesk/DFVNSoyuzGrotesk/DFVN%20Soyuz%20Grotesk%202.0.woff2') format('woff2'),
+                     url('DFVNSoyuzGrotesk/DFVNSoyuzGrotesk/DFVN%20Soyuz%20Grotesk%202.0.ttf') format('truetype'),
+                     url('DFVNSoyuzGrotesk/DFVNSoyuzGrotesk/DFVN%20Soyuz%20Grotesk%202.0.otf') format('opentype');
+                font-weight: 100 900;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            .display-font {
+                font-family: 'DFVN Soyuz Grotesk', Montserrat, sans-serif !important;
+                letter-spacing: -0.5px;
+                font-weight: 700 !important;
+                color: inherit;
+            }
+
+            h1.display-font {
+                font-size: 64px !important;
+                line-height: 1.1;
+            }
+
+            h2.display-font {
+                font-size: 52px !important;
+                line-height: 1.15;
+            }
+
+            @media (max-width: 768px) {
+                h1.display-font { font-size: 36px !important; }
+                h2.display-font { font-size: 28px !important; }
+            }
+
+            /* Gold-orange gradient + stronger shadow/glow to lift hero title and paragraphs off the background */
+            .hero-content h1.display-font {
+                background: linear-gradient(90deg, #FF8C00 0%, #FFD700 50%, #FFC107 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent !important;
+                text-shadow:
+                    0 22px 60px rgba(255,140,0,0.22),
+                    0 10px 36px rgba(255,200,70,0.18),
+                    0 4px 12px rgba(0,0,0,0.28),
+                    0 1px 3px rgba(0,0,0,0.45);
+                -webkit-text-stroke: 0.8px rgba(0,0,0,0.12);
+                filter: drop-shadow(0 10px 30px rgba(255,140,0,0.12));
+            }
+
+            .hero-content .gold-text {
+                color: #ffb347 !important;
+                text-shadow:
+                    0 16px 40px rgba(255,160,50,0.26),
+                    0 6px 20px rgba(255,200,70,0.18),
+                    0 2px 6px rgba(0,0,0,0.22);
+                -webkit-text-stroke: 0.4px rgba(0,0,0,0.12);
+            }
+
+            /* Pale yellow background for long hero quote to improve contrast */
+            .hero-content .gold-bg {
+                background: rgba(255, 244, 204, 0.95); /* pale yellow */
+                padding: 14px 18px;
+                border-radius: 10px;
+                display: inline-block;
+                max-width: 600px;
+                box-shadow: 0 18px 50px rgba(255,170,40,0.12), 0 6px 18px rgba(0,0,0,0.18);
+                color: inherit;
+            }
+
+            @media (max-width: 768px) {
+                .hero-content h1.display-font { text-shadow: 0 8px 20px rgba(255,140,0,0.22); -webkit-text-stroke: 0.4px rgba(0,0,0,0.09); }
+                .hero-content .gold-text { text-shadow: 0 6px 14px rgba(255,160,50,0.18); -webkit-text-stroke: 0.2px rgba(0,0,0,0.08); }
+            }
+
         </style>
-                            
+        <style>
+            /* Hero fireworks canvas and 3D perspective */
+            .hero-section {
+                position: relative;
+                overflow: hidden;
+                perspective: 800px;
+            }
+
+            #heroFireworks {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 2;
+                display: block;
+            }
+
+            /* Ensure hero content sits above background but below canvas controls if needed */
+            .hero-section .container, .hero-section .hero-content, .hero-section .hero-image {
+                position: relative;
+                z-index: 1;
+                transform-style: preserve-3d;
+            }
+        </style>
+
+        <style>
+            /* Improve visibility for event background and separate from hero */
+            .gt-event-bg-section {
+                position: relative;
+                background-size: cover !important;
+                background-position: center center !important;
+                padding: 60px 0; /* add vertical spacing inside the section */
+                margin-top: 28px; /* space from the banner above */
+            }
+
+            .gt-event-bg-section .gt-event-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.16));
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .gt-event-bg-section .gt-event-wrapper {
+                position: relative;
+                z-index: 1; /* keep play button above overlay */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+        </style>
+
+        <style>
+            /* Global theme variables: red / white / gold */
+            :root {
+                --primary: #D32F2F; /* strong red */
+                --accent: #FFD700;  /* gold */
+                --light: #FFFFFF;   /* white */
+                --text-dark: #3b0a0a; /* dark red for text */
+                --muted: #f7f1ee;
+            }
+
+            body {
+                background: linear-gradient(90deg, #D32F2F 0%, #E74C3C 20%, #E67E22 40%, #F39C12 60%, #FFB3A7 80%, #FFDCC4 100%) !important;
+                min-height: 100vh;
+                color: var(--text-dark) !important;
+            }
+
+            html {
+                background: linear-gradient(90deg, #D32F2F 0%, #E74C3C 20%, #E67E22 40%, #F39C12 60%, #FFB3A7 80%, #FFDCC4 100%) !important;
+            }
+
+            h1,h2,h3,h4,h5,h6 { color: var(--primary) !important; }
+
+            a, a:visited { color: var(--primary) !important; }
+            a:hover { color: var(--accent) !important; }
+
+            /* Buttons */
+            .gt-theme-btn {
+                background-image: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%) !important;
+                color: #fff !important;
+                border-color: rgba(211,47,47,0.15) !important;
+            }
+
+            /* Badges and accents */
+            .gt-badge, .badge, .gt-text-theme { background-color: var(--primary) !important; color: #fff !important; }
+
+            /* Section title accent */
+            .gt-section-title span { color: var(--accent) !important; }
+
+            /* Replace heavy dark backgrounds with warm variations where reasonable */
+            .gt-news-section, .gt-testimonial-section, .gt-event-ticket-section-3 { background-color: var(--muted) !important; }
+
+            /* Ensure hero highlight stands out */
+            .gt-hero-content h1 span { color: var(--accent) !important; -webkit-text-fill-color: unset !important; }
+        </style>
+
     </head>
     <body>
+<!-- Preloader Start -->
+<div id="preloader" class="preloader" style="background: linear-gradient(135deg, #D32F2F 0%, #FF6B6B 100%); position: relative; overflow: hidden;">
+    <!-- Falling petals container -->
+    <div id="petalsContainer" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></div>
+    
+    <div class="animation-preloader">
+        <div class="spinner">                
+        </div>
+        <div class="txt-loading">
+            <span data-text-preloader="V" class="letters-loading">V</span>
+            <span data-text-preloader="N" class="letters-loading">N</span>
+            <span data-text-preloader="F" class="letters-loading">F</span>
+            <span data-text-preloader="E" class="letters-loading">E</span>
+            <span data-text-preloader="S" class="letters-loading">S</span>
+            <span data-text-preloader="T" class="letters-loading">T</span>
+        </div>
+        <p class="text-center" style="color: #fff; font-weight: 600;">Loading</p>
+    </div>
+    <div class="loader">
+        <div class="row">
+            <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+            <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+            <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+        </div>
+    </div>
+</div>
 
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-                <div class="spinner">                
-                </div>
-                <div class="txt-loading">
-                    <span data-text-preloader="V" class="letters-loading">
-                        V
-                    </span>
-                    <span data-text-preloader="N" class="letters-loading">
-                        N
-                    </span>
-                    <span data-text-preloader="F" class="letters-loading">
-                        F
-                    </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                    <span data-text-preloader="S" class="letters-loading">
-                        s
-                    </span>
-                    <span data-text-preloader="T" class="letters-loading">
-                        T
-                    </span>
-                </div>
-                <p class="text-center">Loading</p>
-            </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+<style>
+    /* Petal animations and visibility fixes */
+    @keyframes fallPetal {
+        0% {
+            transform: translateY(-10px) translateX(0) rotateZ(0deg) rotateX(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) translateX(120px) rotateZ(360deg) rotateX(180deg);
+            opacity: 0;
+        }
+    }
 
+    @keyframes sway {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(30px); }
+    }
+
+    /* Ensure the petals container is above the loader visuals */
+    #petalsContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        overflow: visible;
+        z-index: 10002;
+    }
+
+    .petal {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background: radial-gradient(circle at 30% 30%, #ffc0cb 0%, #ff6b8a 70%);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        pointer-events: none;
+        filter: drop-shadow(0 6px 8px rgba(0,0,0,0.18));
+        transform-origin: center;
+        z-index: 10003;
+    }
+
+    #preloader {
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+</style>
+
+<script>
+    function createFallingPetals() {
+        const container = document.getElementById('petalsContainer');
+        if (!container) return;
+
+        // Clear existing petals to avoid duplicates
+        container.innerHTML = '';
+
+        const petalCount = 18;
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+
+            const startX = Math.random() * window.innerWidth;
+            const delay = Math.random() * 2;
+            const duration = 3 + Math.random() * 3;
+            const swayDuration = 2 + Math.random() * 1.5;
+            const rotation = Math.random() * 360;
+
+            petal.style.left = startX + 'px';
+            petal.style.top = '-40px';
+            petal.style.transform = `rotateZ(${rotation}deg)`;
+            petal.style.animation = `fallPetal ${duration}s ease-in ${delay}s forwards, sway ${swayDuration}s ease-in-out ${delay}s infinite`;
+
+            container.appendChild(petal);
+        }
+    }
+
+    // Create petals immediately and again on window load (before preloader fades)
+    try { createFallingPetals(); } catch(e) {}
+    window.addEventListener('load', createFallingPetals);
+</script>
         <!-- GT Back To Top Start -->
         <button id="gt-back-top" class="gt-back-to-top show">
             <i class="fa-regular fa-arrow-up"></i>
@@ -227,7 +566,7 @@
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li class="has-dropdown active menu-thumb">
+                                        <li class="has-dropdown active menu-thumb">
                                                 <a href="index.html">
                                                     Home 
                                                 </a>
@@ -252,7 +591,7 @@
                                                             </div>
                                                             <div class="homemenu">
                                                                 <div class="homemenu-thumb">
-                                                                    <img src="assets/img/header/home-1.jpg" alt="img">
+                                                                    <img src="assets/img/header/home-11.jpg" alt="img">
                                                                     <div class="demo-button">
                                                                         <a href="index1.html" class="gt-theme-btn">Multi Page</a>
                                                                     </div>
@@ -325,62 +664,44 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="has-dropdown active d-xl-none">
-                                                <a href="index.html" class="border-none">
-                                                Home
-                                                </a>
-                                                <ul class="submenu">
+                                        <li class="has-dropdown active d-xl-none">
+                                            <a href="index.html" class="border-none">Home</a>
+                                            <ul class="submenu">
                                                     <li><a href="index.html">Trang chủ</a></li>
                                                     <li><a href="index1.html">Tết nguyên đám</a></li>
                                                     <li><a href="index-2.html">Trung thu</a></li>
                                                     <li><a href="index-3.html">Quốc khánh</a></li>
                                                     <li><a href="index-4.html">Nhà giáo</a></li>
-                                                    <li><a href="index-4.html">Giáng sinh</a></li>
+                                                    <li><a href="index-5.html">Giáng sinh</a></li>
                                                 </ul>
-                                            </li>
-                                            <li class="has-dropdown">
-                                                <a href="news-details.html">
-                                                    Pages
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li>
-                                                        <a href="about.html">About Us</a>
-                                                    </li>
-                                                    
-                                                    <li><a href="sponsor.html">Sponsor</a></li>
-                                                    
-                                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                    <li><a href="404.html">404 Page</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="event-details.html">
-                                                    event
-                                                </a>
-                                                <ul class="submenu">
-                                                    
-                                                    <li><a href="event-details.html">Eevent Detaills</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="speaker-details.html">
-                                                   
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li><a href="speaker.html">Speaker</a></li>
-                                                    <li><a href="speaker-details.html">Speaker Detaills</a></li>
-                                                </ul>
-                                            </li>
-                                           <li>
-                                                <a href="news-details.html">
-                                                    Blog
-                                                </a>
+                                        </li>
+                                        <li class="has-dropdown">
+                                            <a href="news-details.html">Pages</a>
+                                            <ul class="submenu">
+                                                <li><a href="about.html">About Us</a></li>
                                                 
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact Us</a>
-                                            </li>
-                                        </ul>
+                                                <li><a href="sponsor.html">Sponsor</a></li>
+                                                <li><a href="pricing.html">Our Pricing</a></li>
+                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                <li><a href="404.html">404 Page</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-dropdown">
+                                            <a href="event-details.html">Event</a>
+                                            <ul class="submenu">
+                                                
+                                                <li><a href="event-details.html">Event Details</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="has-dropdown">
+                                            <a href="news-details.html">Nhóm 16</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact Us</a>
+                                        </li>
+                                    </ul>
                                     </nav>
                                 </div>
                             </div>
@@ -419,38 +740,38 @@
         </div>
 
         <!--banner nè -->
-        <section class="hero-section hero-1 fix bg-cover" style="background-image: url(assets/img/home-1/hero/hero-bg-1.png);">
+        <section class="hero-section hero-1 fix bg-cover" style="background-image: url(assets/img/home-11/hero/hero-bg-1.png);">
+            <!-- Canvas for hero fireworks (3D-like) -->
+            <canvas id="heroFireworks" aria-hidden="true"></canvas>
             <div class="gt-border-shape">
-                <img src="assets/img/home-1/hero/shape-2.png" alt="">
+                <img src="assets/img/home-11/hero/shape-2.png" alt="">
             </div>
             <div class="gt-shape">
-                <img src="assets/img/home-1/hero/bg.png" alt="img">
+                <img src="assets/img/home-11/hero/bg.png" alt="img">
             </div>
             <div class="gt-top-bg">
-                <img src="assets/img/home-1/hero/shape-top.png" alt="img">
+                <img src="assets/img/home-11/hero/shape-top.png" alt="img">
             </div>
             <div class="gt-top-shape">
-                <img src="assets/img/home-1/hero/blur-2.png" alt="img">
+                <img src="assets/img/home-11/hero/blur-2.png" alt="img">
             </div>
             <div class="gt-arrow-shape">
-                <img src="assets/img/home-1/hero/shape-1.png" alt="img">
+                <img src="assets/img/home-11/hero/shape-1.png" alt="img">
             </div>
-            <div class="gt-top-image" style="background-image: url('assets/img/home-1/hero/group-bg.png');">
+            <div class="gt-top-image" style="background-image: url('assets/img/home-11/hero/bg1.jpg');">
             </div>
             <div class="container-fluid">
                 <div class="row g-4 align-items-end">
                     <div class="col-xl-7 col-lg-6 col-md-6">
                         <div class="hero-content">
-                            <h1 class="wow fadeInUp" data-wow-delay=".3s" style="color: #fff; font-size: 64px; font-weight: 900;">
-                                Tết Việt
-                                <span style="display: block; font-size: 48px; margin-top: 10px; font-style: italic; font-weight: 600;">ngàn năm gấm vóc, một cõi đi về</span>
+                            <h1 class="wow fadeInUp display-font" data-wow-delay=".3s" style="color: #FFD700; font-size: 64px; font-weight: 900;">
+                                Hành Trình Di Sản -
+                                    <span style="display: block; font-size: 48px; margin-top: 10px; font-style: italic; font-weight: 600; color:#fff"> Tuyệt Tác Thiên Nhiên</span>
                             </h1>
-                            <p class="wow fadeInUp" data-wow-delay=".4s" style="font-size: 20px; line-height: 1.8; margin: 30px 0 40px 0; color: rgba(255,255,255,0.95); font-style: italic; font-weight: 300; letter-spacing: 0.5px; max-width: 600px;">
+                            <p class="wow fadeInUp gold-text gold-bg" data-wow-delay=".4s" style="font-size: 20px; line-height: 1.8; margin: 30px 0 40px 0; color: #FFD700; font-style: italic; font-weight: 300; letter-spacing: 0.5px; max-width: 600px;">
                                 "Tết không chỉ là sự chuyên giao của đất trời, mà là hành trình trở về của lòng người. Trở về với bếp lửa hồng, với mùi hương trầm thơm ngát và với những giá trị thiêng liêng đã nuôi dưỡng tâm hồn người Việt ngàn đời nay."
                             </p>
-                            <p class="wow fadeInUp" data-wow-delay=".5s" style="font-size: 14px; color: #fff; font-weight: normal; margin-bottom: 20px;">
-                              đếm ngược đến khoảnh khắc đặc biệt của năm
-                            </p>
+                          
                                 <div class="gt-coming-soon-time" data-event-time="2026-02-16T23:59:59">
                                     <div class="gt-timer-content wow fadeInUp" data-wow-delay=".2s">
                                         <h3 class="gt-day">00</h3>
@@ -476,57 +797,49 @@
                      </div>
                     <div class="col-xl-5 col-lg-6 col-md-6">
                         <div class="hero-image wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                            <img src="assets/img/home-1/hero/hero-1.png" alt="img">
+                            <img src="assets/img/home-11/hero/hero-1.png" alt="img">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- GT Marque Section Start -->
-        <div class="gt-marque-section section-padding pb-0 fix">
-            <div class="overlay-shape">
-                <img src="assets/img/home-1/marque/shape-1.png" alt="img">
-            </div>
-            <div class="overlay-shape-2">
-                <img src="assets/img/home-1/marque/shape-2.png" alt="img">
-            </div>
-            <div class="container">
-                <div class="gt-section-title text-center">
-                    <span class="gt-sub-title wow fadeInUp">Who Attends?s</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        Who can Attends
-                    </h2>
+        <!-- phần vid -->
+            <div class="gt-event-bg-section fix bg-cover" style="background-image: url()
+                <div class="gt-event-overlay"></div>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="gt-event-left" style="position:relative; padding:18px;">
+                                <img src="assets/img/home-11/event/bg0.png" alt="bg-left" style="width:100%; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.28); display:block;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="gt-event-wrapper" style="display:flex; align-items:center; justify-content:center; min-height:240px;">
+                                <a href="https://www.youtube.com/watch?v=PBm7EQ0iD7k" class="video-btn ripple video-popup" style="width:140px; height:140px; border-radius:50%; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.06); box-shadow:0 30px 70px rgba(0,0,0,0.35); font-size:36px; color:#fff;">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-       
-        <!-- GT Event-Bg Section Start -->
-        <div class="gt-event-bg-section fix bg-cover" style="background-image: url(assets/img/home-1/event/event-bg.png);">
-            <div class="container">
-                <div class="gt-event-wrapper">
-                    <a href="https://www.youtube.com/watch?v=PBm7EQ0iD7k" class="video-btn ripple video-popup">
-                        <i class="fa-solid fa-play"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
 
         <!-- GT Event-Schedule Section Start -->
         <section class="gt-events-schedule-section">
             <div class="gt-left-shape">
-                <img src="assets/img/home-1/event/circle-shape-2.png" alt="img">
+                <img src="assets/img/home-11/event/circle-shape-2.png" alt="img">
             </div>
             <div class="gt-middle-shape">
-                <img src="assets/img/home-1/event/circle-shape.png" alt="img">
+                <img src="assets/img/home-11/event/circle-shape.png" alt="img">
             </div>
             <div class="gt-right-shape">
-                <img src="assets/img/home-1/event/circle-shape-3.png" alt="img">
+                <img src="assets/img/home-11/event/circle-shape-3.png" alt="img">
             </div>
             <div class="container">
                 <div class="gt-section-title text-center">
                     <span class="gt-sub-title wow fadeInUp">DÒNG CHẢY KÝ ỨC</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                    <h2 class="wow fadeInUp display-font" data-wow-delay=".3s">
                         DÒNG CHẢY KÝ ỨC
                     </h2>
                 </div>
@@ -549,223 +862,98 @@
                         </li>
                         <li class="nav-item wow fadeInUp" data-wow-delay=".8s">
                             <a href="index.html#skill" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">
-                                Mùng 2 Tết & Mùng 3 Tết
+                                Mùng 2 Tết
+                            </a>
+                        </li>
+                        <li class="nav-item wow fadeInUp" data-wow-delay="1.0s">
+                            <a href="index.html#experience" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">
+                                Mùng 3 Tết
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
                         <div id="technical" class="tab-pane fade active show" role="tabpanel">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-1.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    data science upcoming business
-                                                    conference in town
-                                                </a>
-                                            </h3>
-                                        </div>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="gt-timeline-image-container" style="cursor: pointer; position: relative; overflow: hidden; border-radius: 10px; background: #f5f5f5;">
+                                        <img id="tech-img" src="assets/img/home-11/event/e1.jpg" alt="img" style="width: 100%; height: 450px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease;" class="timeline-img">
                                     </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-2.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    Everyday Intelligence Research
-                                                    Rewired events
-                                                </a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-3.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    A general list of well-known
-                                                    business conferences
-                                                </a>
-                                            </h3>
-                                        </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="gt-timeline-content" style="padding: 30px; background: #f9f9f9; border-radius: 10px;">
+                                        <h3 style="color: #d32f2f; font-size: 24px; margin-bottom: 15px; font-weight: 700;">Tiễn Cựu Nghinh Tân - Gột Rửa Bụi Trần</h3>
+                                        <p style="color: #333; font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
+                                            Khởi đầu bằng lễ tiễn Táo Quân cưỡi cá chép về trời, báo hiệu Tết đã chạm ngõ. Đây là khoảng thời gian con người dọn dẹp nhà cửa, gột rửa những muộn phiền năm cũ để tâm hồn thanh khiết, sẵn sàng đón chờ vận hội mới.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="work" class="tab-pane fade" role="tabpanel">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-1.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    data science upcoming business
-                                                    conference in town
-                                                </a>
-                                            </h3>
-                                        </div>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="gt-timeline-image-container" style="cursor: pointer; position: relative; overflow: hidden; border-radius: 10px; background: #f5f5f5;">
+                                        <img id="work-img" src="assets/img/home-11/event/e2.jpg" alt="img" style="width: 100%; height: 450px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease;" class="timeline-img">
                                     </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-2.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    Everyday Intelligence Research
-                                                    Rewired events
-                                                </a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-3.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    A general list of well-known
-                                                    business conferences
-                                                </a>
-                                            </h3>
-                                        </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="gt-timeline-content" style="padding: 30px; background: #f9f9f9; border-radius: 10px;">
+                                        <h3 style="color: #d32f2f; font-size: 24px; margin-bottom: 15px; font-weight: 700;">Bếp Lửa Đoàn Viên & Thời Khắc Giao Hòa</h3>
+                                        <p style="color: #333; font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
+                                            "Chiều ba mươi nợ ai không trả / Giận ai không hòa, nhớ nhé cũng quên..." Bữa cơm Tất niên chiều 30 là nơi bão dừng sau cánh cửa, chỉ còn hơi ấm của sự sum vầy. Để rồi khi kim đồng hồ điểm 0 giờ, trong làn khói hương trầm bảng lảng và tiếng pháo hoa rực rỡ, đất trời giao hòa làm một. Lòng người rưng rưng khấn nguyện "Quốc thái dân an", hân hoan bước vào một kỷ nguyên mới đầy hy vọng.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="ambition" class="tab-pane fade" role="tabpanel">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-1.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    data science upcoming business
-                                                    conference in town
-                                                </a>
-                                            </h3>
-                                        </div>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="gt-timeline-image-container" style="cursor: pointer; position: relative; overflow: hidden; border-radius: 10px; background: #f5f5f5;">
+                                        <img id="ambition-img" src="assets/img/home-11/event/e3.jpg" alt="img" style="width: 100%; height: 450px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease;" class="timeline-img">
                                     </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-2.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    Everyday Intelligence Research
-                                                    Rewired events
-                                                </a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-3.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    A general list of well-known
-                                                    business conferences
-                                                </a>
-                                            </h3>
-                                        </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="gt-timeline-content" style="padding: 30px; background: #f9f9f9; border-radius: 10px;">
+                                        <h3 style="color: #d32f2f; font-size: 24px; margin-bottom: 15px; font-weight: 700;">Khai Niên Rạng Rỡ - Mùng Một Tết Cha</h3>
+                                        <p style="color: #333; font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
+                                            "Mùng một Tết Cha..." Sáng đầu năm, đất trời thay áo mới, lòng người cũng phơi phới sắc xuân. Con cháu tề tựu về gian thờ tổ tiên bên nội (Tết Cha) để tỏ lòng hiếu kính "Uống nước nhớ nguồn". Tục xông đất và trao nhau bao lì xì đỏ thắm không nặng về vật chất, mà là cách người Việt trao đi chút "lộc" may mắn, cầu mong một năm vạn sự hanh thông.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="skill" class="tab-pane fade" role="tabpanel">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-1.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    data science upcoming business
-                                                    conference in town
-                                                </a>
-                                            </h3>
-                                        </div>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="gt-timeline-image-container" style="cursor: pointer; position: relative; overflow: hidden; border-radius: 10px; background: #f5f5f5;">
+                                        <img id="skill-img" src="assets/img/home-11/event/e4.jpg" alt="img" style="width: 100%; height: 450px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease;" class="timeline-img">
                                     </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-2.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    Everyday Intelligence Research
-                                                    Rewired events
-                                                </a>
-                                            </h3>
-                                        </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="gt-timeline-content" style="padding: 30px; background: #f9f9f9; border-radius: 10px;">
+                                        <h3 style="color: #d32f2f; font-size: 24px; margin-bottom: 15px; font-weight: 700;">Nghĩa Tình Sâu Nặng - Mùng Hai Tết Mẹ</h3>
+                                        <p style="color: #333; font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
+                                            "...Mùng hai Tết Mẹ" Nếu mùng 1 là nghi thức, thì mùng 2 là hành trình của sự sẻ chia và biết ơn. Cả gia đình dắt díu nhau về quê ngoại, thắt chặt tình làng nghĩa xóm. Những cái bắt tay, nụ cười xởi lởi và câu chúc bình an làm ấm sưởi những ngày đầu xuân, nhắc nhở ta rằng: Đi đâu cũng không bằng về nhà, về với vòng tay mẹ cha.
+                                        </p>
                                     </div>
-                                    <div class="gt-event-schedule-item">
-                                        <div class="gt-dot-shape">
-                                            <img src="assets/img/home-1/event/line-shape-2.png" alt="">
-                                        </div>
-                                        <div class="gt-event-image">
-                                            <img src="assets/img/home-1/event/event-3.png" alt="img">
-                                        </div>
-                                        <div class="gt-event-schedule-content">
-                                            <h3>
-                                                <a href="event-details.html">
-                                                    A general list of well-known
-                                                    business conferences
-                                                </a>
-                                            </h3>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="experience" class="tab-pane fade" role="tabpanel">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="gt-timeline-image-container" style="cursor: pointer; position: relative; overflow: hidden; border-radius: 10px; background: #f5f5f5;">
+                                        <img id="experience-img" src="assets/img/home-11/event/e5.jpg" alt="img" style="width: 100%; height: 450px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease;" class="timeline-img">
+                                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 12px; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 5px; opacity: 0; transition: opacity 0.3s;" class="img-hint">Nhấn để xem ảnh khác</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="gt-timeline-content" style="padding: 30px; background: #f9f9f9; border-radius: 10px;">
+                                        <h3 style="color: #d32f2f; font-size: 24px; margin-bottom: 15px; font-weight: 700;">Tôn Sư Trọng Đạo - Mùng Ba Tết Thầy</h3>
+                                        <p style="color: #333; font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
+                                            "...Mùng ba Tết Thầy" Nét đẹp văn hóa ngàn đời của dân tộc hiếu học. "Muốn sang thì bắc cầu Kiều / Muốn con hay chữ thì yêu lấy Thầy". Ngày này, học trò tìm về thầy cô cũ để tri ân người chèo đò tri thức. Người ta cũng rủ nhau đi xin chữ Thánh hiền (Tâm, Đức, Trí) để treo trong nhà, như một lời răn mình giữ gìn cốt cách, cầu mong trí tuệ sáng suốt suốt cả năm.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -775,27 +963,207 @@
             </div>
         </section>
 
-        <!-- Gt-Marquee Section Start -->
+        <!-- Timeline Image Gallery Script -->
+        <script>
+            // Image galleries for each timeline section
+            const imageGalleries = {
+                'tech': ['assets/img/home-11/event/e1.jpg', 'assets/img/home-11/event/e11.jpg'],
+                'work': ['assets/img/home-11/event/e2.jpg', 'assets/img/home-11/event/e22.jpg', 'assets/img/home-11/event/e222.jpg'],
+                'ambition': ['assets/img/home-11/event/e3.jpg', 'assets/img/home-11/event/e33.jpg', 'assets/img/home-11/event/e333.png'],
+                'skill': ['assets/img/home-11/event/e4.jpg'],
+                'experience': ['assets/img/home-11/event/e5.jpg']
+            };
+
+            const imageIndices = {
+                'tech': 0,
+                'work': 0,
+                'ambition': 0,
+                'skill': 0,
+                'experience': 0
+            };
+
+            // Setup click handlers for timeline images
+            document.addEventListener('DOMContentLoaded', function() {
+                Object.keys(imageGalleries).forEach(key => {
+                    const imgElement = document.getElementById(key + '-img');
+                    if (imgElement) {
+                        imgElement.addEventListener('click', function() {
+                            // Cycle to next image
+                            imageIndices[key] = (imageIndices[key] + 1) % imageGalleries[key].length;
+                            imgElement.src = imageGalleries[key][imageIndices[key]];
+                            imgElement.style.transform = 'scale(1.02)';
+                            setTimeout(() => {
+                                imgElement.style.transform = 'scale(1)';
+                            }, 200);
+                        });
+
+                        // no hover hints; click to cycle images only
+                    }
+                });
+            });
+        </script>
+        <!-- Blossom overlay script -->
+        <script>
+            (function () {
+                // Create overlay container
+                let overlay = document.createElement('div');
+                overlay.id = 'blossomOverlay';
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.pointerEvents = 'none';
+                overlay.style.zIndex = '10004';
+                document.body.appendChild(overlay);
+
+                // Add CSS for blossoms
+                const css = `
+                    @keyframes fallBlossom {
+                        0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+                        100% { transform: translateY(110vh) rotate(520deg); opacity: 0; }
+                    }
+                    @keyframes swayBlossom {
+                        0% { transform: translateX(0); }
+                        50% { transform: translateX(40px); }
+                        100% { transform: translateX(0); }
+                    }
+                    #blossomOverlay { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:10004; overflow:visible; }
+                    .blossom {
+                        position: absolute;
+                        width: 28px;
+                        height: 28px;
+                        background: radial-gradient(circle at 30% 30%, #fff 0%, #ffd1dc 45%, #ff7fa6 100%);
+                        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+                        filter: drop-shadow(0 6px 8px rgba(0,0,0,0.12));
+                        transform-origin: center;
+                        animation: fallBlossom linear forwards;
+                    }
+                `;
+                const style = document.createElement('style');
+                style.textContent = css;
+                document.head.appendChild(style);
+
+                function spawnBlossom() {
+                    const b = document.createElement('div');
+                    b.className = 'blossom';
+                    const startLeft = Math.random() * window.innerWidth;
+                    const tx = (Math.random() * 160 - 80) + 'px';
+                    const delay = (Math.random() * 1.2).toFixed(2) + 's';
+                    const duration = (4 + Math.random() * 4).toFixed(2) + 's';
+                    b.style.left = startLeft + 'px';
+                    b.style.top = '-40px';
+                    b.style.setProperty('--tx', tx);
+                    b.style.animation = `fallBlossom ${duration} ease-in ${delay} forwards`;
+
+                    overlay.appendChild(b);
+
+                    // remove after animation
+                    const total = parseFloat(duration) * 1000 + parseFloat(delay) * 1000 + 500;
+                    setTimeout(() => { if (b.parentNode) b.parentNode.removeChild(b); }, total);
+                }
+
+                // Spawn blossoms periodically
+                const interval = setInterval(spawnBlossom, 600);
+
+                // Stop spawning after a long time to avoid infinite DOM growth if desired
+                setTimeout(() => { clearInterval(interval); }, 1000 * 60 * 30); // 30 minutes
+
+                // Also spawn a few immediately
+                for (let i = 0; i < 6; i++) setTimeout(spawnBlossom, i * 150);
+            })();
+        </script>
+        <style>
+            /* Overlay container to preserve petal animation briefly after preloader hides */
+            #petalsOverlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 10002;
+                overflow: visible;
+            }
+        </style>
+
+        <script>
+            (function(){
+                function createOverlayPetals(duration = 2200) {
+                    let overlay = document.getElementById('petalsOverlay');
+                    if (!overlay) {
+                        overlay = document.createElement('div');
+                        overlay.id = 'petalsOverlay';
+                        document.body.appendChild(overlay);
+                    }
+                    overlay.innerHTML = '';
+
+                    const count = 12;
+                    for (let i = 0; i < count; i++) {
+                        const petal = document.createElement('div');
+                        petal.className = 'petal';
+                        const startX = Math.random() * window.innerWidth;
+                        const delay = Math.random() * 1.5;
+                        const dur = 1.8 + Math.random() * 2.2;
+                        const swayDur = 1.2 + Math.random();
+                        const rotation = Math.random() * 360;
+
+                        petal.style.left = startX + 'px';
+                        petal.style.top = '-40px';
+                        petal.style.transform = `rotateZ(${rotation}deg)`;
+                        petal.style.animation = `fallPetal ${dur}s ease-in ${delay}s forwards, sway ${swayDur}s ease-in-out ${delay}s infinite`;
+
+                        overlay.appendChild(petal);
+                    }
+
+                    setTimeout(() => { overlay.innerHTML = ''; }, duration + 1000);
+                }
+
+                const pre = document.getElementById('preloader');
+                if (!pre) return;
+
+                const mo = new MutationObserver((mutations) => {
+                    mutations.forEach(m => {
+                        if (m.attributeName === 'class' && pre.classList.contains('loaded')) {
+                            createOverlayPetals();
+                        }
+                        if (m.attributeName === 'style' && (pre.style.display === 'none' || pre.style.visibility === 'hidden')) {
+                            createOverlayPetals();
+                        }
+                    });
+                });
+
+                mo.observe(pre, { attributes: true, attributeFilter: ['class', 'style'] });
+
+                // Fallback: create overlay petals after a short delay in case fadeOut completes without attribute changes
+                window.addEventListener('load', function() {
+                    setTimeout(() => { createOverlayPetals(); }, 300);
+                });
+            })();
+        </script>
         <div class="gt-marquee-section-2 fix">
             <div class="mycustom-marque">
               <div class="scrolling-wrap">
                <div class="comm">
                    <div></div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> marketing</div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> BUSINESS</div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> branding</div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> chúc mừng </div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> NĂM MỚI </div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> VẠN SỰ</div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> NHƯ Ý</div>
                </div>
                <div class="comm">
                    <div></div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> marketing</div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> BUSINESS</div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> branding</div>
+                  <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> chúc mừng </div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> NĂM MỚI </div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> vạn sự</div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> NHƯ Ý</div>
                </div>
                <div class="comm">
                    <div></div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> marketing</div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> BUSINESS</div>
-                   <div class="cmn-textslide"><img src="assets/img/home-1/marque/01.png" alt="img"> branding</div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> chúc mừng </div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> NĂM MỚI </div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> vạn sự</div>
+                   <div class="cmn-textslide"><img src="assets/img/home-11/marque/01.png" alt="img"> NHƯ Ý</div>
                </div>
            </div>
        </div>
@@ -804,117 +1172,104 @@
         <!-- Gt-Testimonial Section Start -->
         <section class="gt-testimonial-section section-padding fix">
             <div class="gt-map-shape">
-                <img src="assets/img/home-1/testimonial/bg.png" alt="img">
+                <img src="assets/img/home-11/testimonial/bg.png" alt="img">
             </div>
             <div class="gt-client-image">
-                <img src="assets/img/home-1/testimonial/client-1.png" alt="img">
+                <img src="assets/img/home-11/testimonial/client-1.png" alt="img">
             </div>
             <div class="gt-client-image-2">
-                <img src="assets/img/home-1/testimonial/client-2.png" alt="img">
+                <img src="assets/img/home-11/testimonial/client-2.png" alt="img">
             </div>
             <div class="gt-client-image-3">
-                <img src="assets/img/home-1/testimonial/client-3.png" alt="img">
+                <img src="assets/img/home-11/testimonial/client-3.png" alt="img">
             </div>
             <div class="gt-client-image-4">
-                <img src="assets/img/home-1/testimonial/client-4.png" alt="img">
+                <img src="assets/img/home-11/testimonial/client-4.png" alt="img">
             </div>
             <div class="gt-client-image-5">
-                <img src="assets/img/home-1/testimonial/client-5.png" alt="img">
+                <img src="assets/img/home-11/testimonial/client-5.png" alt="img">
             </div>
             <div class="container">
                 <div class="gt-section-title text-center">
-                    <span class="gt-sub-title wow fadeInUp">event testimonials</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        What Our Attendees Say
+                    <span class="gt-sub-title wow fadeInUp">truyền thống dân tộc</span>
+                    <h2 class="wow fadeInUp display-font" data-wow-delay=".3s">
+                        Hội Làng
                     </h2>
                 </div>
-                <div class="gt-testimonial-wrapper">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-5">
-                            <div class="swiper swiper-image">
-                                <div class="swiper-wrapper">
-                                  <div class="swiper-slide">
-                                    <div class="th-testimonial-image">
-                                        <img src="assets/img/home-1/testimonial/testimonial-1.jpg" alt="img">
-                                    </div>
-                              
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <div class="th-testimonial-image">
-                                        <img src="assets/img/home-1/testimonial/testimonial-2.jpg" alt="img">
-                                    </div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <div class="th-testimonial-image">
-                                        <img src="assets/img/home-1/testimonial/testimonial-3.jpg" alt="img">
-                                    </div>
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="swiper swiper-image">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <div style="border-radius: 10px; overflow: hidden; height: 450px;">
+                                    <img src="assets/img/home-11/event/event-1.png" alt="img" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div style="border-radius: 10px; overflow: hidden; height: 450px;">
+                                    <img src="assets/img/home-11/event/event-2.png" alt="img" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div style="border-radius: 10px; overflow: hidden; height: 450px;">
+                                    <img src="assets/img/home-11/event/event-3.png" alt="img" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                              </div>
+                                                            <div class="swiper-slide">
+                                                                <div style="border-radius: 10px; overflow: hidden; height: 450px;">
+                                                                        <img src="assets/img/home-11/event/event-4.jpg" alt="img" style="width: 100%; height: 100%; object-fit: cover;">
+                                                                </div>
+                                                            </div>
                             </div>
+                        </div>
+                        <div class="array-buttons" style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+                            <button class="array-prev" style="width: 45px; height: 45px; border-radius: 50%; background: #d32f2f; color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="array-next" style="width: 45px; height: 45px; border-radius: 50%; background: #d32f2f; color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                     <div class="col-lg-7">
-                            <div class="gt-testimonial-card-item">
-                                <div class="swiper th-testimonial-slider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="gt-testimonial-content">
-                                            <div class="gt-star">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                           </div>
-                                            <p>
-                                                Luctus dignissim ornare suscipt penatibus suspendisse faciliy placera eleifend duise quam enimes egeter platea consectetuer malesuada an hack blandit proin suscipit porta vitae enter an ultricies tempor ultrices duisentis a auctor tempor neque cubilia psum risus commodo pulvina  aliquam donec arcu.
-                                            </p>
-                                             <div class="gt-client-info">
-                                                <h3>Herbert Martinez</h3>
-                                                <span>HR Manager</span>
-                                             </div>
-                                          </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="gt-testimonial-content">
-                                            <div class="gt-star">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                           </div>
-                                            <p>
-                                                Luctus dignissim ornare suscipt penatibus suspendisse faciliy placera eleifend duise quam enimes egeter platea consectetuer malesuada an hack blandit proin suscipit porta vitae enter an ultricies tempor ultrices duisentis a auctor tempor neque cubilia psum risus commodo pulvina  aliquam donec arcu.
-                                            </p>
-                                             <div class="gt-client-info">
-                                                <h3>Herbert Martinez</h3>
-                                                <span>HR Manager</span>
-                                             </div>
-                                          </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="gt-testimonial-content">
-                                            <div class="gt-star">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                           </div>
-                                            <p>
-                                                Luctus dignissim ornare suscipt penatibus suspendisse faciliy placera eleifend duise quam enimes egeter platea consectetuer malesuada an hack blandit proin suscipit porta vitae enter an ultricies tempor ultrices duisentis a auctor tempor neque cubilia psum risus commodo pulvina  aliquam donec arcu.
-                                            </p>
-                                             <div class="gt-client-info">
-                                                <h3>Herbert Martinez</h3>
-                                                <span>HR Manager</span>
-                                             </div>
-                                          </div>
-                                        </div>
-                                     </div>
-                                 </div>
-                                <div class="array-buttons">
-                                  <button class="array-prev"><i class="fa-solid fa-arrow-left"></i></button>
-                                  <button class="array-next"><i class="fa-solid fa-arrow-right"></i></button>
+                        <div class="swiper th-testimonial-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div style="padding: 30px; background: #f9f9f9; border-radius: 10px; min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                                        <h4 style="color: #d32f2f; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
+                                            Đua Thuyền: "Cầu Thủy"
+                                        </h4>
+                                        <p style="color: #333; font-size: 15px; line-height: 1.8; margin: 0;">
+                                            Mái chèo xé nước đánh thức thần sông. Nghi lễ cầu mưa thuận gió hòa và thể hiện sức mạnh đoàn kết của làng xã.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div style="padding: 30px; background: #f9f9f9; border-radius: 10px; min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                                        <h4 style="color: #d32f2f; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
+                                            Đấu Vật: "Thượng Võ"
+                                        </h4>
+                                        <p style="color: #333; font-size: 15px; line-height: 1.8; margin: 0;">
+                                            Không cay cú ăn thua, đấu vật tôn vinh sức khỏe, sự dẻo dai và hào khí dân tộc để bảo vệ non sông.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div style="padding: 30px; background: #f9f9f9; border-radius: 10px; min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                                        <h4 style="color: #d32f2f; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
+                                            Đánh Đu: "Giao Hòa"
+                                        </h4>
+                                        <p style="color: #333; font-size: 15px; line-height: 1.8; margin: 0;">
+                                            Cánh đu bay cao là khát vọng vươn tới trời xanh, cầu mong nhân duyên vẹn tròn, vạn vật sinh sôi nảy nở.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div style="padding: 30px; background: #f9f9f9; border-radius: 10px; min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                                        <h4 style="color: #d32f2f; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
+                                            Kéo Co: "Kéo Lộc"
+                                        </h4>
+                                        <p style="color: #333; font-size: 15px; line-height: 1.8; margin: 0;">
+                                            Sợi dây nối liền Âm Dương. Tiếng hò reo của cộng đồng xua tan cái lạnh, kéo may mắn và tài lộc về cho xóm làng.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -923,123 +1278,247 @@
             </div>
         </section>
 
-        <!-- Gt-Attended Section Start -->
-        <section class="gt-attended-section section-padding pt-0 fix">
-            <div class="row gx-0 row-cols-sm-2 row-cols-1 row-cols-md-2 row-cols-md-3 row-cols-xl-5">
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-4.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-4.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
+        <!-- Gt-Event-Ticket Section Start -->
+        <section class="gt-event-ticket-section-3">
+            <div class="container">
+                <div class="gt-section-title text-center">
+                    <span class="gt-sub-title gt-style-4 wow fadeInUp">hành trình du xuân</span>
+                        <h2 class="wow fadeInUp display-font" data-wow-delay=".3s">
+                            hành trình du xuân tết việt
+                        </h2>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-5.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-5.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-6.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-6.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-7.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-7.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-8.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-8.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-9.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-9.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-10.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-10.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-11.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-11.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge-2">
-                            <img src="assets/img/home-1/event/event-12.jpg" alt="img">
-                            <div class="gt-attended-content">
-                                <h6>event gallery</h6>
-                                <h2>
-                                    Recent
-                                    Memories
-                                    2024
-                                </h2>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s" style="display: flex;">
+                        <div class="gt-main-card-item gt-bg" style="width: 100%; display: flex; flex-direction: column;">
+                            <div class="gt-event-ticket-card-item" style="flex: 1; display: flex; flex-direction: column;">
+                            <h3>Gói Gold</h3>
+                            <p style="font-size: 13px; color: #666; margin: 5px 0 15px 0; font-weight: 500;">Hành Trình Xuân Truyền Thống</p>
+                            <div class="gt-event-box-item">
+                                <h6>DEFAULT <span>(Vé linh hoạt)</span></h6>
+                                <div class="gt-box-item">
+                                    <div class="gt-item">
+                                        <span>Giá vé :</span>
+                                        <p>09$</p>
+                                    </div>
+                                    <div class="gt-item">
+                                        <span>Số lượng :</span>
+                                        <p class="qty">
+                                            <button class="qtyminus" aria-hidden="true">−</button>
+                                            <input type="number" name="qty" id="qty2" min="1" max="10" step="1" value="1">
+                                            <button class="qtyplus" aria-hidden="true">+</button>
+                                        </p>
+                                    </div>
+                                    <div class="gt-item">
+                                        <span>Tổng cộng :</span>
+                                        <p id="subtotal2">09$</p>
+                                    </div>
+                                </div>
+                             </div>
+                             <ul class="gt-list-item" style="font-size: 13px; flex: 1;">
+                                <li>
+                                    <span>Tham quan chùa - hái lộc :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Hướng dẫn viên du lịch :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Nước uống & ăn nhẹ :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Bảo hiểm du lịch :</span>
+                                    Yes
+                                </li>
+                            </ul>
+                            <div class="gt-card-button gt-cart-button-2">
+                                 <a href="event-details.html" class="gt-theme-btn gt-theme-btn-2">ĐẶT VÉ NGAY</a>
                             </div>
+                          </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="gt-attended-item">
-                        <div class="gt-attended-iamge">
-                            <img src="assets/img/home-1/event/event-13.jpg" alt="img">
-                            <a href="assets/img/home-1/event/event-13.jpg" class="icon img-popup2">
-                              <i class="fa-light fa-arrows-up-down-left-right"></i>
-                            </a>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s" style="display: flex;">
+                        <div class="gt-main-card-item gt-style-2 gt-bg-color" style="border: 3px solid #d32f2f; position: relative; width: 100%; display: flex; flex-direction: column;">
+                            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #d32f2f; color: #fff; padding: 5px 20px; border-radius: 20px; font-size: 12px; font-weight: bold;">NỔI BẬT</div>
+                            <div class="gt-event-ticket-card-item" style="flex: 1; display: flex; flex-direction: column;">
+                            <h3>Gói Platinum</h3>
+                            <p style="font-size: 13px; color: #666; margin: 5px 0 15px 0; font-weight: 500;">Hành Trình Tết Cao Cấp VIP</p>
+                            <div class="gt-event-box-item">
+                                <h6>DEFAULT <span>(Vé linh hoạt)</span></h6>
+                                <div class="gt-box-item">
+                                    <div class="gt-item">
+                                        <span>Giá vé :</span>
+                                        <p>59$</p>
+                                    </div>
+                                    <div class="gt-item">
+                                        <span>Số lượng :</span>
+                                        <p class="qty">
+                                            <button class="qtyminus" aria-hidden="true">−</button>
+                                            <input type="number" name="qty" id="qty4" min="1" max="10" step="1" value="1">
+                                            <button class="qtyplus" aria-hidden="true">+</button>
+                                        </p>
+                                    </div>
+                                    <div class="gt-item">
+                                        <span>Tổng cộng :</span>
+                                        <p id="subtotal4">59$</p>
+                                    </div>
+                                </div>
+                             </div>
+                             <ul class="gt-list-item" style="font-size: 13px; flex: 1;">
+                                <li>
+                                    <span>Xe đưa đón riêng & check-in ưu tiên :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Trải nghiệm gói lì xì phong thủy :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Tiệc buffet Tết cao cấp :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Workshop: Gói bánh chưng & mứt :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Quà lưu niệm Tết độc quyền :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Hướng dẫn viên VIP :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Bảo hiểm du lịch :</span>
+                                    Yes
+                                </li>
+                            </ul>
+                            <div class="gt-card-button gt-cart-button-2">
+                                 <a href="event-details.html" class="gt-theme-btn gt-theme-btn-2">ĐẶT VÉ NGAY</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s" style="display: flex;">
+                        <div class="gt-main-card-item gt-bg" style="width: 100%; display: flex; flex-direction: column;">
+                            <div class="gt-event-ticket-card-item" style="flex: 1; display: flex; flex-direction: column;">
+                            <h3>Gói Diamond</h3>
+                            <p style="font-size: 13px; color: #666; margin: 5px 0 15px 0; font-weight: 500;">Trải Nghiệm Tết Ba Miền</p>
+                            <div class="gt-event-box-item">
+                                <h6>DEFAULT <span>(Vé linh hoạt)</span></h6>
+                                <div class="gt-box-item">
+                                    <div class="gt-item">
+                                        <span>Giá vé :</span>
+                                        <p>29$</p>
+                                    </div>
+                                    <div class="gt-item">
+                                        <span>Số lượng :</span>
+                                        <p class="qty">
+                                            <button class="qtyminus" aria-hidden="true">−</button>
+                                            <input type="number" name="qty" id="qty3" min="1" max="10" step="1" value="1">
+                                            <button class="qtyplus" aria-hidden="true">+</button>
+                                        </p>
+                                    </div>
+                                    <div class="gt-item">
+                                        <span>Tổng cộng :</span>
+                                        <p id="subtotal3">29$</p>
+                                    </div>
+                                </div>
+                             </div>
+                             <ul class="gt-list-item" style="font-size: 13px; flex: 1;">
+                                <li>
+                                    <span>Làng nghề làm bánh chưng/bánh tét :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Viết thư pháp :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Biểu diễn múa lân - trống hội :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Bữa trưa đặc sản Tết :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Hướng dẫn viên chuyên nghiệp :</span>
+                                    Yes
+                                </li>
+                                <li>
+                                    <span>Bảo hiểm du lịch :</span>
+                                    Yes
+                                </li>
+                            </ul>
+                            <div class="gt-card-button gt-cart-button-2">
+                                 <a href="event-details.html" class="gt-theme-btn gt-theme-btn-2">ĐẶT VÉ NGAY</a>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Quantity Update Script -->
+        <script>
+            function updateSubtotal(inputId, priceMap) {
+                const input = document.getElementById(inputId);
+                const subtotalId = 'subtotal' + inputId.replace('qty', '');
+                const subtotal = document.getElementById(subtotalId);
+                const quantity = parseInt(input.value) || 1;
+                const price = priceMap[inputId];
+                subtotal.textContent = (price * quantity) + '$';
+            }
+
+            const priceMap = {
+                'qty2': 9,
+                'qty3': 29,
+                'qty4': 59
+            };
+
+            document.addEventListener('DOMContentLoaded', function() {
+                ['qty2', 'qty3', 'qty4'].forEach(qtyId => {
+                    const input = document.getElementById(qtyId);
+                    if (input) {
+                        const minusBtn = input.previousElementSibling;
+                        const plusBtn = input.nextElementSibling;
+
+                        minusBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            let val = parseInt(input.value) || 1;
+                            if (val > 1) {
+                                input.value = val - 1;
+                                updateSubtotal(qtyId, priceMap);
+                            }
+                        });
+
+                        plusBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            let val = parseInt(input.value) || 1;
+                            if (val < 10) {
+                                input.value = val + 1;
+                                updateSubtotal(qtyId, priceMap);
+                            }
+                        });
+
+                        input.addEventListener('change', function() {
+                            updateSubtotal(qtyId, priceMap);
+                        });
+                    }
+                });
+            });
+        </script>
+
         <!-- Gt-News Section Start -->
         <section class="gt-news-section section-padding pt-0 fix">
             <div class="container">
                 <div class="gt-section-title text-center mb-0">
                     <span class="gt-sub-title wow fadeInUp" style="color: #d32f2f; font-size: 14px; letter-spacing: 2px;">Tin tức & Bài viết</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s" style="color: #1a1a1a; font-size: 48px; font-weight: 800; margin-top: 15px;">
+                    <h2 class="wow fadeInUp display-font" data-wow-delay=".3s" style="color: #1a1a1a; font-size: 48px; font-weight: 800; margin-top: 15px;">
                         Những Điểm Đến Tuyệt Vời
                     </h2>
                 </div>
@@ -1047,7 +1526,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="gt-news-card-item">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-1/news/news-1.jpg" alt="img">
+                                <img src="assets/img/home-11/news/news-1.jpg" alt="img">
                                 <span>Hà Giang</span>
                             </div>
                             <div class="gt-news-content">
@@ -1073,7 +1552,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="gt-news-card-item">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-1/news/news-2.jpg" alt="img">
+                                <img src="assets/img/home-11/news/news-2.jpg" alt="img">
                                 <span>Mộc Châu</span>
                             </div>
                             <div class="gt-news-content">
@@ -1099,7 +1578,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                         <div class="gt-news-card-item">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-1/news/news-3.jpg" alt="img">
+                                <img src="assets/img/home-11/news/news-3.jpg" alt="img">
                                 <span>Ninh Bình</span>
                             </div>
                             <div class="gt-news-content">
@@ -1125,7 +1604,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".9s">
                         <div class="gt-news-card-item">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-1/news/news-3.jpg" alt="img">
+                                <img src="assets/img/home-11/news/news-4.jpg" alt="img">
                                 <span>Hội An</span>
                             </div>
                             <div class="gt-news-content">
@@ -1153,84 +1632,54 @@
         </section>
 
         <!-- Lucky Red Envelope Game Start -->
-        <section class="lucky-envelope-section section-padding fix" style="background: linear-gradient(135deg, #c41e3a 0%, #e74c3c 100%); position: relative; overflow: hidden;">
-            <div class="container">
+        <section class="lucky-envelope-section section-padding fix" style="background-image: url('assets/img/home-11/event/bg4.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden;">
+            <div class="lucky-bg-overlay" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15)); z-index:0;"></div>
+            <div class="container" style="position:relative; z-index:1;">
                 <div class="gt-section-title text-center mb-0">
-                    <h2 class="wow fadeInUp" data-wow-delay=".2s" style="color: #fff; font-size: 48px; margin-bottom: 15px; font-weight: 800; letter-spacing: -1px;">
+                    <h2 class="wow fadeInUp display-font" data-wow-delay=".2s" style="color: #510b0b; font-size: 48px; margin-bottom: 15px; font-weight: 800; letter-spacing: -1px;">
                         Mini Game Tết
                     </h2>
                     <span class="gt-sub-title wow fadeInUp" style="color: rgba(255,255,255,0.95); font-size: 18px; font-weight: 500; letter-spacing: 1px;" data-wow-delay=".3s">Mở bao lì xì nhận may mắn</span>
                 </div>
-                <div style="text-align: center; margin-top: 40px; perspective: 1000px;">
-                    <div class="lucky-envelope-container" id="luckEnvelopeBtn" style="
-                        width: 200px;
-                        height: 280px;
-                        margin: 0 auto;
-                        cursor: pointer;
-                        position: relative;
-                        transform-style: preserve-3d;
-                        transition: transform 0.3s ease;
-                    ">
-                        <!-- Bao lì xì -->
-                        <div style="
-                            width: 100%;
-                            height: 100%;
-                            background: linear-gradient(135deg, #d32f2f 0%, #f44336 50%, #ffcdd2 100%);
-                            border-radius: 10px;
-                            box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset -2px -2px 5px rgba(0,0,0,0.2), inset 2px 2px 5px rgba(255,255,255,0.3);
-                            position: relative;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border: 3px solid #b71c1c;
-                        ">
-                            <!-- Pattern vàng -->
-                            <div style="
-                                position: absolute;
-                                top: 15px;
-                                left: 15px;
-                                width: 30px;
-                                height: 30px;
-                                background: radial-gradient(circle, #ffd700, #ffb300);
-                                border-radius: 50%;
-                                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-                            "></div>
-                            <div style="
-                                position: absolute;
-                                bottom: 15px;
-                                right: 15px;
-                                width: 25px;
-                                height: 25px;
-                                background: radial-gradient(circle, #ffd700, #ffb300);
-                                border-radius: 50%;
-                                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-                            "></div>
-                            <!-- Text -->
-                            <div style="text-align: center; z-index: 10; color: #fff;">
-                                <p style="font-size: 14px; margin: 5px 0 0 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Chúc Mừng Năm Mới</p>
+
+                <div class="lucky-stage" style="text-align:center; margin-top:36px; perspective:1200px;">
+                    <div class="lucky-card-wrap" style="display:inline-block; width:260px; height:340px;" id="luckEnvelopeBtn" onclick="this.classList.add('opened')" role="button" tabindex="0">
+                        <div class="lucky-card front" style="width:100%; height:100%; border-radius:18px; box-shadow: 0 30px 90px rgba(0,0,0,0.45), inset 0 2px 6px rgba(255,255,255,0.04); background: linear-gradient(135deg,#c62828 0%, #ff6f5e 60%); border:4px solid rgba(255,200,80,0.06); transform-origin: center bottom; transition: transform 0.9s cubic-bezier(.2,.9,.2,1); display:flex; align-items:center; justify-content:center; position:relative;">
+                            <div style="position:absolute; top:18px; left:18px; width:48px; height:48px; border-radius:50%; background:radial-gradient(circle,#ffd54f,#ffb300); box-shadow: 0 6px 18px rgba(0,0,0,0.2);"></div>
+                            <div style="position:absolute; bottom:22px; right:22px; width:36px; height:36px; border-radius:50%; background:radial-gradient(circle,#ffd54f,#ffb300); box-shadow: 0 6px 12px rgba(0,0,0,0.18);"></div>
+                            <div style="text-align:center; color:#fff; z-index:3; text-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+                                <p style="font-size:20px; margin:0 0 6px 0;">Chúc Mừng</p>
+                                <h3 style="margin:0; font-size:22px; font-weight:800; letter-spacing:1px;">Năm Mới</h3>
+                            </div>
+                            <div class="shine" style="position:absolute; inset:0; background:linear-gradient(120deg, rgba(255,255,255,0.06), rgba(255,255,255,0)); border-radius:18px;"></div>
+                        </div>
+
+                        <div class="lucky-card inner" style="width:100%; height:100%; position:absolute; left:0; top:0; border-radius:18px; background:linear-gradient(135deg,#fff8e1 0%, #ffe0b2 100%); box-shadow: 0 40px 120px rgba(0,0,0,0.45); transform-origin: center bottom; transform: rotateX(-90deg); opacity:0; transition: transform 0.9s cubic-bezier(.2,.9,.2,1), opacity 0.6s; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px;">
+                            <div style="font-size:20px; color:#d84315; font-weight:800; margin-bottom:8px;">Bạn nhận được</div>
+                            <div style="width:90px; height:90px; border-radius:50%; background:radial-gradient(circle,#ffd700,#ffb300); display:flex; align-items:center; justify-content:center; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+                                <span style="font-weight:900; color:#6b2a09; font-size:20px;">Lộc</span>
                             </div>
                         </div>
                     </div>
-                    <p style="color: #fff; margin-top: 30px; font-size: 18px; font-weight: 500; animation: pulse 2s infinite;">
-                        👆 Nhấn vào bao lì xì để mở
-                    </p>
+
+                    <p class="gt-hint" style="color:#fff; margin-top:26px; font-size:22px; font-weight:600;">&#128070; Nhấn vào bao lì xì để mở</p>
                 </div>
             </div>
 
-            <!-- Coins animation container -->
-            <div id="coinsContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"></div>
+            <!-- Coins animation container (kept global fixed) -->
+            <div id="coinsContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10005;"></div>
 
-            <!-- Congratulations modal -->
+            <!-- Congratulations modal (kept) -->
             <div id="congratsModal" style="
                 display: none;
                 position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+                background: linear-gradient(135deg, #2c0404 0%, #5e0e09 100%);
                 padding: 50px;
                 border-radius: 20px;
-                z-index: 10000;
+                z-index: 10006;
                 text-align: center;
                 box-shadow: 0 20px 60px rgba(0,0,0,0.4);
                 max-width: 500px;
@@ -1238,7 +1687,7 @@
                 border: 3px solid #ffd700;
                 animation: bounceIn 0.6s ease;
             ">
-                <div style="color: #ffd700; font-size: 60px; margin-bottom: 20px;">✨</div>
+                <div style="color: #ffd700; font-size: 60px; margin-bottom: 20px;"></div>
                 <h3 style="color: #fff; font-size: 28px; margin: 20px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Chúc Mừng Năm Mới!</h3>
                 <p id="congratsText" style="
                     color: #fff;
@@ -1250,7 +1699,7 @@
                 "></p>
                 <button onclick="closeCongratsModal()" style="
                     background: #ffd700;
-                    color: #d32f2f;
+                    color: #4f0505;
                     border: none;
                     padding: 12px 30px;
                     font-size: 16px;
@@ -1271,12 +1720,21 @@
                 width: 100%;
                 height: 100%;
                 background: rgba(0,0,0,0.6);
-                z-index: 9999;
+                z-index: 10004;
             " onclick="closeCongratsModal()"></div>
+
+            <style>
+                /* Local styles to animate the card open */
+                .lucky-card-wrap.opened .front { transform: rotateX(-85deg); opacity:0; }
+                .lucky-card-wrap.opened .inner { transform: rotateX(0deg); opacity:1; }
+
+                /* Smooth hover hint when not opened */
+                .lucky-card-wrap:hover .front { transform: translateY(-8px) rotateX(0deg); }
+            </style>
         </section>
 
         <!-- GT Footer Section Start -->
-        <footer class="gt-footer-section fix bg-cover" style="background-image: url(assets/img/home-1/footer/shape.png);">
+        <footer class="gt-footer-section fix bg-cover" style="background-image: url(assets/img/home-11/footer/shape.png);">
             <div class="container">
                 <div class="gt-footer-widget-wrapper">
                     <div class="gt-footer-bg-item">
@@ -1338,6 +1796,114 @@
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+
+        <!-- Hero fireworks script: 3D-like fireworks that run once on page load -->
+        <script>
+        (function(){
+            const canvas = document.getElementById('heroFireworks');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                const rect = canvas.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = Math.max(1, rect.width) * dpr;
+                canvas.height = Math.max(1, rect.height) * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            // Particle class with simple 3D depth (z) for perspective
+            class Particle {
+                constructor(x,y,color,vel,angle,z) {
+                    this.x = x; this.y = y; this.color = color;
+                    this.vx = Math.cos(angle)*vel;
+                    this.vy = Math.sin(angle)*vel;
+                    this.life = 1.0; this.decay = 0.02 + Math.random()*0.03;
+                    this.z = z || (Math.random()*300 + 100); // depth (closer = smaller scale)
+                    this.size = 2 + Math.random()*3;
+                }
+                update(dt) {
+                    // gravity effect adjusted by depth
+                    const g = 80 / (this.z/100);
+                    this.vy += g*dt;
+                    this.x += this.vx*dt;
+                    this.y += this.vy*dt;
+                    this.life -= this.decay*dt*20;
+                }
+                draw(ctx) {
+                    const perspective = 800;
+                    const scale = Math.max(0.2, (perspective - this.z)/perspective);
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, this.life);
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size*scale, 0, Math.PI*2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            function createBurst(cx, cy, baseColor) {
+                const particles = [];
+                const count = 60 + Math.floor(Math.random()*40);
+                for (let i=0;i<count;i++){
+                    const angle = Math.random()*Math.PI*2;
+                    const vel = 60 + Math.random()*220;
+                    const z = 80 + Math.random()*520; // depth
+                    const hueShift = (Math.random()*40-20);
+                    const color = baseColor || `hsl(${Math.floor(30+Math.random()*30+hueShift)},${60+Math.random()*30}%,${50+Math.random()*20}%)`;
+                    particles.push(new Particle(cx,cy,color,vel,angle,z));
+                }
+                return particles;
+            }
+
+            let particles = [];
+            let last = performance.now();
+            let running = true;
+
+            function step(now){
+                const dt = Math.min(0.04, (now - last)/1000);
+                last = now;
+                // clear with slight fade for trails
+                ctx.clearRect(0,0,canvas.width, canvas.height);
+                // update
+                for (let i=particles.length-1;i>=0;i--){
+                    const p = particles[i];
+                    p.update(dt);
+                    if (p.life<=0) particles.splice(i,1);
+                }
+                // draw
+                for (let p of particles) p.draw(ctx);
+
+                if (running) requestAnimationFrame(step);
+            }
+
+            // fire a few bursts on load centered over hero area
+            function startHeroFireworks(){
+                resize();
+                const rect = canvas.getBoundingClientRect();
+                const cx = rect.width * 0.35; const cy = rect.height * 0.25;
+                const cx2 = rect.width * 0.65; const cy2 = rect.height * 0.18;
+                particles = particles.concat(createBurst(cx, cy, '#FFD54F'));
+                setTimeout(()=>{ particles = particles.concat(createBurst(cx2, cy2, '#FF7043')); }, 350);
+                setTimeout(()=>{ particles = particles.concat(createBurst(rect.width*0.5, rect.height*0.32, '#FF5252')); }, 700);
+                // smaller side bursts
+                setTimeout(()=>{ particles = particles.concat(createBurst(rect.width*0.15, rect.height*0.4, '#FFC107')); }, 900);
+                setTimeout(()=>{ particles = particles.concat(createBurst(rect.width*0.85, rect.height*0.4, '#FF4081')); }, 1100);
+                // end after ~3.5s
+                setTimeout(()=>{ running = false; }, 3500);
+                requestAnimationFrame(step);
+            }
+
+            window.addEventListener('load', function(){
+                // run once when hero is visible
+                resize();
+                startHeroFireworks();
+            });
+
+            window.addEventListener('resize', function(){ resize(); });
+        })();
+        </script>
 
         <!-- Lucky Envelope Game Styles and Scripts -->
         <style>
@@ -1526,5 +2092,6 @@
             `;
             document.head.appendChild(style);
         </script>
+        
     </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
     <!--<< Header Area >>-->
     <head>
        <!-- ========== Meta Tags ========== -->
@@ -7,11 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Gramentheme">
-        <meta name="description" content="Pixvent - Conference and Event HTML Template">
+        <meta name="description" content="VN FEST - Conference and Event HTML Template">
         <!-- ======== Page title ============ -->
-        <title>VietNam FEST</title>
+        <title>VN FEST - Conference and Event HTML Template</title>
         <!--<< Favcion >>-->
-        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="shortcut icon" href="assets/img/logo/Logo.svg">
         <!--<< Bootstrap min.css >>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!--<< All Min Css >>-->
@@ -28,36 +28,197 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        <style>
+            /* Cố gắng loại bỏ lớp phủ màu (color overlay) */
+            .gt-hero-section.gt-hero-3::before {
+                background: none !important; 
+                content: none !important;
+            }
+            .gt-hero-section.gt-hero-3::after {
+                background: none !important; 
+                content: none !important;
+            }
+            /* THÊM CSS GHI ĐÈ FONT MỚI */
+            .gt-hero-content h1, 
+            .gt-hero-content span, 
+            .gt-hero-content p {
+                font-family: 'Montserrat', sans-serif !important;
+                /* Đảm bảo độ đậm cho chữ */
+                font-weight: 900 !important; 
+            }
+            /* Đảm bảo Montserrat là font mặc định cho toàn bộ trang */
+            body, h1, h2, h3, h4, h5, h6, p, a, span, li, button {
+                font-family: 'Montserrat', sans-serif !important;
+            }
+            .gt-hero-content h1 { font-size: 130px !important; line-height: 1.2 !important; padding-top: 20px !important; }
+                /* Màu chữ menu chính */
+            .main-menu nav ul li a {
+                color: #000000 !important; /* Màu đen */
+                font-weight: 600 !important;
+            }
+            
+            /* Màu chữ khi hover */
+            .main-menu nav ul li a:hover {
+                color: #FFCC00 !important; /* Màu vàng */
+            }
+            
+            /* Màu chữ menu active (trang hiện tại) */
+            .main-menu nav ul li.active > a {
+                color: #DA251D !important; /* Màu đỏ (màu chủ đạo của bạn) */
+            }
+            
+            /* Màu chữ submenu */
+            .main-menu nav ul li .submenu li a {
+                color: #333333 !important; /* Xám đen */
+                background: #ffffff !important;
+            }
+            
+            /* Màu chữ submenu khi hover */
+            .main-menu nav ul li .submenu li a:hover {
+                color: #FFCC00 !important; /* Màu vàng */
+                background: #f8f8f8 !important;
+            }
+            
+            /* Icon mũi tên trong submenu */
+            .main-menu nav ul li a i {
+                color: inherit !important;
+            }
+            /* TĂNG KHOẢNG CÁCH GIỮA CÁC MỤC MENU ĐỂ TẠO CẢM GIÁC DỊCH CHUYỂN SANG PHẢI */
+            .main-menu nav ul li {
+                margin-right: 20px !important;
+            }
+
+            /* Loại bỏ khoảng cách ở mục cuối cùng để không bị dư thừa */
+            .main-menu nav ul li:last-child {
+                margin-right: 0 !important;
+            }
+            /* Đổi màu nút Play thành màu đỏ */
+            .gt-event-intro-section .video-icon .video-btn {
+                color: #ffffff !important; /* Màu biểu tượng Play bên trong (trắng) */
+                background: #DA251D !important; /* Màu nền đỏ */
+                border-color: #DA251D !important; /* Màu viền đỏ */
+            }
+
+            /* Đổi màu nút Tab chuyển ngày thành màu đỏ */
+            .gt-event-schedule-section-3 .gt-section-title-area .gt-nav .nav-item .nav-link {
+                background: #DA251D !important; /* Màu nền đỏ */
+                color: #ffffff !important; /* Màu chữ trắng */
+            }
+
+            /* Đổi màu nút Tab ACTIVE/HOVER (nút đang chọn/khi rê chuột) */
+            .gt-event-schedule-section-3 .gt-section-title-area .gt-nav .nav-item .nav-link.active,
+            .gt-event-schedule-section-3 .gt-section-title-area .gt-nav .nav-item .nav-link:hover {
+                background: #B30000 !important; /* Màu đỏ đậm hơn khi active/hover */
+                color: #ffffff !important;
+            }
+            /* CSS MỚI: Tùy chỉnh chiều cao khung sự kiện */
+            .gt-event-schedule-section-3 .event-schedule-box-items-3 {
+                padding-bottom: 20px !important; /* Giảm đệm đáy của toàn bộ khung sự kiện */
+                margin-bottom: 20px; /* Giảm khoảng cách giữa các khối (nếu có) */
+            }
+
+            .gt-event-schedule-section-3 .gt-event-schedule-content {
+                padding: 10px 30px 10px 30px !important; /* Giảm đệm (trên, phải, dưới, trái) của phần nội dung */
+            }
+
+            /* Tùy chỉnh lại kích thước của khối hình tròn nhỏ (gt-group-image) để không chiếm quá nhiều không gian nếu cần */
+            .gt-event-schedule-section-3 .gt-group-image {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none; /* Đảm bảo khối này nằm đúng vị trí */
+                margin-top: 10px; /* Thêm một chút khoảng cách từ nội dung trên */
+                height: 60px; /* Giảm chiều cao của khối chứa hình tròn */
+                overflow: hidden;
+            }
+
+            .gt-event-schedule-section-3 .gt-group-image img {
+                height: 100%; /* Giữ cho hình ảnh không bị cắt xén trong khối mới */
+                width: auto;
+            }
+            /* === CSS MỚI & CẬP NHẬT để rút ngắn khung sự kiện === */
+
+            /* 1. Rút ngắn khoảng đệm (padding) của toàn bộ khối sự kiện */
+            .gt-event-schedule-section-3 .event-schedule-box-items-3 {
+                padding-top: 30px !important; /* Đảm bảo có khoảng cách trên */
+                padding-bottom: 30px !important; /* Giảm khoảng cách dưới */
+                min-height: auto !important; 
+            }
+
+            /* 2. Giảm đệm cho phần nội dung (dưới ảnh lớn) */
+            .gt-event-schedule-section-3 .gt-event-schedule-content {
+                padding: 10px 30px 10px 30px !important; 
+            }
+
+            /* 3. Đặt lại kích thước và vị trí cho khối hình ảnh nhỏ (mặt người và +20) 
+            Thường khối này có vị trí tuyệt đối hoặc phức tạp, chúng ta sẽ ép kích thước nó nhỏ lại */
+            .gt-event-schedule-section-3 .gt-group-image {
+                /* Đảm bảo nó nằm phía dưới, có thể bạn muốn nó nhỏ hơn so với 200px cũ */
+                height: 45px !important; 
+                width: auto !important; 
+                margin-top: 15px !important; 
+                overflow: hidden;
+            }
+
+            /* 4. Ẩn nút mũi tên (>) nếu không cần nữa */
+            .gt-event-schedule-section-3 .gt-icon {
+                display: none !important;
+            }
+
+            /* KHẮC PHỤC LỖI HÌNH TRÒN CỦA SPEAKER */
+            /* Nếu hình ảnh bị tràn ra khỏi khung tròn của Speaker, sử dụng đoạn này */
+            .gt-speaker-items-3 .gt-speaker-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Đảm bảo hình ảnh che phủ toàn bộ container */
+            }
+            /* Tăng kích thước icon group1.png LỚN HƠN */
+            .gt-event-schedule-section-3 .gt-group-image {
+                height: 200px !important; /* Tăng chiều cao khung chứa */
+                margin-top: 10px !important;
+            }
+
+            .gt-event-schedule-section-3 .gt-group-image img {
+                height: 100% !important;
+                width: auto !important;
+            }
+        </style>
                             
     </head>
     <body>
-
+        <audio id="backgroundAudio" loop>
+            <source src="assets/img/home-3/bgmusic.mp3" type="audio/mp3">
+            Trình duyệt của bạn không hỗ trợ phần tử âm thanh.
+        </audio>
         <!-- Preloader Start -->
         <div id="preloader" class="preloader">
             <div class="animation-preloader">
                 <div class="spinner">                
                 </div>
                 <div class="txt-loading">
-                    <span data-text-preloader="P" class="letters-loading">
-                        v
+                    <span data-text-preloader="V" class="letters-loading">
+                        V
                     </span>
-                    <span data-text-preloader="I" class="letters-loading">
+                    <span data-text-preloader="N" class="letters-loading">
                         N
                     </span>
-                    <span data-text-preloader="X" class="letters-loading">
+                    <span data-text-preloader="F" class="letters-loading">
                         F
                     </span>
-                    <span data-text-preloader="V" class="letters-loading">
+                    <span data-text-preloader="E" class="letters-loading">
                         E
                     </span>
-                    <span data-text-preloader="E" class="letters-loading">
+                    <span data-text-preloader="S" class="letters-loading">
                         S
                     </span>
                     <span data-text-preloader="T" class="letters-loading">
                         T
                     </span>
                 </div>
-                <p class="text-center">ĐANG TẢI</p>
+                <p class="text-center">Loading</p>
             </div>
             <div class="loader">
                 <div class="row">
@@ -94,7 +255,7 @@
                         <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/blue-logo.svg" alt="logo-img">
+                                    <img src="assets/img/logo/Logo.svg" alt="logo-img">
                                 </a>
                             </div>
                             <div class="offcanvas__close">
@@ -105,7 +266,7 @@
                         </div>
                         <div class="mobile-menus fix mb-3"></div>
                         <div class="sideber-image">
-                            <img src="assets/img/header/sideber.jpg" alt="img">
+                            <img src="assets\img\home-3\about\Không có gì quý hơn Độc Lập - Tự Do.png" alt="img">
                         </div>
                     </div>
                 </div>
@@ -122,13 +283,13 @@
                             <ul class="gt-left">
                                 <li>
                                     <i class="fa-solid fa-location-dot"></i>
-                                    4233 w. 65th st. chicago il 60629
+                                    450-451 Lê Văn Việt - Phường Tăng Nhơn Phú A - Thủ Đức - TP.HCM
                                 </li>
                             </ul>
                         </div>
                         <div class="logo">
                             <a href="index.html" class="header-logo">
-                                <img src="assets/img/logo/blue-logo.svg" alt="logo-img">
+                                <img src="assets/img/logo/Logo.svg" alt="logo-img">
                             </a>
                         </div>
                         <div class="header-right d-flex justify-content-end align-items-center mt-0">
@@ -141,12 +302,11 @@
                                             Home
                                             </a>
                                             <ul class="submenu">
-                                                    <li><a href="index.html">Trang chủ</a></li>
-                                                    <li><a href="index1.html">Tết nguyên đám</a></li>
-                                                    <li><a href="index-2.html">Trung thu</a></li>
-                                                    <li><a href="index-3.html">Quốc khánh</a></li>
-                                                    <li><a href="index-4.html">Nhà giáo</a></li>
-                                                    <li><a href="index-4.html">Giáng sinh</a></li>
+                                                    <li><a href="index.html">Tết Nguyên Đán</a></li>
+                                                    <li><a href="index-2.html">Tết Trung thu</a></li>
+                                                    <li><a href="index-3.html">Lễ Quốc Khánh</a></li>
+                                                    <li><a href="index-4.html">Ngày Nhà Giáo Việt Nam</a></li>
+                                                    <li><a href="index-5.html">Giáng Sinh</a></li>
                                                 </ul>
                                          </li>
                                             <li class="has-dropdown">
@@ -158,14 +318,17 @@
                                                         <a href="about.html">About Us</a>
                                                     </li>
                                                     <li class="has-dropdown">
-                                                        
+                                                        <a href="service-details.html">
+                                                            Our Service
+                                                            <i class="fas fa-angle-right"></i>
+                                                        </a>
                                                         <ul class="submenu">
                                                             <li><a href="service.html">Our Services</a></li>
-                                                            
+                                                            <li><a href="service-details.html">Service Details</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="sponsor.html">Sponsor</a></li>
-                                                    
+                                                    <li><a href="pricing.html">Our Pricing</a></li>
                                                     <li><a href="coming-soon.html">Coming Soon</a></li>
                                                     <li><a href="404.html">404 Page</a></li>
                                                 </ul>
@@ -175,16 +338,28 @@
                                                     event
                                                 </a>
                                                 <ul class="submenu">
-                                                    
+                                                    <li><a href="event.html">Event</a></li>
                                                     <li><a href="event-details.html">Eevent Detaills</a></li>
                                                 </ul>
                                             </li>
-                                            
+                                            <li>
+                                                <a href="speaker-details.html">
+                                                    Speaker
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="speaker.html">Speaker</a></li>
+                                                    <li><a href="speaker-details.html">Speaker Detaills</a></li>
+                                                </ul>
+                                            </li>
                                            <li>
                                                 <a href="news-details.html">
                                                     Blog
                                                 </a>
-                                                
+                                                <ul class="submenu">
+                                                    <li><a href="news-grid.html">Blog Grid</a></li>
+                                                    <li><a href="news.html">Blog Standard</a></li>
+                                                    <li><a href="news-details.html">Blog Details</a></li>
+                                                </ul>
                                             </li>
                                             <li>
                                                 <a href="contact.html">Contact Us</a>
@@ -200,7 +375,7 @@
                             </div>
                             <div class="header-button mt-2">
                                 <a href="contact.html" class="gt-theme-btn">
-                                   <i class="fa-solid fa-ticket-simple"></i> get ticket
+                                   <i class="fa-solid fa-ticket-simple"></i> thuê áo dài
                                 </a>
                             </div>
                             <div class="header__hamburger d-xl-block my-auto">
@@ -228,12 +403,12 @@
         </div>
 
         <!-- GT Hero Section Start -->
-        <section class="gt-hero-section gt-hero-3 fix bg-cover" style="background-image: url(assets/img/home-3/hero/hero-bg.jpg);">
-            <div class="gt-shape">
-                <img src="assets/img/home-3/hero/shape.png" alt="img">
+        <section class="gt-hero-section gt-hero-3 fix bg-cover">      
+            <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <source src="assets/img/home-3/hero/Trống đồng.mp4" type="video/mp4">
+</video>      <div class="gt-shape">
             </div>
-            <div class="gt-coming-soon-time" data-event-time="2025-12-31T23:59:59">
-                <div class="gt-timer-content">
+                <div class="gt-coming-soon-time" data-event-time="2025-09-02T23:59:59" style="display: none;">                <div class="gt-timer-content">
                     <h3 class="gt-day">00</h3>
                     <p>Days</p>
                 </div>
@@ -254,15 +429,15 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <div class="gt-hero-content">
-                            <span class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">digital Design</span>
-                            <h1 class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                conference
+                            <span class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s" 
+                            style="color: #FFFFFF; text-shadow: 0 0 20px rgba(0,0,0,0.8); position: relative; top: -20px; font-size: 75px;">CHÀO MỪNG</span>
+                            <h1 class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s"
+                            style="color: #FFCC00; -webkit-text-stroke: 1.5px #B30000; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); position: relative; top: -30px;">
+                                NGÀY QUỐC KHÁNH 
                             </h1>
-                            <span class="gt-style-2 wow fadeInUp" data-wow-delay=".5s">2025</span>
-                            <p class="wow fadeInUp" data-wow-delay=".7s">september 25 - 10:00Am - 5:00 pm</p>
-                            <div class="hero-button wow fadeInUp" data-wow-delay=".3s">
-                                <a href="contact.html" class="gt-theme-btn gt-theme-btn-3"><i class="fa-solid fa-arrow-up"></i> get tickets</a>
-                            </div>
+                            <span class="gt-style-2 wow fadeInUp" data-wow-delay=".5s" style="color: #FF0000; text-shadow: 0 0 1px #FF0000, 0 0 10px #FF0000, 0 0 3px #CC0000; letter-spacing: normal; font-size: 110px; position: relative; top: 60px;">VIỆT NAM</span>
+                            <p class="wow fadeInUp" data-wow-delay=".7s" style="color: #FFCC00; text-shadow: 0 0 30px #000; font-size: 40px !important; position: relative; top: 105px;">- 02 THÁNG 09 NĂM 2025 -</p>
+                            <div class="hero-button wow fadeInUp" data-wow-delay="2s" style="margin-top: 200px;"></div>
                         </div>
                     </div>
                 </div>
@@ -272,10 +447,10 @@
         <!-- GT About Section Start -->
         <section class="gt-about-section section-padding fix">
             <div class="gt-left-shape">
-                <img src="assets/img/home-3/about/shape-1.png" alt="img">
+                <img src="assets/img/home-3/about/shape-1.1.png" alt="img">
             </div>
             <div class="gt-right-shape">
-                <img src="assets/img/home-3/about/shape-2.png" alt="img">
+                <img src="assets/img/home-3/about/shape-2.1.png" alt="img">
             </div>
              <div class="gt-blur-shape">
                 <img src="assets/img/home-3/about/blur-shape.png" alt="img">
@@ -285,49 +460,49 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="gt-about-image wow fadeInUp" data-wow-delay=".3s">
-                                <img src="assets/img/home-3/about/about-1.png" alt="img">
+                                <img src="assets/img/home-3/about/Không có gì quý hơn Độc Lập - Tự Do.png" alt="img">
                                 <div class="gt-circle-shape">
-                                    <img src="assets/img/home-3/about/circle.png" alt="img">
+                                    <img src="assets/img/home-3/about/circle1.png" alt="img">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="gt-about-content">
                                 <div class="gt-section-title mb-0">
-                                    <span class="gt-sub-title gt-style-4 wow fadeInUp">About design conference</span>
+                                    <span class="gt-sub-title gt-style-4 wow fadeInUp" style="font-size: 30px !important;color: #DA251D;">Độc lập – Tự do – Hạnh phúc</span>
                                     <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                        Building The Future of digital design & Conferences
+                                        “Mỗi lá cờ đỏ sao vàng tung bay là một niềm tự hào.”
                                     </h2>
                                 </div>
-                                <p class="gt-text wow fadeInUp" data-wow-delay=".5s">
-                                    Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
+                                <p class="gt-text wow fadeInUp" data-wow-delay=".5s" style="font-size: 25px;">
+                                    Ngày Quốc khánh Việt Nam, hay còn gọi là Tết Độc lập, là ngày lễ chính thức của Việt Nam, diễn ra vào ngày 2 tháng 9 hằng năm, kỷ niệm ngày Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn độc lập tại Quảng trường Ba Đình, Hà Nội, khai sinh ra nước Việt Nam Dân chủ Cộng hòa, một trong các tiền thân của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam ngày nay.
                                 </p>
                                 <div class="gt-counter-box wow fadeInUp" data-wow-delay=".3s">
                                     <div class="gt-count-item">
-                                        <h2><span class="gt-count">25</span>+</h2>
+                                        <h2 style="color: #DA251D;"><span class="gt-count">50</span>M</h2>
                                         <p>
-                                            Our Visionary Speakers
+                                            Hashtag #TuHaoVietNam
                                         </p>
                                     </div>
                                     <div class="gt-count-item">
-                                        <h2><span class="gt-count">897</span>+</h2>
+                                        <h2 style="color: #DA251D;"><span class="gt-count">30</span>K</h2>
                                         <p>
-                                            Event Participants
+                                            Người xem diễu binh 02/09/2025
                                         </p>
                                     </div>
                                     <div class="gt-count-item">
-                                        <h2><span class="gt-count">69</span>+</h2>
+                                        <h2 style="color: #DA251D;"><span class="gt-count">80</span></h2>
                                         <p>
-                                            International Sponsors
+                                            Năm xây dựng và bảo vệ Tổ quốc
                                         </p>
                                     </div>
                                 </div>
                                 <div class="gt-about-button wow fadeInUp" data-wow-delay=".5s">
-                                   <a href="contact.html" class="gt-theme-btn gt-theme-btn-3"><i class="fa-solid fa-arrow-up"></i> get tickets</a>
+                                   <a href="contact.html" class="gt-theme-btn gt-theme-btn-3"><i class="fa-solid fa-arrow-up"></i>Mua vé</a>
                                    <ul class="gt-button">
                                       <li>
                                          <i class="fa-solid fa-phone-volume"></i>
-                                         <a href="tel:+9132140203420">+91 3214 0203 420</a>
+                                         <a href="tel:+84337707057">0337707057</a>
                                       </li>
                                    </ul>
                                 </div>
@@ -347,19 +522,139 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="gt-event-intro-items">
-                            <div class="gt-intro-video">
-                                <div class="gt-intro-image wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                    <img src="assets/img/home-3/text.png" alt="img">
+                            <div class="gt-intro-video" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                <div class="gt-intro-image wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s" style="flex: 1; margin-right: 50px;">
+                                    <img src="assets/img/home-3/text1.png" alt="img" style="width: 100% !important; max-width: 1000px !important; height: auto !important; display: block;">
                                 </div>
-                                <div class="video-icon">
-                                    <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn ripple video-popup">
+                                <div class="video-icon" style="flex-shrink: 0;">
+                                    <a href="#" class="video-btn ripple" onclick="openVideoModal(); return false;">
                                         <i class="fa-solid fa-play"></i>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="gt-intro-content wow fadeInUp" data-wow-delay=".3s">
+
+<!-- Video Modal -->
+<div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 99999; align-items: center; justify-content: center;">
+    <button onclick="closeVideoModal()" style="position: absolute; top: 20px; right: 30px; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; font-size: 35px; cursor: pointer; width: 50px; height: 50px; border-radius: 50%; line-height: 35px; transition: all 0.3s;">&times;</button>
+    <video id="mainVideo" controls autoplay style="max-width: 85%; max-height: 85%; border-radius: 15px; box-shadow: 0 0 50px rgba(0,0,0,0.5);">
+        <source src="assets/img/home-3/quoc-khanh-video.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+    </video>
+</div>
+
+<script>
+    // Lấy các phần tử audio
+const backgroundAudio = document.getElementById('backgroundAudio');
+const mainVideo = document.getElementById('mainVideo');
+
+// Biến trạng thái để kiểm soát việc bắt đầu nhạc nền
+let isAudioStarted = false;
+
+// Hàm để làm mờ âm thanh nền (Fade Out)
+function fadeOutBackground(callback) {
+    let volume = backgroundAudio.volume;
+    const fadePoint = setInterval(function () {
+        if (volume > 0.05) {
+            volume -= 0.05;
+            backgroundAudio.volume = volume;
+        } else {
+            clearInterval(fadePoint);
+            backgroundAudio.volume = 0;
+            backgroundAudio.pause();
+            if (callback) callback();
+        }
+    }, 100); // Điều chỉnh tốc độ mờ dần (ms)
+}
+
+// Hàm để làm rõ âm thanh nền (Fade In)
+function fadeInBackground() {
+    // Đảm bảo bắt đầu từ 0 để tăng dần
+    backgroundAudio.volume = 0;
+    
+    // Yêu cầu phát trước khi tăng âm lượng
+    backgroundAudio.play().catch(e => console.log("Audio play prevented: ", e));
+    
+    let volume = 0;
+    const targetVolume = 0.5; // Âm lượng tối đa bạn muốn (ví dụ: 50%)
+    
+    const fadePoint = setInterval(function () {
+        if (volume < targetVolume - 0.05) {
+            volume += 0.05;
+            backgroundAudio.volume = volume;
+        } else {
+            clearInterval(fadePoint);
+            backgroundAudio.volume = targetVolume;
+        }
+    }, 100); // Điều chỉnh tốc độ rõ dần (ms)
+}
+
+// Hàm khởi động nhạc nền khi người dùng tương tác lần đầu
+function startBackgroundMusic() {
+    if (!isAudioStarted) {
+        backgroundAudio.volume = 0.3; // Đặt âm lượng 30%
+        backgroundAudio.play().then(() => {
+            isAudioStarted = true;
+            console.log('Nhạc nền đã bắt đầu phát');
+        }).catch(e => {
+            console.log("Không thể phát nhạc nền:", e);
+        });
+    }
+}
+
+// Tự động bắt đầu nhạc khi người dùng click/scroll/keypress lần đầu
+document.addEventListener('click', startBackgroundMusic, { once: true });
+document.addEventListener('scroll', startBackgroundMusic, { once: true });
+document.addEventListener('keydown', startBackgroundMusic, { once: true });
+
+// Mở Video Modal
+function openVideoModal() {
+    // 1. Logic kiểm soát việc bắt đầu nhạc nền lần đầu
+    if (!isAudioStarted) {
+        // Phát nhạc nền (sẽ được fade in sau)
+        backgroundAudio.volume = 0.5; 
+        backgroundAudio.play().catch(e => console.log("Background audio play prevented on open: ", e));
+        isAudioStarted = true;
+    }
+    
+    // 2. Tắt nhạc nền (Fade Out)
+    fadeOutBackground(function() {
+        // Nhạc nền đã tắt/mờ hoàn toàn, giờ mở video
+        document.getElementById('videoModal').style.display = 'flex';
+        mainVideo.play();
+    });
+    
+    // Mở video modal
+    document.getElementById('videoModal').style.display = 'flex';
+    document.getElementById('mainVideo').play();
+}
+
+// Đóng Video Modal
+function closeVideoModal() {
+    document.getElementById('videoModal').style.display = 'none';
+    mainVideo.pause();
+    mainVideo.currentTime = 0;
+    
+    // Mở nhạc nền (Fade In)
+    if (isAudioStarted) {
+        fadeInBackground();
+    }
+}
+
+document.getElementById('videoModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeVideoModal();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeVideoModal();
+    }
+});
+</script>
+                                </div>
+                            <div class="gt-intro-content wow fadeInUp" data-wow-delay=".3s" style="text-align: left; font-size: 200%; margin-top: -125px;">
                                 <h2>
-                                    conference
+                                    A80
                                 </h2>
                             </div>
                         </div>
@@ -371,448 +666,137 @@
         <!-- Gt-Event-Schedule Section Start -->
         <section class="gt-event-schedule-section-3 fix">
             <div class="gt-top-shape float-bob-x">
-                <img src="assets/img/home-3/event/shape.png" alt="img">
+                <img src="assets/img/home-3/event/shape.png" alt="img" style="width: 140px !important; height: auto !important; top: 100px;">
             </div>
             <div class="container">
                 <div class="gt-section-title-area mb-0">
                     <div class="gt-section-title mb-0">
-                        <h2 class="wow fadeInUp" data-wow-delay=".3s">Schedule</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">LỊCH TRÌNH</h2>
                     </div>
                     <ul class="gt-nav" role="tablist">
                         <li class="nav-item wow fadeInUp" data-wow-delay=".2s">
                             <a href="index-3.html#technical" data-bs-toggle="tab" class="nav-link active" aria-selected="false" role="tab" tabindex="-1">
-                                day 01
+                                Ngày 27/08/2025
                             </a>
                         </li>
                         <li class="nav-item wow fadeInUp" data-wow-delay=".4s">
                             <a href="index-3.html#work" data-bs-toggle="tab" class="nav-link" aria-selected="true" role="tab">
-                                day 02
+                                Ngày 30/08/2025
                             </a>
                         </li>
                         <li class="nav-item wow fadeInUp" data-wow-delay=".6s">
                             <a href="index-3.html#ambition" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">
-                                day 03
-                            </a>
-                        </li>
-                        <li class="nav-item wow fadeInUp" data-wow-delay=".8s">
-                            <a href="index-3.html#skill" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">
-                                day 04
+                                Ngày 02/09/2025
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="tab-content">
                     <div id="technical" class="tab-pane fade active show" role="tabpanel">
-                        <div class="row g-4">
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-1.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Everyday Intelligence Research Rewired events
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-2.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Major Digital Design Conferences in 2025
-                                                Adobe MAX
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-3.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Figma’s Annual digital Conference
-                                                site develop
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-4.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                UXDX USA 2025 digital awards show
-                                                2025, in new york
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row g-4 justify-content-center"> <div class="col-xl-6 col-lg-8 col-md-10"> <div class="event-schedule-box-items-3">
+                <div class="event-schedule-image">
+                    <img src="assets/img/home-3/event/Sơ duyệt.jpg" alt="img">
+                    <ul class="gt-event-post">
+                        <li>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            27/08/2025
+                        </li>
+                    </ul>
+                </div>
+                <div class="gt-event-schedule-content">
+                    <h3>
+                            Sơ duyệt Lễ Kỷ niệm, Diễu binh, Diễu hành
+                    </h3>
+                    <ul class="gt-list">
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            **21h00 (Dự phòng ngày 28-8)**
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-location-dot"></i>
+                            Địa điểm: Quảng trường Ba Đình
+                        </li>
+                    </ul>
+                    <div class="gt-group-image">
+                        <img src="assets/img/home-3/event/group1.png" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                     </div>
                     <div id="work" class="tab-pane fade" role="tabpanel">
-                        <div class="row g-4">
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-1.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Everyday Intelligence Research Rewired events
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-2.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Major Digital Design Conferences in 2025
-                                                Adobe MAX
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-3.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Figma’s Annual digital Conference
-                                                site develop
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-4.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                UXDX USA 2025 digital awards show
-                                                2025, in new york
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row g-4 justify-content-center"> <div class="col-xl-6 col-lg-8 col-md-10"> <div class="event-schedule-box-items-3">
+                <div class="event-schedule-image">
+                    <img src="assets/img/home-3/event/Tổng duyệt.jpg" alt="img">
+                    <ul class="gt-event-post">
+                        <li>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            30/08/2025
+                        </li>
+                    </ul>
+                </div>
+                <div class="gt-event-schedule-content">
+                    <h3>
+                            Tổng duyệt Lễ Kỷ niệm, Diễu binh, Diễu hành
+                    </h3>
+                    <ul class="gt-list">
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            **7h00 (Dự phòng ngày 31-8)**
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-location-dot"></i>
+                            Địa điểm: Quảng trường Ba Đình
+                        </li>
+                    </ul>
+                    <div class="gt-group-image">
+                        <img src="assets/img/home-3/event/group1.png" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                     </div>
                     <div id="ambition" class="tab-pane fade" role="tabpanel">
-                        <div class="row g-4">
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-1.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Everyday Intelligence Research Rewired events
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-2.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Major Digital Design Conferences in 2025
-                                                Adobe MAX
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-3.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                Figma’s Annual digital Conference
-                                                site develop
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6">
-                                <div class="event-schedule-box-items-3">
-                                    <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-4.jpg" alt="img">
-                                        <ul class="gt-event-post">
-                                            <li>
-                                                <i class="fa-regular fa-calendar-days"></i>
-                                                25 april, 2025
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="gt-event-schedule-content">
-                                        <h3>
-                                            <a href="event-details.html">
-                                                UXDX USA 2025 digital awards show
-                                                2025, in new york
-                                            </a>
-                                        </h3>
-                                        <ul class="gt-list">
-                                            <li>
-                                                <i class="fa-regular fa-door-open"></i>
-                                                Room 2024
-                                            </li>
-                                        </ul>
-                                        <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
-                                        </div>
-                                        <a href="event-details.html" class="gt-icon">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row g-4 justify-content-center"> <div class="col-xl-6 col-lg-8 col-md-10"> <div class="event-schedule-box-items-3">
+                <div class="event-schedule-image">
+                    <img src="assets/img/home-3/event/Chính thức.jpg" alt="img">
+                    <ul class="gt-event-post">
+                        <li>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            02/09/2025
+                        </li>
+                    </ul>
+                </div>
+                <div class="gt-event-schedule-content">
+                    <h3>
+                            Chương trình Chính thức Ngày Quốc Khánh (Diễu binh, Diễu hành)
+                    </h3>
+                    <ul class="gt-list">
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            **7h45 (Bắt đầu Chương trình Diễu binh, Diễu hành)**
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-location-dot"></i>
+                            Địa điểm: Quảng trường Ba Đình
+                        </li>
+                    </ul>
+                    <div class="gt-group-image">
+                        <img src="assets/img/home-3/event/group1.png" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                     </div>
                     <div id="skill" class="tab-pane fade" role="tabpanel">
                         <div class="row g-4">
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <div class="event-schedule-box-items-3">
                                     <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-1.jpg" alt="img">
+                                        <img src="assets/img/home-3/event/Sơ duyệt.jpg" alt="img">
                                         <ul class="gt-event-post">
                                             <li>
                                                 <i class="fa-regular fa-calendar-days"></i>
@@ -833,7 +817,7 @@
                                             </li>
                                         </ul>
                                         <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
+                                            <img src="assets/img/home-3/event/group1.png" alt="img">
                                         </div>
                                         <a href="event-details.html" class="gt-icon">
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -844,7 +828,7 @@
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <div class="event-schedule-box-items-3">
                                     <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-2.jpg" alt="img">
+                                        <img src="assets/img/home-3/event/Tổng duyệt.jpg" alt="img">
                                         <ul class="gt-event-post">
                                             <li>
                                                 <i class="fa-regular fa-calendar-days"></i>
@@ -866,7 +850,7 @@
                                             </li>
                                         </ul>
                                         <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
+                                            <img src="assets/img/home-3/event/group1.png" alt="img">
                                         </div>
                                         <a href="event-details.html" class="gt-icon">
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -877,7 +861,7 @@
                             <div class="col-xl-3 col-lg-6 col-md-6">
                                 <div class="event-schedule-box-items-3">
                                     <div class="event-schedule-image">
-                                        <img src="assets/img/home-3/event/event-3.jpg" alt="img">
+                                        <img src="assets/img/home-3/event/Chính thức.jpg" alt="img">
                                         <ul class="gt-event-post">
                                             <li>
                                                 <i class="fa-regular fa-calendar-days"></i>
@@ -899,7 +883,7 @@
                                             </li>
                                         </ul>
                                         <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
+                                            <img src="assets/img/home-3/event/group1.png" alt="img">
                                         </div>
                                         <a href="event-details.html" class="gt-icon">
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -932,7 +916,7 @@
                                             </li>
                                         </ul>
                                         <div class="gt-group-image">
-                                            <img src="assets/img/home-3/event/group.png" alt="img">
+                                            <img src="assets/img/home-3/event/group1.png" alt="img">
                                         </div>
                                         <a href="event-details.html" class="gt-icon">
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -959,7 +943,7 @@
                                 <div id="technic" class="tab-pane fade" role="tabpanel">
                                 <div class="gt-event-video-image">
                                 <video 
-                                    src="assets/img/home-3/event/business.mp4"  
+                                    src="assets/img/home-3/event/business1.mp4"  
                                     autoplay 
                                     muted 
                                     loop 
@@ -974,28 +958,10 @@
                                     </video>
                                 </div>
                                 </div>
-                                <div id="worker" class="tab-pane fade" role="tabpanel">
-                                    <div class="gt-event-video-image">
-                                        <video 
-                                            src="assets/img/home-3/event/business.mp4"  
-                                            autoplay 
-                                            muted 
-                                            loop 
-                                            playsinline 
-                                            style="
-                                                width: 1410px; 
-                                                height: 700px; 
-                                                object-fit: cover; 
-                                                border-radius: 40px;
-                                                pointer-events: none;
-                                                user-select: none;">
-                                            </video>
-                                        </div>
-                                  </div>
                                 <div id="ambitions" class="tab-pane fade active show" role="tabpanel">
                                     <div class="gt-event-video-image">
                                         <video 
-                                            src="assets/img/home-3/event/business.mp4"  
+                                            src="assets/img/home-3/event/business2.mp4"  
                                             autoplay 
                                             muted 
                                             loop 
@@ -1010,68 +976,17 @@
                                         </video>
                                     </div>
                                 </div>
-                                <div id="skills" class="tab-pane fade" role="tabpanel">
-                                    <div class="gt-event-video-image">
-                                        <video 
-                                            src="assets/img/home-3/event/business.mp4"  
-                                            autoplay 
-                                            muted 
-                                            loop 
-                                            playsinline 
-                                            style="
-                                                width: 1410px; 
-                                                height: 700px; 
-                                                object-fit: cover; 
-                                                border-radius: 40px;
-                                                pointer-events: none;
-                                                user-select: none;">
-                                            </video>
-                                    </div>
-                                </div>
-                                <div id="year" class="tab-pane fade" role="tabpanel">
-                                    <div class="gt-event-video-image">
-                                        <video 
-                                            src="assets/img/home-3/event/business.mp4"  
-                                            autoplay 
-                                            muted 
-                                            loop 
-                                            playsinline 
-                                            style="
-                                                width: 1410px; 
-                                                height: 700px; 
-                                                object-fit: cover; 
-                                                border-radius: 40px;
-                                                pointer-events: none;
-                                                user-select: none;">
-                                            </video>
-                                    </div>
-                                </div>
-                             </div>
                               <div class="gt-gallery-items">
-                                 <h2>previous events gallery</h2>
+                                 <h2>KHOẢNG CÁCH 80 NĂM</h2>
+                                 <h3>“Từ khoảnh khắc Bác cất tiếng đọc Tuyên ngôn Độc lập, 80 năm đã trôi qua, nhưng âm vang của ngày ấy vẫn theo dân tộc trên mọi hành trình.”</h3>
                                  <ul class="gt-nav" role="tablist">
                                     <li class="nav-item">
                                         <a href="index-3.html#technic" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">
-                                            2005
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-3.html#worker" data-bs-toggle="tab" class="nav-link" aria-selected="true" role="tab">
-                                            2010
+                                            1945
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="index-3.html#ambitions" data-bs-toggle="tab" class="nav-link active" aria-selected="false" role="tab" tabindex="-1">
-                                            2015
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-3.html#skills" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">
-                                            2020
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-3.html#year" data-bs-toggle="tab" class="nav-link gt-style-2" aria-selected="false" role="tab" tabindex="-1">
                                             2025
                                         </a>
                                     </li>
@@ -1094,20 +1009,13 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
                             <div class="gt-speaker-items-3">
                                 <div class="gt-speaker-image">
-                                    <img src="assets/img/home-3/speaker/speaker-1.jpg" alt="img">
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-3.html#" class="ms-3"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-3.html#"><i class="fa-brands fa-instagram"></i></a>
-                                  </div>
+                                    <img src="assets/img/home-3/speaker/BÁC HỒ.jpg" alt="img">
                                   <div class="gt-speaker-content">
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
-                                          <i class="fa-solid fa-play"></i>
-                                      </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Hồ Chí Minh</a>
+                                      </h4>
                                       <p>
-                                        founder & CEO
+                                        Vị lãnh tụ vĩ đại của đất nước
                                       </p>
                                   </div>
                                 </div>
@@ -1116,43 +1024,38 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
                             <div class="gt-speaker-items-3">
                                 <div class="gt-speaker-image">
-                                    <img src="assets/img/home-3/speaker/speaker-2.jpg" alt="img">
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-3.html#" class="ms-3"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-3.html#"><i class="fa-brands fa-instagram"></i></a>
-                                  </div>
+                                    <img src="assets/img/home-3/speaker/Bác Võ Nguyên Giáp.jpg" alt="img">
                                   <div class="gt-speaker-content">
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
-                                          <i class="fa-solid fa-play"></i>
-                                      </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Võ Nguyên Giáp</a>
+                                      </h4>
                                       <p>
-                                        founder & CEO
+                                        Nhà lãnh đạo quân sự lỗi lạc
                                       </p>
                                   </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="gt-section-title mb-0">
+                                <span class="text-white gt-sub-title gt-style-4 wow fadeInUp" style="width: auto !important; height: 150px !important; font-size: 30px !important;">
+                                    Cùng điểm qua những gương mặt tiêu biểu đã góp phần làm nên lịch sử hào hùng của dân tộc Việt Nam cho đến hiện tại.
+                                </span>
+                                <p class="text-white mt-3 mt-mb-0 wow fadeInUp" data-wow-delay=".5s">
+                                    Họ không chỉ là những nhà lãnh đạo xuất sắc mà còn là biểu tượng của lòng yêu nước, sự kiên cường và tinh thần đoàn kết. Qua từng thời kỳ lịch sử, những con người này đã dẫn dắt dân tộc vượt qua khó khăn, chiến thắng kẻ thù và xây dựng một đất nước Việt Nam độc lập, tự do và hùng mạnh như ngày nay.
+                                </p>
+                            </div>
+                        </div>
                         <div class="col-xl-4 col-lg-6 col-md-6 wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
                             <div class="gt-speaker-items-3">
                                 <div class="gt-speaker-image">
-                                    <img src="assets/img/home-3/speaker/speaker-3.jpg" alt="img">
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-3.html#" class="ms-3"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-3.html#"><i class="fa-brands fa-instagram"></i></a>
-                                  </div>
+                                    <img src="assets/img/home-3/speaker/Bác Nguyễn Phú Trọng.png" alt="img">
                                   <div class="gt-speaker-content">
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
-                                          <i class="fa-solid fa-play"></i>
-                                      </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Nguyễn Phú Trọng</a>
+                                      </h4>
                                       <p>
-                                        founder & CEO
+                                        Tổng Bí thư Đảng Cộng sản Việt Nam nhiệm kỳ 2021-2024
                                       </p>
                                   </div>
                                 </div>
@@ -1161,20 +1064,13 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow img-custom-anim-top" data-wow-duration="1.3s" data-wow-delay="0.3s">
                             <div class="gt-speaker-items-3">
                                 <div class="gt-speaker-image">
-                                    <img src="assets/img/home-3/speaker/speaker-4.jpg" alt="img">
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-3.html#" class="ms-3"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-3.html#"><i class="fa-brands fa-instagram"></i></a>
-                                  </div>
+                                    <img src="assets/img/home-3/speaker/Bác Phạm Minh Chính.jpg" alt="img">
                                   <div class="gt-speaker-content">
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
-                                          <i class="fa-solid fa-play"></i>
-                                      </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Phạm Minh Chính</a>
+                                      </h4>
                                       <p>
-                                        founder & CEO
+                                        Thủ tướng Chính phủ nước CHXHCN Việt Nam
                                       </p>
                                   </div>
                                 </div>
@@ -1183,20 +1079,13 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
                             <div class="gt-speaker-items-3">
                                 <div class="gt-speaker-image">
-                                    <img src="assets/img/home-3/speaker/speaker-5.jpg" alt="img">
-                                    <div class="gt-social-icon d-flex align-items-center">
-                                        <a href="index-3.html#" class="ms-3"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="index-3.html#" class="me-3"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="index-3.html#"><i class="fa-brands fa-instagram"></i></a>
-                                  </div>
+                                    <img src="assets/img/home-3/speaker/Bác Tô Lâm.jpg" alt="img">
                                   <div class="gt-speaker-content">
-                                        <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
-                                          <i class="fa-solid fa-play"></i>
-                                      </a>
-                                      
+                                      <h4>
+                                        <a href="speaker-details.html">Tô Lâm</a>
+                                      </h4>
                                       <p>
-                                        founder & CEO
+                                        Tổng Bí thư Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam khóa XIII
                                       </p>
                                   </div>
                                 </div>
@@ -1214,29 +1103,29 @@
                     <div class="swiper-wrapper slide-transtion">
                     <div class="swiper-slide brand-slide-element">
                         <div class="gt-testimonial-box-item">
-                            <h3>Next-level experience!</h3>
+                            <h3>Những bài viết tiêu biểu!</h3>
                             <p>
-                                "Attending this AI event was a game-changer. The speakers were not only knowledgeable but also made complex concepts easy to understand. I walked away with practical strategies I can apply immediately in my work."
+                                “Khoảnh khắc 80 năm Quốc khánh thật sự khiến tôi xúc động. Lễ diễu binh và phần phát biểu của lãnh đạo nhắc tôi nhớ về chặng đường mà dân tộc đã đi qua. Một ngày chứa đầy tự hào.”
                             </p>
-                            <h6>Mark D., <span>Tech Entrepreneur</span></h6>
+                            <h6><span>— Nguyễn Minh An, Giáo viên Lịch sử</span></h6>
                         </div>
                     </div>
                     <div class="swiper-slide brand-slide-element">
                         <div class="gt-testimonial-box-item">
-                            <h3>Next-level experience!</h3>
+                            <h3>Những bài viết tiêu biểu!</h3>
                             <p>
-                                "Attending this AI event was a game-changer. The speakers were not only knowledgeable but also made complex concepts easy to understand. I walked away with practical strategies I can apply immediately in my work."
+                                “Tham dự sự kiện 2/9/2025 giúp tôi cảm nhận rõ hơn tinh thần đoàn kết của người Việt. Những thước phim tư liệu và nghi lễ tại Ba Đình mang lại cảm giác thiêng liêng khó tả.”
                             </p>
-                            <h6>Mark D., <span>Tech Entrepreneur</span></h6>
+                            <h6><span>— Lê Quỳnh Mai, Nhà báo</span></h6>
                         </div>
                     </div>
                     <div class="swiper-slide brand-slide-element">
                         <div class="gt-testimonial-box-item">
-                            <h3>Next-level experience!</h3>
+                            <h3>Những bài viết tiêu biểu!</h3>
                             <p>
-                                "Attending this AI event was a game-changer. The speakers were not only knowledgeable but also made complex concepts easy to understand. I walked away with practical strategies I can apply immediately in my work."
+                                “Lời phát biểu tại lễ kỷ niệm 80 năm Quốc khánh thật mạnh mẽ. Nó cho tôi thêm niềm tin vào sự phát triển của đất nước trong thời kỳ mới.”
                             </p>
-                            <h6>Mark D., <span>Tech Entrepreneur</span></h6>
+                            <h6><span>— Trần Hải Phong, Doanh nhân trẻ</span></h6>
                         </div>
                     </div>
                     </div>
@@ -1247,182 +1136,33 @@
                         <div class="swiper-wrapper slide-transtion">
                         <div class="swiper-slide brand-slide-element">
                             <div class="gt-testimonial-box-item">
-                                <h3>Next-level experience!</h3>
+                                <h3>Những bài viết tiêu biểu!</h3>
                                 <p>
-                                    "Attending this AI event was a game-changer. The speakers were not only knowledgeable but also made complex concepts easy to understand. I walked away with practical strategies I can apply immediately in my work."
+                                    “Không khí ngày 2/9 năm nay đặc biệt hơn mọi năm. Các hoạt động tri ân và tái hiện lịch sử khiến tôi hiểu sâu hơn ý nghĩa của độc lập.”
                                 </p>
-                                <h6>Mark D., <span>Tech Entrepreneur</span></h6>
+                                <h6><span>— Phạm Tố Linh, Sinh viên Quốc tế học</span></h6>
                             </div>
                         </div>
                         <div class="swiper-slide brand-slide-element">
                             <div class="gt-testimonial-box-item">
-                                <h3>Next-level experience!</h3>
+                                <h3>Những bài viết tiêu biểu!</h3>
                                 <p>
-                                    "Attending this AI event was a game-changer. The speakers were not only knowledgeable but also made complex concepts easy to understand. I walked away with practical strategies I can apply immediately in my work."
+                                    “Tôi ấn tượng nhất là màn trình diễn ánh sáng kể lại 80 năm hình thành và phát triển đất nước. Một trải nghiệm hiện đại nhưng vẫn giữ trọn tinh thần dân tộc.”
                                 </p>
-                                <h6>Mark D., <span>Tech Entrepreneur</span></h6>
+                                <h6><span>— Hoàng Gia Bảo, Thiết kế sáng tạo</span></h6>
                             </div>
                         </div>
                         <div class="swiper-slide brand-slide-element">
                             <div class="gt-testimonial-box-item">
-                                <h3>Next-level experience!</h3>
+                                <h3>Những bài viết tiêu biểu!</h3>
                                 <p>
-                                    "Attending this AI event was a game-changer. The speakers were not only knowledgeable but also made complex concepts easy to understand. I walked away with practical strategies I can apply immediately in my work."
+                                    “2/9/2025 đánh dấu một cột mốc lớn. Những hoạt động văn hóa, triển lãm và chương trình nghệ thuật càng làm tôi thấy rõ sự đổi thay của Việt Nam qua các thời kỳ.”
                                 </p>
-                                <h6>Mark D., <span>Tech Entrepreneur</span></h6>
+                                <h6><span>— Đặng Quốc Huy, Công chức trẻ</span></h6>
                             </div>
                         </div>
                         </div>
                     </div>
-            </div>
-        </section>
-
-        <!-- Gt-Service Section Start -->
-        <section class="gt-service-section-3 section-padding">
-            <div class="gt-circle-shape">
-                <img src="assets/img/home-2/service/circle.png" alt="img">
-            </div>
-            <div class="gt-top-shape">
-                <img src="assets/img/home-2/service/dark.png" alt="img">
-            </div>
-            <div class="container">
-                <div class="gt-service-wrapper">
-                    <div class="row g-4">
-                        <div class="col-lg-6">
-                           <div class="gt-service-dark-box">
-                               <h6 class="wow fadeInUp" data-wow-delay=".3s">why you join this events</h6>
-                               <h2 class="wow fadeInUp" data-wow-delay=".5s">
-                                  you will get to know
-                               </h2>
-                               <div class="gt-shape">
-                                    <img src="assets/img/home-2/service/shape-2.png" alt="img">
-                                </div>
-                                <div class="gt-service-image wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                    <img src="assets/img/home-2/service/man.png" alt="img">
-                                </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="gt-service-item gt-style-2">
-                                <div class="gt-bg-shape">
-                                    <img src="assets/img/home-2/service/bg-shape.png" alt="img">
-                                </div>
-                                <div class="faq-accordion">
-                                <div class="accordion" id="accordion">
-                                    <div class="accordion-item mb-3">
-                                        <h5 class="accordion-header">
-                                            <button class="accordion-button d-flex gap-2 flex-wrap collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#faq1"
-                                                aria-expanded="false" aria-controls="faq1">
-                                                <span>01</span>
-                                                Networking
-                                            </button>
-                                        </h5>
-                                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                            <div class="accordion-body">
-                                            Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                                                <div class="thumb">
-                                                    <img src="assets/img/home-2/service/faq-2.jpg" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item mb-3">
-                                        <h5 class="accordion-header">
-                                            <button class="accordion-button d-flex gap-2 flex-wrap collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#faq2"
-                                                aria-expanded="false" aria-controls="faq2">
-                                                <span>02</span>
-                                                Connecting minds
-                                            </button>
-                                        </h5>
-                                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                            <div class="accordion-body">
-                                            Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                                                <div class="thumb">
-                                                    <img src="assets/img/home-2/service/faq-2.jpg" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item mb-3">
-                                        <h5 class="accordion-header">
-                                            <button class="accordion-button d-flex gap-2 flex-wrap collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#faq3"
-                                                aria-expanded="false" aria-controls="faq3">
-                                                <span>03</span>
-                                                Creating future
-                                            </button>
-                                        </h5>
-                                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                            <div class="accordion-body">
-                                                Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                                                <div class="thumb">
-                                                    <img src="assets/img/home-2/service/faq-2.jpg" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item mb-3">
-                                        <h5 class="accordion-header">
-                                            <button class="accordion-button d-flex gap-2 flex-wrap" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#faq4"
-                                                aria-expanded="true" aria-controls="faq4">
-                                                <span>04</span>
-                                                Great Speakers
-                                            </button>
-                                        </h5>
-                                        <div id="faq4" class="accordion-collapse collapse show" data-bs-parent="#accordion">
-                                            <div class="accordion-body">
-                                                Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                                                <div class="thumb">
-                                                    <img src="assets/img/home-2/service/faq-2.jpg" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item mb-3">
-                                        <h5 class="accordion-header">
-                                            <button class="accordion-button d-flex gap-2 flex-wrap collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#faq5"
-                                                aria-expanded="false" aria-controls="faq5">
-                                                <span>05</span>
-                                                New People
-                                            </button>
-                                        </h5>
-                                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                            <div class="accordion-body">
-                                                Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                                                <div class="thumb">
-                                                    <img src="assets/img/home-2/service/faq-2.jpg" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item mb-0">
-                                        <h5 class="accordion-header">
-                                            <button class="accordion-button d-flex gap-2 flex-wrap collapsed gt-style-2" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#faq6"
-                                                aria-expanded="false" aria-controls="faq6">
-                                                <span>06</span>
-                                                Have Fun
-                                            </button>
-                                        </h5>
-                                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                            <div class="accordion-body">
-                                                Welcome to our AI Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                                                <div class="thumb">
-                                                    <img src="assets/img/home-2/service/faq-2.jpg" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1436,49 +1176,44 @@
             </div>
             <div class="container">
                 <div class="gt-section-title text-center">
-                    <span class="gt-sub-title gt-style-4 wow fadeInUp">get your seat</span>
                         <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                            buy a ticket be the first one
+                            Ủng hộ web của chúng mình nhé!
                         </h2>
                     </div>
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="gt-main-card-item gt-bg">
                             <div class="gt-event-ticket-card-item">
-                            <h3>Gold package</h3>
+                            <h3>Áo Dài Nam</h3>
                             <div class="gt-event-box-item">
-                                <h6>DEFAULT <span>( Unlimited tickets)</span></h6>
+                                <h6>Số lượng <span>(Không giới hạn)</span></h6>
                                 <div class="gt-box-item">
                                     <div class="gt-item">
-                                        <span>Ticket Price :</span>
-                                        <p>09$</p>
+                                        <span>Giá thuê :</span>
+                                        <p>50k</p>
                                     </div>
                                     <div class="gt-item">
-                                        <span>Quantity :</span>
+                                        <span>Số lượng :</span>
                                         <p class="qty">
                                             <button class="qtyminus" aria-hidden="true">−</button>
                                             <input type="number" name="qty" id="qty2" min="1" max="10" step="1" value="1">
                                             <button class="qtyplus" aria-hidden="true">+</button>
                                         </p>
                                     </div>
-                                    <div class="gt-item">
-                                        <span>Sub Total :</span>
-                                        <p>18$</p>
-                                    </div>
                                 </div>
                              </div>
                              <ul class="gt-list-item">
                                 <li>
-                                    <span>Lunch & Coffee :</span>
-                                    Yes
+                                    <span>Hỗ trợ phí nếu hư hỏng :</span>
+                                    Không
                                 </li>
                                 <li>
-                                    <span>Certificate :</span>
-                                    Yes
+                                    <span>Số ngày tối đa được thuê :</span>
+                                    3 ngày
                                 </li>
                             </ul>
                             <div class="gt-card-button gt-cart-button-2">
-                                 <a href="event-details.html" class="gt-theme-btn gt-theme-btn-2">PURCHASE TICKET</a>
+                                 <a href="contact.html" class="gt-theme-btn gt-theme-btn-2">THUÊ ÁO DÀI</a>
                             </div>
                           </div>
                         </div>
@@ -1486,254 +1221,81 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="gt-main-card-item gt-style-2 gt-bg-color">
                             <div class="gt-event-ticket-card-item">
-                            <h3>Diamond package</h3>
+                            <h3>Áo Dài Nữ</h3>
                             <div class="gt-event-box-item">
-                                <h6>DEFAULT <span>( Unlimited tickets)</span></h6>
+                                <h6>Số lượng <span>(không giới hạn)</span></h6>
                                 <div class="gt-box-item">
                                     <div class="gt-item">
-                                        <span>Ticket Price :</span>
-                                        <p>09$</p>
+                                        <span>Giá thuê :</span>
+                                        <p>500k</p>
                                     </div>
                                     <div class="gt-item">
-                                        <span>Quantity :</span>
+                                        <span>Số lượng :</span>
                                         <p class="qty">
                                             <button class="qtyminus" aria-hidden="true">−</button>
                                             <input type="number" name="qty" id="qty3" min="1" max="10" step="1" value="1">
                                             <button class="qtyplus" aria-hidden="true">+</button>
                                         </p>
                                     </div>
-                                    <div class="gt-item">
-                                        <span>Sub Total :</span>
-                                        <p>18$</p>
-                                    </div>
                                 </div>
                              </div>
                              <ul class="gt-list-item">
                                 <li>
-                                    <span>Lunch & Coffee :</span>
-                                    Yes
+                                    <span>Hỗ trợ phí nếu hư hỏng :</span>
+                                    Có
                                 </li>
                                 <li>
-                                    <span>Certificate :</span>
-                                    Yes
+                                    <span>Số ngày tối đa được thuê :</span>
+                                    3 ngày
                                 </li>
                             </ul>
                             <div class="gt-card-button gt-cart-button-2">
-                                 <a href="event-details.html" class="gt-theme-btn gt-theme-btn-2">PURCHASE TICKET</a>
+                                 <a href="contact.html" class="gt-theme-btn gt-theme-btn-2">THUÊ ÁO DÀI</a>
                             </div>
                           </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="gt-main-card-item gt-bg">
-                            <div class="gt-event-ticket-card-item">
-                            <h3>platinum package</h3>
-                            <div class="gt-event-box-item">
-                                <h6>DEFAULT <span>( Unlimited tickets)</span></h6>
-                                <div class="gt-box-item">
-                                    <div class="gt-item">
-                                        <span>Ticket Price :</span>
-                                        <p>09$</p>
-                                    </div>
-                                    <div class="gt-item">
-                                        <span>Quantity :</span>
-                                        <p class="qty">
-                                            <button class="qtyminus" aria-hidden="true">−</button>
-                                            <input type="number" name="qty" id="qty4" min="1" max="10" step="1" value="1">
-                                            <button class="qtyplus" aria-hidden="true">+</button>
-                                        </p>
-                                    </div>
-                                    <div class="gt-item">
-                                        <span>Sub Total :</span>
-                                        <p>18$</p>
-                                    </div>
-                                </div>
-                             </div>
-                             <ul class="gt-list-item">
-                                <li>
-                                    <span>Lunch & Coffee :</span>
-                                    Yes
-                                </li>
-                                <li>
-                                    <span>Certificate :</span>
-                                    Yes
-                                </li>
-                            </ul>
-                            <div class="gt-card-button gt-cart-button-2">
-                                 <a href="event-details.html" class="gt-theme-btn gt-theme-btn-2">PURCHASE TICKET</a>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gt-Sponsor-Bg Section Start -->
-        <section class="gt-sponsor-bg-section section-padding fix">
-            <div class="container">
-                <div class="gt-sponsor-bg-wrapper bg-cover" style="background-image: url(assets/img/home-1/sponser/sponsor-bg.jpg);">
-                    <div class="gt-right-shape">
-                        <img src="assets/img/home-1/sponser/shape.png" alt="img">
-                    </div>
-                    <div class="gt-sponsor-content">
-                        <h2 class="wow fadeInUp" data-wow-delay=".3s">apply for event sponsors</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".5s">
-                            Welcome to our Business & Startup hub, where innovation meets ingenuity! We are a community of forward-thinking entrepreneurs, industry leaders, and AI experts, united by our shared passion.
-                        </p>
-                        <a href="sponsor.html" class="gt-theme-btn wow fadeInUp" data-wow-delay=".3s"><i class="fa-solid fa-arrow-up"></i> get sponsors</a>
-                    </div>
-                    <div class="gt-qr-image wow fadeInUp" data-wow-delay=".3s">
-                        <img src="assets/img/home-1/sponser/qr-image.png" alt="img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         <!-- Gt-News Section3 Start -->
-        <section class="gt-news-section-3 section-padding fix pt-0">
-            <div class="gt-left-shape">
-                <img src="assets/img/home-3/news/shape.png" alt="img">
-            </div>
-            <div class="container">
-                
-                <div class="news-wrapper-3">
-                    <div class="row">
-                    <div class="col-xl-12">
-                        <div class="gt-news-items-3 gt-style-2">
-                            <div class="gt-news-content">
-                                <ul class="gt-post">
-                                    <li>
-                                        Corporate
-                                    </li>
-                                    <li class="gt-style-2">
-                                        11 march 2025
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">Consectetur adipisicing elit, sed do eiusmod tempor</a>
-                                </h3>
-                                <p>
-                                    lipsum to our Business & Startup hub, where innovation meets ingenuity! We are a communi of forward-thinking entrepreneurs
-                                </p>
-                                <a href="news-details.html" class="gt-link-btn">
-                                     <span class="gt-icon-btn">
-                                         <i class="fa-solid fa-chevrons-right"></i>
-                                     </span>
-                                     <span class="gt-radius-btn">READ MORE</span>
-                                  </a>
-                            </div>
-                            <div class="gt-news-image">
-                                <img src="assets/img/home-3/news/news-1.jpg" alt="img">
-                                <div class="post-date">
-                                    <h5>20</h5>
-                                    <p>april</p>
-                                  </div>
-                            </div>
-                        </div>
-                        <div class="gt-news-items-3 gt-style-2">
-                            <div class="gt-news-content">
-                                <ul class="gt-post">
-                                    <li>
-                                        Corporate
-                                    </li>
-                                    <li class="gt-style-2">
-                                        11 march 2025
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">Consectetur adipisicing elit, sed do eiusmod tempor</a>
-                                </h3>
-                                <p>
-                                    lipsum to our Business & Startup hub, where innovation meets ingenuity! We are a communi of forward-thinking entrepreneurs
-                                </p>
-                                <a href="news-details.html" class="gt-link-btn">
-                                     <span class="gt-icon-btn">
-                                         <i class="fa-solid fa-chevrons-right"></i>
-                                     </span>
-                                     <span class="gt-radius-btn">READ MORE</span>
-                                  </a>
-                            </div>
-                            <div class="gt-news-image">
-                                <img src="assets/img/home-3/news/news-2.jpg" alt="img">
-                                <div class="post-date">
-                                    <h5>20</h5>
-                                    <p>april</p>
-                                  </div>
-                            </div>
-                        </div>
-                        <div class="gt-news-items-3 mb-0">
-                            <div class="gt-news-content">
-                                <ul class="gt-post">
-                                    <li>
-                                        Corporate
-                                    </li>
-                                    <li class="gt-style-2">
-                                        11 march 2025
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">Consectetur adipisicing elit, sed do eiusmod tempor</a>
-                                </h3>
-                                <p>
-                                    lipsum to our Business & Startup hub, where innovation meets ingenuity! We are a communi of forward-thinking entrepreneurs
-                                </p>
-                                <a href="news-details.html" class="gt-link-btn">
-                                     <span class="gt-icon-btn">
-                                         <i class="fa-solid fa-chevrons-right"></i>
-                                     </span>
-                                     <span class="gt-radius-btn">READ MORE</span>
-                                  </a>
-                            </div>
-                            <div class="gt-news-image">
-                                <img src="assets/img/home-3/news/news-3.jpg" alt="img">
-                                <div class="post-date">
-                                    <h5>20</h5>
-                                    <p>april</p>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
                 </div>
             </div>
         </section>
 
         <!-- GT-Brand Section Start -->
-        <div class="gt-brand-section section-padding fix pt-0">
-            <div class="container">
-                <div class="brand-wrapper">
-                    <h4>official sponsorship</h4>
+       <div class="gt-brand-section section-padding fix pt-0">
+    <div class="container">
+        <div class="brand-wrapper">
+            <h4 style="line-height: 1.2; margin-bottom: 30px; position: relative; text-align: center; padding: 0 20px;">
+                <span style="background: white; padding: 0 15px; position: relative; z-index: 1;">Tài Trợ Chính</span>
+            </h4>
                     <div class="swiper gt-brand-slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                    <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                    <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                     <img src="assets/img/home-3/brand/brand-1.png" alt="brand-img">
+                                     <img src="assets/img/home-3/brand/brand-2.png" alt="brand-img">
                                 </div>
                             </div>
                         </div>
@@ -1741,71 +1303,77 @@
                 </div>
             </div>
         </div>
-
+    <style>
+    .brand-image {
+        padding: 15px;
+    }
+    
+    .brand-image img {
+        max-width: 220px;
+        max-height: 150px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
         <!-- GT Footer Section Start -->
-        <footer class="gt-footer-section-2 fix">
-        <div class="gt-top-shape">
-            <img src="assets/img/home-2/footer/footer-shape.png" alt="img">
-        </div>
-        <div class="container">
-            <div class="gt-footer-widget-wrapper gt-style-2">
-                <div class="row g-4 justify-content-between">
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="gt-footer-widget-items">
-                            <div class="gt-widget-head">
+        <footer class="gt-footer-section-3 fix bg-cover" style="background-image: url(assets/img/home-3/footer-bg.jpg);">
+            <div class="container">
+                <div class="footer-widget-wrapper-3">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10">
+                            <div class="gt-widget-head-logo wow fadeInUp" data-wow-delay=".3s">
                                 <a href="index.html" class="gt-footer-logo">
-                                    <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                                    <img src="assets/img/logo/Logo.svg" alt="img">
                                 </a>
                             </div>
-                            <div class="gt-footer-content">
-                                <p>
-                                    Lễ hội Trung Thu 2025 - Nơi lưu giữ và lan tỏa những giá trị văn hóa truyền thống tốt đẹp nhất của dân tộc Việt Nam.
+                            <ul class="gt-footer-list wow fadeInUp" data-wow-delay=".5s">
+                                <li>
+                                    <a href="index.html">home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">about us</a>
+                                </li>
+                                <li>
+                                    <a href="event-details.html">events</a>
+                                </li>
+                                <li>
+                                    <a href="speaker-details.html">speakers</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">contact us</a>
+                                </li>
+                           </ul>
+                            <form action="index-3.html#" class="wow fadeInUp" data-wow-delay=".3s">
+                                <div class="form-clt">
+                                    <input type="text" name="email" id="email" placeholder="Your Email Address">
+                                    <button type="submit" class="gt-theme-btn">
+                                      subscribe now
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="gt-footer-wrapper-3">
+                                <p class="wow fadeInLeft" data-wow-delay=".3s">
+                                     © 2025 VN FEST. All Rights Reserved.
                                 </p>
-                                <div class="gt-social-icon d-flex align-items-center">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                                <div class="gt-social-icon d-flex align-items-center wow fadeInRight" data-wow-delay=".5s">
+                                    <a href="index-3.html#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="index-3.html#"><i class="fab fa-twitter"></i></a>
+                                    <a href="index-3.html#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="index-3.html#"><i class="fa-brands fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="gt-footer-widget-items">
-                            <div class="gt-widget-head">
-                                <h4>Liên Kết</h4>
-                            </div>
-                            <ul class="gt-list-area">
-                                <li><a href="about.html">Giới Thiệu</a></li>
-                                <li><a href="sponsor.html">Nhà Tài Trợ</a></li>
-                                <li><a href="contact.html">Mua Vé</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="gt-footer-widget-items">
-                            <div class="gt-widget-head">
-                                <h4>Địa Chỉ Tổ Chức</h4>
-                            </div>
-                            <div class="gt-footer-content">
-                                <p style="color:white;">Phân hiệu Giao thông vận tải <br> S450-451 Lê Văn Việt,P. Tăng Nhơn Phú A, Thủ Đức, TP.HCM.</p>
-                                <p style="color:white; margin-top:10px;">0869 161 050</p>
-                                <p style="color:white; margin-top:5px;">VNFEST@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             <div class="gt-footer-bottom">
-                <div class="gt-footer-wrapper gt-style-2">
-                    <p class="wow fadeInUp" data-wow-delay=".3s">© 2025 All Rights Reserved.</p>
-                    <ul class="gt-footer-list wow fadeInUp" data-wow-delay=".5s">
-                        <li><a href="#">Điều khoản sử dụng</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 
         <!--<< All JS Plugins >>-->
