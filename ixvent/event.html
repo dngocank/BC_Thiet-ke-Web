@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+       <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="VietnamFest">
+        <meta name="description" content="Lịch trình các lễ hội văn hóa đặc sắc tại Việt Nam 2025">
+        <title>Sự Kiện & Lễ Hội - VietNam FEST</title>
+        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        
+        <style>
+            /* CSS tùy chỉnh */
+            @media (max-width: 767px) {
+                body, p, h1, h2, h3, h4, h5, h6 { text-align: left !important; }
+            }
+            .gt-event-list li { margin-right: 15px; font-size: 14px; }
+            .gt-event-schedule-content h3 a { font-size: 20px; line-height: 1.4; font-weight: 700; }
+            .gt-text h6 { line-height: 1.6; font-weight: normal; color: #555; }
+        </style>
+    </head>
+    <body>
+
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="V" class="letters-loading">V</span>
+                    <span data-text-preloader="N" class="letters-loading">N</span>
+                    <span data-text-preloader="-" class="letters-loading">-</span>
+                    <span data-text-preloader="F" class="letters-loading">F</span>
+                    <span data-text-preloader="E" class="letters-loading">E</span>
+                    <span data-text-preloader="S" class="letters-loading">S</span>
+                    <span data-text-preloader="T" class="letters-loading">T</span>
+                </div>
+                <p class="text-center">ĐANG TẢI DỮ LIỆU</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>  
+
+        <button id="gt-back-top" class="gt-back-to-top show">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/black-logo.svg" alt="logo-img">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <p class="text d-none d-xl-block">
+                            VietNam FEST - Hành trình khám phá di sản và lễ hội văn hóa Việt Nam.
+                        </p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact d-none d-xl-block">
+                            <h4 class="d-none d-xl-block">Liên hệ</h4>
+                            <ul class="d-none d-xl-block">
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                    <div class="offcanvas__contact-text"><a target="_blank" href="#">Hà Nội - Đà Nẵng - TP.HCM</a></div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
+                                    <div class="offcanvas__contact-text"><a href="mailto:info@vietnamfest.com">info@vietnamfest.com</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+
+        <header id="header-sticky" class="header-1 header-new">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main">
+                        <div class="logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="assets/img/logo/black-logo.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        <div class="header-right d-flex justify-content-end align-items-center mt-0">
+                            <div class="mean__menu-wrapper">
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li class="has-dropdown active menu-thumb">
+                                                <a href="index.html">Trang Chủ</a>
+                                                <ul class="submenu has-homemenu">
+                                                    <li>
+                                                        <div class="homemenu-items">
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb">
+                                                                    <img src="assets/img/header/home-1.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index.html" class="gt-theme-btn">Xem ngay</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">Tết Nguyên Đán</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-2.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-2.html" class="gt-theme-btn">Xem ngay</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">Tết Trung Thu</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-3.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-3.html" class="gt-theme-btn">Xem ngay</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">Quốc Khánh</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-4.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-4.html" class="gt-theme-btn">Xem ngay</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">Ngày Nhà Giáo</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="homemenu">
+                                                                <div class="homemenu-thumb mb-15">
+                                                                    <img src="assets/img/header/home-5.jpg" alt="img">
+                                                                    <div class="demo-button">
+                                                                        <a href="index-5.html" class="gt-theme-btn">Xem ngay</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="homemenu-content text-center">
+                                                                    <h4 class="homemenu-title">Giáng Sinh</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown active d-xl-none">
+                                                <a href="index.html" class="border-none">Lễ Hội Nổi Bật</a>
+                                                <ul class="submenu">
+                                                    <li><a href="index.html">Tết Nguyên Đán</a></li>
+                                                    <li><a href="index-2.html">Tết Trung Thu</a></li>
+                                                    <li><a href="index-3.html">Quốc Khánh</a></li>
+                                                    <li><a href="index-4.html">Ngày Nhà Giáo</a></li>
+                                                    <li><a href="index-5.html">Giáng Sinh</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown">
+                                                <a href="event.html">Sự Kiện</a>
+                                                <ul class="submenu">
+                                                    <li><a href="#mien-bac">Miền Bắc</a></li>
+                                                    <li><a href="#mien-trung">Miền Trung</a></li>
+                                                    <li><a href="#mien-nam">Miền Nam</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="news.html">Tin Tức</a></li>
+                                            <li><a href="about.html">Giới Thiệu</a></li>
+                                            <li><a href="contact.html">Liên Hệ</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="header-right-icon">
+                                <a href="#" class="main-header__search search-toggler">
+                                    <i class="fa-regular fa-magnifying-glass"></i>
+                                </a>
+                            </div>
+                            <div class="header-button">
+                                <a href="contact.html" class="gt-theme-btn">
+                                   <i class="fa-solid fa-ticket-simple"></i> Mua Vé
+                                </a>
+                            </div>
+                            <div class="header__hamburger d-xl-block my-auto">
+                                <div class="sidebar__toggle">
+                                    <i class="fas fa-bars"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-popup">
+            <div class="search-popup__overlay search-toggler"></div>
+            <div class="search-popup__content">
+                <form role="search" method="get" class="search-popup__form" action="#">
+                    <input type="text" id="search" name="search" placeholder="Tìm kiếm lễ hội...">
+                    <button type="submit" aria-label="search submit" class="search-btn">
+                        <span><i class="fa-regular fa-magnifying-glass"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="gt-breadcrumb-wrapper fix">
+            <div class="gt-top-shape">
+                <img src="assets/img/inner-page/breadcrumb/bg-shape.png" alt="img">
+            </div>
+            <div class="gt-line-shape">
+                <img src="assets/img/inner-page/breadcrumb/line-shape.png" alt="img">
+            </div>
+            <div class="gt-arrow-shape float-bob-y">
+                <img src="assets/img/inner-page/breadcrumb/arrow.png" alt="img">
+            </div>
+            <div class="container-fluid">
+                <div class="gt-page-heading bg-cover" style="background-image: url(assets/img/inner-page/breadcrumb/bg.png);">
+                    <div class="gt-breadcrumb-sub-title">
+                        <h1 class="wow fadeInUp" data-wow-delay=".3s">LỊCH TRÌNH LỄ HỘI</h1>
+                    </div>
+                    <ul class="gt-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><span>Sự kiện</span></li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="gt-events-schedule-section section-padding fix" id="schedule">
+            <div class="gt-left-shape"><img src="assets/img/home-1/event/circle-shape-2.png" alt="img"></div>
+            <div class="gt-middle-shape"><img src="assets/img/home-1/event/circle-shape.png" alt="img"></div>
+            <div class="gt-right-shape"><img src="assets/img/home-1/event/circle-shape-3.png" alt="img"></div>
+            
+            <div class="container">
+                <div class="gt-section-title text-center">
+                    <span class="gt-sub-title wow fadeInUp">Khám phá văn hóa</span>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                        Danh Sách Các Lễ Hội Đặc Sắc
+                    </h2>
+                </div>
+                <div class="gt-event-schedule-wrapper">
+                    <ul class="nav" role="tablist">
+                        <li class="nav-item wow fadeInUp" data-wow-delay=".2s">
+                            <a href="#mien-bac" data-bs-toggle="tab" class="nav-link active" aria-selected="true" role="tab">Miền Bắc</a>
+                        </li>
+                        <li class="nav-item wow fadeInUp" data-wow-delay=".4s">
+                            <a href="#mien-trung" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab">Miền Trung & Tây Nguyên</a>
+                        </li>
+                        <li class="nav-item wow fadeInUp" data-wow-delay=".6s">
+                            <a href="#mien-nam" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab">Miền Nam</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content">
+                        
+                        <div id="mien-bac" class="tab-pane fade active show" role="tabpanel">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image"><img src="assets/img/home-1/event/event-1.png" alt="Hội Gióng"></div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 6-8/1 ÂL (Sóc Sơn) & 9/4 ÂL (Phù Đổng)</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Sóc Sơn & Gia Lâm, Hà Nội</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Hội Gióng (Di sản UNESCO)</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text"><h6>Tái hiện trận chiến Thánh Gióng đánh giặc Ân với các nghi lễ rước kiệu, cướp hoa tre độc đáo.</h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image"><img src="assets/img/home-1/event/event-2.png" alt="Hội Lim"></div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 13 tháng Giêng Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Đồi Lim, Tiên Du, Bắc Ninh</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Hội Lim - Dân ca Quan Họ</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text"><h6>Không gian văn hóa Kinh Bắc đặc sắc với các làn điệu Quan họ giao duyên trên bến dưới thuyền.</h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image"><img src="assets/img/home-1/event/event-3.png" alt="Chùa Hương"></div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Tháng 1 - Tháng 3 Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Hương Sơn, Mỹ Đức, Hà Nội</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Chùa Hương</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text"><h6>Lễ hội Phật giáo lớn nhất miền Bắc, hành trình du xuân trên dòng suối Yến thơ mộng về cõi Phật linh thiêng.</h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image"><img src="assets/img/home-1/event/event-1.png" alt="Cổ Loa"></div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Mùng 6 tháng Giêng</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Đông Anh, Hà Nội</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Cổ Loa</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text"><h6>Tưởng nhớ An Dương Vương và nỏ thần huyền thoại. Lễ rước kiệu Bát xã uy nghiêm cùng các trò chơi bắn nỏ.</h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="mien-trung" class="tab-pane fade" role="tabpanel">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image"><img src="assets/img/home-1/event/event-2.png" alt="Làng Sen"></div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 17-19/5 Dương lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Kim Liên, Nam Đàn, Nghệ An</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Làng Sen</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text"><h6>Ngày hội tri ân Chủ tịch Hồ Chí Minh trên quê hương Bác. Nổi bật với Lễ rước ảnh Bác và Liên hoan tiếng hát Làng Sen.</h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image"><img src="assets/img/home-1/event/event-3.png" alt="Festival Huế"></div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Mùa hè (Định kỳ 2 năm)</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Đại Nội & TP. Huế</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Festival Huế & Lễ Tế Giao</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text"><h6>Sự kiện văn hóa quốc tế, tôn vinh di sản Cố đô. Tái hiện Lễ Tế Giao hào hùng tại đàn Nam Giao.</h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-2.png" alt="Cà Phê">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Tháng 3 (Định kỳ 2 năm)</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Buôn Ma Thuột, Đắk Lắk</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Cà phê Buôn Ma Thuột</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Tôn vinh "vàng đen" Tây Nguyên. Hòa mình vào không gian văn hóa cồng chiêng, đua voi và hương vị cà phê đại ngàn.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-1.png" alt="Katé">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Tháng 7 Chăm lịch (Tháng 10 DL)</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Ninh Thuận, Bình Thuận</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Katé (Người Chăm)</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Lễ hội lớn nhất của đồng bào Chăm theo đạo Bà La Môn, diễn ra tại các tháp Chàm cổ kính với điệu múa Apsara huyền bí.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="mien-nam" class="tab-pane fade" role="tabpanel">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-1.png" alt="Nguyên Tiêu">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 15 tháng Giêng Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> TP.HCM (Chợ Lớn), Hội An</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Tết Nguyên Tiêu (Hội Đèn Lồng)</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Ngày rằm lớn nhất năm, rực rỡ với hội đèn lồng, múa lân sư rồng và tục ăn chè trôi nước cầu viên mãn.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-2.png" alt="Oóc Om Bóc">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 15/10 Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Sóc Trăng, Trà Vinh</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Oóc Om Bóc & Đua Ghe Ngo</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Lễ Cúng Trăng của người Khmer Nam Bộ. Sôi động với giải đua ghe ngo kịch tính trên sông nước miền Tây.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-3.png" alt="Chol Chnam Thmay">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 13-16/4 Dương lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Các tỉnh Tây Nam Bộ</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Tết Chol Chnam Thmay</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Tết cổ truyền của đồng bào Khmer. Độc đáo với lễ tắm Phật, đắp núi cát và lễ hội té nước cầu may mắn đầu năm.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-1.png" alt="Bánh Dân Gian">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Tháng 3 hoặc 4 Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Cần Thơ</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Bánh Dân Gian Nam Bộ</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Thiên đường ẩm thực phương Nam, quy tụ hàng trăm loại bánh quê dân dã, ngon lành và đầy màu sắc.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-2.png" alt="Bà Chúa Xứ">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> 23-27/4 Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Châu Đốc, An Giang</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Vía Bà Chúa Xứ Núi Sam</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Lễ hội tâm linh lớn nhất miền Tây. Nổi tiếng với nghi thức Lễ Tắm Bà thiêng liêng vào đêm 23/4.</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+
+                                    <div class="gt-event-schedule-item">
+                                        <div class="gt-dot-shape"><img src="assets/img/home-1/event/line-shape-2.png" alt=""></div>
+                                        <div class="gt-event-image">
+                                            <img src="assets/img/home-1/event/event-3.png" alt="Nghinh Ông">
+                                        </div>
+                                        <div class="gt-event-schedule-content">
+                                            <ul class="gt-event-list">
+                                                <li><i class="fa-regular fa-calendar-days"></i> Tháng 8 Âm lịch</li>
+                                                <li><i class="fa-regular fa-location-dot"></i> Vũng Tàu, Cần Giờ</li>
+                                            </ul>
+                                            <h3><a href="event-details.html">Lễ hội Nghinh Ông (Cúng Cá Ông)</a></h3>
+                                            <div class="gt-client-info">
+                                                <div class="gt-text">
+                                                    <h6>Lễ hội lớn nhất của ngư dân vùng biển, cầu mưa thuận gió hòa và tạ ơn thần Nam Hải (Cá Voi).</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gt-event-button"><a href="event-details.html" class="gt-theme-btn">Chi tiết</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="gt-footer-section fix bg-cover" style="background-image: url(assets/img/home-1/footer/shape.png);">
+            <div class="container">
+                <div class="gt-footer-widget-wrapper gt-style-2">
+                    <div class="row g-4 justify-content-between">
+                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <a href="index.html" class="gt-footer-logo">
+                                        <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                                    </a>
+                                </div>
+                                <div class="gt-footer-content">
+                                    <p>
+                                        VietNam FEST - Nơi lưu giữ và lan tỏa những giá trị văn hóa truyền thống tốt đẹp nhất của dân tộc Việt Nam đến bạn bè quốc tế.
+                                    </p>
+                                    <div class="gt-social-icon d-flex align-items-center">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <h4>Liên Kết</h4>
+                                </div>
+                                <ul class="gt-list-area">
+                                    <li><a href="about.html">Giới Thiệu</a></li>
+                                    <li><a href="sponsor.html">Nhà Tài Trợ</a></li>
+                                    <li><a href="contact.html">Mua Vé</a></li>
+                                    <li><a href="news.html">Tin Tức</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <h4>Địa Chỉ Tổ Chức</h4>
+                                </div>
+                                <div class="gt-footer-content">
+                                    <p style="color:white;">Trung tâm Văn hóa Nghệ thuật,<br> Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội.</p>
+                                    <p style="color:white; margin-top:10px;">Hotline: 0909 123 456</p>
+                                    <p style="color:white; margin-top:5px;">Email: info@vietnamfest.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-footer-bottom">
+                        <div class="gt-footer-wrapper gt-style-2">
+                            <p class="wow fadeInUp" data-wow-delay=".3s">© 2025 VietNam FEST. All Rights Reserved.</p>
+                            <ul class="gt-footer-list wow fadeInUp" data-wow-delay=".5s">
+                                <li><a href="contact.html">Điều khoản sử dụng</a></li>
+                                <li><a href="contact.html">Chính sách bảo mật</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+         
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/viewport.jquery.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
