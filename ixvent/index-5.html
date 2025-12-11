@@ -80,6 +80,27 @@
 
     </head>
     <body>
+        <!-- 🎵 BACKGROUND MUSIC (ADD THIS) -->
+<audio id="bgMusic" loop>
+    <source src="assets/music/Noel.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎵 MUSIC TOGGLE BUTTON -->
+<div id="musicToggle" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.8);
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999999;
+    backdrop-filter: blur(5px);
+    font-size: 20px;
+">
+    🔊
+</div>
+</script>
         <!-- ❄ Smooth Snow Canvas (ADDED) -->
 <canvas id="snowCanvas"></canvas>
         <!-- << Preloader Area >> -->
@@ -296,7 +317,7 @@
                                                 <li><a href="about.html">About Us</a></li>
                                                 
                                                 <li><a href="sponsor.html">Sponsor</a></li>
-                                                
+                                                <li><a href="pricing.html">Our Pricing</a></li>
                                                 <li><a href="coming-soon.html">Coming Soon</a></li>
                                                 <li><a href="404.html">404 Page</a></li>
                                             </ul>
@@ -312,6 +333,7 @@
                                         <li class="has-dropdown">
                                             <a href="news-details.html">Blog</a>
                                             <ul class="submenu">
+                                                <li><a href="news-grid.html">Blog Grid</a></li>
                                                 
                                                 <li><a href="news-details.html">Blog Details</a></li>
                                             </ul>
@@ -1409,6 +1431,34 @@ window.addEventListener("resize", () => {
 initSnow();
 animateSnow();
 </script> 
+<script>
+// 🎵 Music logic
+const bgMusic = document.getElementById("bgMusic");
+const toggleBtn = document.getElementById("musicToggle");
+
+let isPlaying = false;
+
+// ⏯ Khi user click nút → bật/tắt nhạc
+toggleBtn.addEventListener("click", () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        toggleBtn.innerHTML = "🔇";
+    } else {
+        bgMusic.play();
+        toggleBtn.innerHTML = "🔊";
+    }
+    isPlaying = !isPlaying;
+});
+
+// ▶ Tự play nhạc khi user chạm trang lần đầu (bắt buộc do chính sách trình duyệt)
+document.addEventListener("click", () => {
+    if (!isPlaying) {
+        bgMusic.play();
+        toggleBtn.innerHTML = "🔊";
+        isPlaying = true;
+    }
+}, { once: true });
+</script>
 
     </body>
 </html>
