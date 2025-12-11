@@ -79,6 +79,70 @@
 </style>
 
     </head>
+    <style>
+/* ✔ Hero luôn full màn hình */
+.hero-full {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full screen */
+    overflow: hidden;
+    padding: 0; /* xoá padding để video không bị thu nhỏ */
+}
+
+/* ✔ Video nền fill toàn bộ hero */
+.hero-full .hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* giúp video luôn full */
+    z-index: 0;
+}
+
+/* ✔ Overlay để chữ dễ đọc */
+.hero-full::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+/* ✔ Đảm bảo nội dung nằm trên video */
+.hero-full > * {
+    position: relative;
+    z-index: 2;
+}
+</style>
+<style>
+/* ✔ Xoá padding mặc định của hero template */
+.hero-full.gt-hero-5 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* ✔ Căn giữa nội dung theo chiều dọc */
+.hero-full .container,
+.hero-full .row,
+.hero-full .gt-hero-content {
+    height: 100%;
+    display: flex;
+    align-items: center;   /* căn giữa theo chiều dọc */
+}
+
+/* ✔ Giảm kích thước h1 nếu quá to */
+.hero-full .gt-hero-content h1 {
+    font-size: 90px; /* bạn muốn nhỏ hơn bao nhiêu tuỳ chỉnh */
+    line-height: 1.1;
+}
+
+/* ✔ Fix số 2025 bị đẩy sai vị trí */
+.hero-full .year {
+    top: 5%;
+}
+</style>
+
     <body>
         <!-- 🎵 BACKGROUND MUSIC (ADD THIS) -->
 <audio id="bgMusic" loop>
@@ -227,7 +291,7 @@
                                                             </div>
                                                             <div class="homemenu">
                                                                 <div class="homemenu-thumb">
-                                                                    <img src="assets/img/header/home-11.jpg" alt="img">
+                                                                    <img src="assets/img/header/home-1.jpg" alt="img">
                                                                     <div class="demo-button">
                                                                         <a href="index1.html" class="gt-theme-btn">Multi Page</a>
                                                                     </div>
@@ -308,7 +372,7 @@
                                                     <li><a href="index-2.html">Trung thu</a></li>
                                                     <li><a href="index-3.html">Quốc khánh</a></li>
                                                     <li><a href="index-4.html">Nhà giáo</a></li>
-                                                    <li><a href="index-5.html">Giáng sinh</a></li>
+                                                    <li><a href="index-4.html">Giáng sinh</a></li>
                                                 </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -322,10 +386,21 @@
                                                 <li><a href="404.html">404 Page</a></li>
                                             </ul>
                                         </li>
+                                        <li class="has-dropdown">
+                                            <a href="event-details.html">Event</a>
+                                            <ul class="submenu">
+                                                
+                                                <li><a href="event-details.html">Event Details</a></li>
+                                            </ul>
+                                        </li>
                                         
                                         <li class="has-dropdown">
-                                            <a href="news-details.html">Nhóm 16</a>
-                                            
+                                            <a href="news-details.html">Blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="news-grid.html">Blog Grid</a></li>
+                                                
+                                                <li><a href="news-details.html">Blog Details</a></li>
+                                            </ul>
                                         </li>
                                         <li>
                                             <a href="contact.html">Contact Us</a>
@@ -355,71 +430,86 @@
         </div>
     </header>
 
-        <!-- GT Search Start -->
-        <div class="search-popup">
-            <div class="search-popup__overlay search-toggler"></div>
-            <div class="search-popup__content">
-                <form role="search" method="get" class="search-popup__form" action="index-5.html#">
-                    <input type="text" id="search" name="search" placeholder="Search Here...">
-                    <button type="submit" aria-label="search submit" class="search-btn gt-style-4">
-                        <span><i class="fa-regular fa-magnifying-glass"></i></span>
-                    </button>
-                </form>
+    <!-- GT Search Start -->
+<div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content">
+        <form role="search" method="get" class="search-popup__form" action="index-5.html#">
+            <input type="text" id="search" name="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="search-btn gt-style-4">
+                <span><i class="fa-regular fa-magnifying-glass"></i></span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- GT-Hero-section Section Start -->
+<section class="hero-section gt-hero-5 fix bg-cover hero-full">
+
+    <!-- 🎥 Background Video -->
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+        <source src="assets/video/bgmain.mp4" type="video/mp4">
+    </video>
+
+    <div class="side-hero">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <div class="offcanvas__logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo/Logo.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        <a href="#" class="main-header__search search-toggler">
+                            <i class="fa-regular fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menus fix mb-3"></div>
+
+                    <div class="sideber-image">
+                        <img src="assets/img/header/Xmas.jpg" alt="img">
+                    </div>
+
+                    <a href="contact.html" class="gt-theme-btn style-5">
+                        <i class="fa-solid fa-ticket-simple"></i> Mua vé ngay
+                    </a>
+                </div>
             </div>
         </div>
+    </div>
 
-        <!-- GT-Hero-section Section Start -->
-        <section class="hero-section gt-hero-5 fix bg-cover" style="background-image: url(assets/img/home-5/hero/bgmain.jpg);">
-            <div class="side-hero">
-                <div class="offcanvas__info">
-                <div class="offcanvas__wrapper">
-                    <div class="offcanvas__content">
-                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                            <div class="offcanvas__close">
-    <i class="fa-solid fa-xmark"></i>
-</div>
-                            <div class="offcanvas__logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/Logo.svg" alt="logo-img">
-                                </a>
-                            </div>
-                            <a href="index-5.html#" class="main-header__search search-toggler">
-                                    <i class="fa-regular fa-magnifying-glass"></i>
-                                </a>
-                        </div>
-                        <div class="mobile-menus fix mb-3"></div>
-                        <div class="sideber-image">
-                            <img src="assets/img/header/Xmas.jpg" alt="img">
-                        </div>
-                        <a href="contact.html" class="gt-theme-btn style-5"><i class="fa-solid fa-ticket-simple"></i> get A ticket</a>
-                    </div>
+    <ul class="gt-hero-list wow fadeInUp" data-wow-delay=".3s">
+        <li>
+            <i class="fa-solid fa-calendar-days"></i>
+            24/12/2025 - 16:00 - 23:00
+        </li>
+        <li>
+            <i class="fa-solid fa-location-dot"></i>
+            Nhà Văn hóa Thanh Niên, TP. HCM
+        </li>
+    </ul>
+
+    <!-- FIXED POSITION NUMBER -->
+    <h2 class="year">2025</h2>
+
+    <div class="container">
+        <div class="row h-100 align-items-center">
+            <div class="col-xl-12">
+                <div class="gt-hero-content">
+                    <h1 class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                        <span>VietNam FEST</span> <br>
+                        Merry Xmas
+                    </h1>
                 </div>
             </div>
-            </div>
-            <ul class="gt-hero-list wow fadeInUp" data-wow-delay=".3s">
-                <li>
-                    <i class="fa-solid fa-calendar-days"></i>
-                    24/12/2025 - 16:00 - 23:00
-                </li>
-                <li>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Nhà Văn hóa Thanh Niên, TP. HCM
-                </li>
-            </ul>
-            <h2 class="year">2025</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="gt-hero-content">
-                            <h1 class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                <span>VietNam FEST</span> <br>
-                                 Merry Xmas
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- GT-Event-Fashion-section Section Start -->
         <section class="gt-event-fashion-section section-padding fix">
@@ -427,7 +517,7 @@
                 <img src="assets/img/home-5/event/shape-3.png" alt="img">
             </div>
             <div class="right-shape">
-                <img src="assets/img/home-5/event/shape-4.png" alt="img">
+                <img src="assets/img/home-5/hero/bgmain.jpg" alt="img">
             </div>
             <div class="container">
                 <div class="gt-section-title-area">
@@ -435,7 +525,7 @@
                     <h2 class="wow fadeInUp" data-wow-delay=".3s">
                          Merry Christmas <br> Đêm hội Giáng Sinh tại <span> Nhà Văn hóa Thanh Niên </span>TP. HCM
                     </h2>
-                    
+                    </a>
                  </div>
                  <div class="content">
                     <p class="wow fadeInUp" data-wow-delay=".3s">
@@ -469,6 +559,32 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<style>
+/* Container video (phủ toàn khu vực section để làm anchor căn giữa) */
+.gt-fashion-image {
+    position: relative;
+}
+
+/* Icon play ở giữa */
+.glightbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+/* Tăng kích thước icon nếu cần */
+.glightbox i {
+    font-size: 70px;
+    color: white;
+    transition: 0.2s;
+}
+
+.glightbox:hover i {
+    transform: scale(1.15);
+}
+</style>
 
 <script>
     const lightbox = GLightbox({
@@ -501,7 +617,7 @@
                                         </li>
                                     </ul>
                                     <h3>
-                                        <a >
+                                        <a href="event-details.html">
                                             Đêm hội Giáng sinh & Cuộc thi "Sắc màu mùa đông - Âm vang văn nghệ"
                                         </a>
                                     </h3>
@@ -515,22 +631,22 @@
                                     <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                     <div class="gt-event-schedule-image">
-                                        <img src="assets/img/home-5/event/event-5.jpg" alt="">
+                                        <img src="assets/img/home-5/event/cat.png" alt="">
                                      </div>
                                     </div>
                                     <div class="swiper-slide">
                                     <div class="gt-event-schedule-image style-2">
-                                        <img src="assets/img/home-5/event/event-6.jpg" alt="">
+                                        <img src="assets/img/home-5/event/dgs.png" alt="">
                                      </div>
                                     </div>
                                     <div class="swiper-slide">
                                     <div class="gt-event-schedule-image">
-                                        <img src="assets/img/home-5/event/event-7.jpg" alt="">
+                                        <img src="assets/img/home-5/event/tp.png" alt="">
                                      </div>
                                     </div>
                                     <div class="swiper-slide">
                                     <div class="gt-event-schedule-image">
-                                        <img src="assets/img/home-5/event/event-8.jpg" alt="">
+                                        <img src="assets/img/home-5/event/vn.png" alt="">
                                      </div>
                                     </div>
                                     </div>
@@ -1033,11 +1149,11 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="gt-event-ticket-box-5">
                             <div class="gt-event-image">
-                                <img src="assets/img/home-5/event/event-1.jpg" alt="img">
+                                <img src="assets/img/home-5/event/hht.png" alt="img">
                             </div>
                             <div class="gt-event-content">
                                 <h4>
-                                    <a>Hoa hồng tuyết</a>
+                                    <a href="event-details.html">Hoa hồng tuyết</a>
                                 </h4>
                                 <h6>Ngày 23/12/2025</h6>
                                 <ul class="event-list">
@@ -1056,7 +1172,7 @@
                                 </ul>
                                 <div class="gt-event-button">
                                     <div class="gt-button">
-                                        <a  class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
+                                        <a href="event-details.html" class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
                                     </div>
                                     <div class="gt-right-text">
                                         <h4>150.000 VND</h4>
@@ -1069,11 +1185,11 @@
                      <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="gt-event-ticket-box-5">
                             <div class="gt-event-image">
-                                <img src="assets/img/home-5/event/event-2.jpg" alt="img">
+                                <img src="assets/img/home-5/event/dsb.jpg" alt="img">
                             </div>
                             <div class="gt-event-content">
-                                <h4> 
-                                    <a>Đêm Sao Băng</a>
+                                <h4>
+                                    <a href="event-details.html">Đêm Sao Băng</a>
                                 </h4>
                                 <h6>Ngày 24/12/2025</h6>
                                 <ul class="event-list">
@@ -1092,7 +1208,7 @@
                                 </ul>
                                 <div class="gt-event-button">
                                     <div class="gt-button">
-                                        <a  class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
+                                        <a href="event-details.html" class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
                                     </div>
                                     <div class="gt-right-text">
                                         <h4>350.000 VND</h4>
@@ -1105,10 +1221,12 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                         <div class="gt-event-ticket-box-5">
                             <div class="gt-event-image">
-                                <img src="assets/img/home-5/event/event-3.jpg" alt="img">
+                                <img src="assets/img/home-5/event/dkas.jpg" alt="img">
                             </div>
                             <div class="gt-event-content">
-                                
+                                <h4>
+                                    <a href="event-details.html">Dạ Khúc Ánh Sáng</a>
+                                </h4>
                                 <h6>Ngày 25/12/2025</h6>
                                 <ul class="event-list">
                                     <li>
@@ -1125,7 +1243,9 @@
                                     </li>
                                 </ul>
                                 <div class="gt-event-button">
-                                    
+                                    <div class="gt-button">
+                                        <a href="event-details.html" class="gt-theme-btn">Mua vé<i class="fa-solid fa-arrow-down-to-line"></i></a>
+                                    </div>
                                     <div class="gt-right-text">
                                         <h4>450.000 VND</h4>
                                         <span>/người</span>
@@ -1141,7 +1261,7 @@
         <!-- Gt-Sponsor-Bg Section Start -->
         <section class="gt-sponsor-bg-section section-padding fix">
             <div class="container">
-                <div class="gt-sponsor-bg-wrapper bg-cover" style="background-image: url(assets/img/home-5/sponsor-bg.jpg);">
+                <div class="gt-sponsor-bg-wrapper bg-cover" style="background-image: url(assets/img/home-5/ntt.png);">
                     <div class="gt-right-shape">
                         <img src="assets/img/home-1/sponser/shape.png" alt="img">
                     </div>
@@ -1173,7 +1293,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="gt-news-card-item-5">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-5/news/01.jpg" alt="img">
+                                <img src="assets/img/home-5/news/bv.png" alt="img">
                                 <span class="gt-post">1/12/2025</span>
                             </div>
                             <div class="gt-news-content">
@@ -1191,7 +1311,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="gt-news-card-item-5">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-5/news/02.jpg" alt="img">
+                                <img src="assets/img/home-5/news/concept.png" alt="img">
                                 <span class="gt-post">5/12/2025</span>
                             </div>
                             <div class="gt-news-content">
@@ -1209,7 +1329,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                         <div class="gt-news-card-item-5">
                             <div class="gt-news-image">
-                                <img src="assets/img/home-5/news/03.jpg" alt="img">
+                                <img src="assets/img/home-5/news/cv.png" alt="img">
                                 <span class="gt-post">12/12/2025</span>
                             </div>
                             <div class="gt-news-content">
@@ -1261,7 +1381,7 @@
                             <div class="gt-footer-widget-items">
                                 <div class="gt-widget-head">
                                     <a href="index.html" class="gt-footer-logo">
-                                        <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                                        <img src="assets/img/logo/Logo.svg" alt="logo-img">
                                     </a>
                                 </div>
                                 <div class="gt-footer-content">
